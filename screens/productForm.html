@@ -20,7 +20,7 @@
 <body>
     <div>
         <h1>Agrega producto al e-commerce</h1>
-            <form id="nuevo-producto">
+            <form id="nuevo-producto" enctype="multipart/form-data">
                 <div class="mb-3">
                 <label for="nombreDetail">Nombre <input type="text" name="nombreDetail" id="nombreDetail" placeholder="Nombre del producto">
                 </label>
@@ -37,8 +37,8 @@
                 <label for="precioDetail">Precio <input type="number" name="precioDetail" id="precioDetail" placeholder="">
                 </label>
             </div>
-            <div class="mb-3"> <label for="tipoDetail">USO:
-                    <select name="tipoDetail" class="form-control">
+            <div class="mb-3"> <label for="usoDetail">USO:
+                    <select name="usoDetail" id="usoDetail" class="form-control">
                         <option value="urbano">Urbano</option>
                         <option value="deportivo">Deportivo</option>
                         <option  value="de vestir">De vestir</option>
@@ -46,77 +46,49 @@
             </div>
             <div class="mb-3">
                 <label for="generoDetail">Genero:
-                    <select name="generoDetail" class="form-control">
+                    <select name="generoDetail" id="generoDetail" class="form-control">
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
                         <option value="Para Chicos">Para chicos</option>
                     </select></label>
             </div>
-            <div class="mb-3"><label for="talleDetail">Seleccione el talle:</label>
-            <input type="number" name="talleDetail" id="talleDetail" list="talles">
-            <datalist id="talles">
-                <option value="15"></option>
-                <option value="16"></option>
-                <option value="17"></option>
-                <option value="18"></option>
-                <option value="19"></option>
-                <option value="20"></option>
-                <option value="21"></option>
-                <option value="22"></option>
-                <option value="23"></option>
-                <option value="24"></option>
-                <option value="25"></option>
-                <option value="26"></option>
-                <option value="27"></option>
-                <option value="28"></option>
-                <option value="29"></option>
-                <option value="30"></option>
-                <option value="31"></option>
-                <option value="32"></option>
-                <option value="33"></option>
-                <option value="34"></option>
-                <option value="35"></option>
-                <option value="36"></option>
-                <option value="37"></option>
-                <option value="38"></option>
-                <option value="38.5"></option>
-                <option value="39"></option>
-                <option value="39.5"></option>
-                <option value="40"></option>
-                <option value="40.5"></option>
-                <option value="41"></option>
-                <option value="41.5"></option>
-                <option value="42"></option>
-                <option value="42.5"></option>
-                <option value="43"></option>
-                <option value="43.5"></option>
-                <option value="44"></option>
-                <option value="44.5"></option>
-                <option value="45"></option>
-                <option value="45.5"></option>
-                <option value="46"></option>
-                <option value="46.5"></option>
-                <option value="47"></option>
-                <option value="47.5"></option>
-                <option value="48"></option>
-                <option value="48.5"></option>
-                <option value="49"></option>
-                <option value="49.5"></option>
-    
-               
-                
-                
-              </datalist>
+            <div class="mb-3">
+                <label for="talles">Tallas:</label>
+                <input id="talleDetail" name="tallas" type="checkbox" value="25" />25
+                <input id="talleDetail" name="tallas" type="checkbox" value="26" />26
+                <input id="talleDetail" name="tallas" type="checkbox" value="27" />27
+                <input id="talleDetail" name="tallas" type="checkbox" value="28" />28
+                <input id="talleDetail" name="tallas" type="checkbox" value="29" />29
+                <input id="talleDetail" name="tallas" type="checkbox" value="30" />30
+                <input id="talleDetail" name="tallas" type="checkbox" value="31" />31
+                <input id="talleDetail" name="tallas" type="checkbox" value="32" />32
+                <input id="talleDetail" name="tallas" type="checkbox" value="33" />33
+                <input id="talleDetail" name="tallas" type="checkbox" value="34" />34
+                <input id="talleDetail" name="tallas" type="checkbox" value="35" />35
+                <input id="talleDetail" name="tallas" type="checkbox" value="36" />36
+                <input id="talleDetail" name="tallas" type="checkbox" value="37" />37
+                <input id="talleDetail" name="tallas" type="checkbox" value="38" />38
+                <input id="talleDetail" name="tallas" type="checkbox" value="39" />39
+                <input id="talleDetail" name="tallas" type="checkbox" value="40" />40
+                <input id="talleDetail" name="tallas" type="checkbox" value="41" />41
+                <input id="talleDetail" name="tallas" type="checkbox" value="42" />42
+                <input id="talleDetail" name="tallas" type="checkbox" value="43" />43
+                <input id="talleDetail" name="tallas" type="checkbox" value="44" />44
+
+
+
+
             </div>  
             <div class="mb-3">
                 <label for="colorDetail">Color:
-                <select name="colorDetail" id="colorDetail">
-                    <option value="negro">negro</option>
-                    <option value="blanco">blanco</option>
-                    <option value="rojo">rojo</option>
-                    <option value="azul">azul</option>
-                    <option value="amarillo">amarillo</option>
-                </datalist>
+                    <input id="colorDetail" name="Color" type="checkbox" value="Blanco" />Blanco
+                    <input id="colorDetail" name="color" type="checkbox" value="Negro" />Negro
+                    <input id="colorDetail" name="color" type="checkbox" value="Verde" />Verde
+                    <input id="colorDetail" name="color" type="checkbox" value="Gris" />Gris
+                    <input id="colorDetail" name="color" type="checkbox" value="Café" />Café
+                    <input id="colorDetail" name="color" type="checkbox" value="Amarillo" />Amarillo
+                    <input id="colorDetail" name="color" type="checkbox" value="Rojo" />Rojo
+                    <input id="colorDetail" name="color" type="checkbox" value="Azul" />Azul
             </label>
             </div>
             <div class="mb-3">
@@ -125,7 +97,7 @@
               </div>
               <div class="mb-3">
                 <label for="formFile" class="form-label">Primer imagen secundaria</label>
-                <input class="form-control" type="file" name="img2" id="img2Detail">
+                <input class="form-control" type="file" name="img2" id="img2Detail" accept ="image/jpeg, image/png, image/jpg">
               </div>
               <div class="mb-3">
                 <label for="formFile" class="form-label">Segunda imagen secundaria</label>
@@ -133,33 +105,35 @@
               </div>
             <div class="mb-3">
                 <label for="submit">
-                <input type="submit" id="" value="nuevo producto" onclick="pushearAJson()">
+                <input type="submit" id="submit" value="nuevo producto" onclick="nuevoElemento(), enviar()">
             </label>
+            <label for="cargar"><input type="submit" id="cargar" value="cargar" ><label>
             </div>
         </form>
     </div>
-
-    <div id="productList">
-        <!-- Los productos se mostrarán aquí -->
-    </div>
-
-    <script src="./scripts/productDetail.js"></script>
-    <script src="../scripts/productos.js"></script>
-    <script>init(()=>{
-    async function getProducts() {
-        try {
-            const response = await fetch('http://localhost:3000/products');
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('Error al obtener productos:', error);
-            return {};
-        }
-    }
-});
-
-    </script>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/productForm.js"></script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+      
+        const firebaseConfig = {
+          apiKey: "AIzaSyACFIyQ4dTJZxVJdgj3nUtwC4REJXm3k9Y",
+          authDomain: "c-18-116-m-html.firebaseapp.com",
+          databaseURL: "https://c-18-116-m-html-default-rtdb.firebaseio.com",
+          projectId: "c-18-116-m-html",
+          storageBucket: "c-18-116-m-html.appspot.com",
+          messagingSenderId: "623166454779",
+          appId: "1:623166454779:web:ea2d35912fa7068cd4295e",
+          measurementId: "G-P03JLH7RPV"
+        };
+      
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+    <script></script>
 </body>
 
 </html>
