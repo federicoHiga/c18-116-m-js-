@@ -18,27 +18,27 @@
   height: 20px;
 }
 
-.colorNegro{
+.color-negro{
   background-color: #0D0D0D;
   stroke-width: 2px;
   stroke: #661010;
 }
-.colorBlanco{
+.color-blanco{
   background-color: #FFF;
   stroke-width: 1px;
   stroke: #000;
 }
-.colorRojo{
+.color-rojo{
   background-color: #B74040;
   stroke-width: 1px;
   stroke: #000;
 }
-.colorAzul{
+.color-azul{
   background-color: #5F92A7;
   stroke-width: 1px;
   stroke: #000;
 }
-.colorAmarillo{
+.color-verde{
   background-color: #B4D261;
   stroke-width: 1px;
   stroke: #000;

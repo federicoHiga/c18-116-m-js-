@@ -232,7 +232,7 @@
 
 
 .form-check-input {
-  background-image:none;
+  background-color: rgb(255, 255, 255); 
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -242,6 +242,7 @@
   margin-top: 0;
   margin-right: 10px;
 }
+
 .form-check-input:checked {
   background-color: #fff;
   border-color: #fff;
@@ -252,9 +253,6 @@
   width: 20px;
   height: 20px;
   box-shadow: none;
-}
-.form-check-input[type=checkbox]{
-  border-color: #960101 !important; 
 }
 
 .form-check-input[type=checkbox] {
@@ -459,4 +457,219 @@ height: 22px;
   width: 22px;
   height: 30px;
   padding-bottom: 4px;
+}
+
+/*Login*/
+
+.login-logo-Zenith {
+  position: static;
+  width: 90%;
+  margin-top:40px;
+  margin-bottom: 40px;
+}
+
+.form-control-login {
+  display: flex;
+  flex-wrap: wrap;
+  border-color: black;
+  border-radius: 8px;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100%;
+  
+}
+
+.link-registro-login {
+  color: #661010;
+}
+
+.login-boton-submit {
+  margin-top: 16px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 150px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #8C8C8C;
+  border: 1px;
+  }
+  
+.login-boton-submit:hover {
+    width: 100%;
+    background-color: #000;
+    border-color: #000;
+    width: 150px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+.login-logo-google {
+    background-color: #661010;
+    width: 32px;
+    height: 32px;
+    border-width: 
+    5px; 
+    border-style: 
+    solid; 
+    border-color: #661010;
+    border-radius: 50%;
+  }
+
+.login-logo-facebook {
+    width: 32px;
+    height: 32px;
+  }
+
+.form-control-login-sub {
+  display: flex;
+  flex-wrap: wrap;
+  border-color: #661010;
+  border-radius: 8px;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 60%;
+  
+}
+
+.link-olvido-contraseña {
+  color: #000;
+  text-decoration: none;
+}
+
+/*Registro*/
+
+.registro-logo-Zenith {
+  position: static;
+  width: 90%;
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+.registro-boton-submit {
+  margin-top: 168px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 310px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #000;
+  border: 1px;
+}
+  
+.registro-boton-submit:hover {
+    width: 100%;
+    background-color: #000;
+    border-color: #000;
+    width: 310px;
+    height: 48px;
+    border-radius: 8px;
+}
+
+.registro2-boton-submit {
+    margin-top: 100px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    width: 310px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #000;
+    border: 1px;
+}
+  
+.registro2-boton-submit:hover {
+      width: 100%;
+      background-color: #000;
+      border-color: #000;
+      width: 310px;
+      height: 48px;
+      border-radius: 8px;
+}
+
+.titulo-registro-finalizado {
+      position: fixed;
+      top: 210px;
+      right: 92px;
+      margin: 0;
+}
+
+.texto-registro-finalizado {
+  margin:0;
+}
+
+.imagen-celebracion {
+  position: absolute;
+  height: 100px;
+  left: 50%;
+  width: 100%;
+}
+
+.imagen-conffeti {
+  width: 231.086px;
+  height: 110.26px;
+  position: absolute;
+  top: 100px;
+  right: 240px;
+}
+
+.imagen-chica {
+  width: 83.096px;
+  height: 183.635px;
+  position: absolute;
+  left: -20%;
+  top: 113px;
+}
+
+
+.imagen-chico {
+  width: 91.72px;
+  height: 188.733px;
+  position: absolute;
+  left: 2%;
+  top: 113px;
+}
+
+.registro3-boton-submit {
+  margin-top: 395px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 310px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #000;
+  border: 1px;
+}  /*NAVBAR*/
+/* NAVBAR */
+
+.navbar {
+  padding: 0.1rem;
+  background-color:white;
+}
+
+.navbar-collaps {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Acordion*/
+
+.accordion-item {
+  border: none;
+}
+
+.list-group {
+  border: none;
+}
+
+.accordion-text{
+  color:#000;
+}
+
+.hotSaleText {
+  color: #661010;
 }

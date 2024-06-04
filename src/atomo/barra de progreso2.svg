@@ -1,0 +1,33 @@
+<svg width="47" height="20" viewBox="0 0 47 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="barra de progreso">
+<g id="Rectangle 11" filter="url(#filter0_d_470_4331)">
+<rect width="17.4194" height="16" rx="8" transform="matrix(-1 0 0 1 45 0)" fill="#0D0D0D"/>
+</g>
+<g id="Rectangle 12" filter="url(#filter1_d_470_4331)">
+<rect width="10.8871" height="10" rx="5" transform="matrix(-1 0 0 1 13.4274 3)" fill="white"/>
+<rect x="0.05" y="-0.05" width="10.9871" height="10.1" rx="5.05" transform="matrix(-1 0 0 1 13.5274 3)" stroke="#0D0D0D" stroke-width="0.1"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_470_4331" x="25.5807" y="0" width="21.4193" height="20" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_470_4331"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_470_4331" result="shape"/>
+</filter>
+<filter id="filter1_d_470_4331" x="0.440308" y="2.90002" width="15.087" height="14.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="1"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.11 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_470_4331"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_470_4331" result="shape"/>
+</filter>
+</defs>
+</svg>

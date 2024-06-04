@@ -40,7 +40,8 @@
       "color": [
         "Negro",
         "Blanco",
-        "Rojo"
+        "Rojo",
+        "Verde"
       ],
       "talle": [
         38,
@@ -80,9 +81,9 @@
     {
       "id": 4,
       "nombre":"Kwirt-mart",
-      "image1": "../src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard_hover.png",
-      "image2": "../src/productos/Zapatillas_Response_Runner_Gris_ID7333_01_standard.png",      
-      "image3": "../src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard.png",
+      "image1": "src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard_hover.png",
+      "image2": "src/productos/Zapatillas_Response_Runner_Gris_ID7333_01_standard.png",      
+      "image3": "src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard.png",
       "marca": "Topper",
       "precio": 7500,
       "categorias": [
@@ -216,6 +217,7 @@
         "Hot Sale"
       ],
       "color": [
+        "Negro",
         "Blanco",
         "Rojo"
       ],
