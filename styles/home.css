@@ -1,0 +1,646 @@
+  /*NAVBAR*/
+/* NAVBAR */
+
+.navbar {
+  padding: 0.1rem;
+  background-color:white;
+}
+
+.navbar-collaps {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Acordion*/
+
+.accordion-item {
+  border: none;
+}
+
+.list-group {
+  border: none;
+}
+
+.accordion-text{
+  color:#000;
+}
+
+.hotSaleText {
+  color: #661010;
+}
+
+/*LOGO ZENITH NAVBAR*/
+
+.logo-Zenith {
+  position: absolute;
+  top: 2.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-Zenith img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Imagen Carrito*/
+
+.itemDeCompra {
+  position: absolute;
+  top: 2%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+/*Imagenes RRSS de la NAV*/
+
+.iconos-RRSS-nav {
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.iconos-RRSS-nav-texto {
+  color:#000;
+  text-decoration: none;
+
+}
+
+/* Filtro */
+
+.btn-secondary {
+    --bs-btn-color: #000;
+    --bs-btn-bg: #fff;
+    --bs-btn-border-color: #fff;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fff;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 000, 000, 000;
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #fff;
+    --bs-btn-active-border-color: #fff;
+    --bs-btn-active-shadow: inset 0 0px 0px rgba(0, 0, 0, 1);
+    --bs-btn-disabled-color: #000;
+    --bs-btn-disabled-bg: #fff;
+    --bs-btn-disabled-border-color: #fff;
+
+  }
+
+  .dropdown-menu {
+
+  
+  --bs-dropdown-link-hover-bg: #fff;
+  --bs-dropdown-link-active-color: #fff;
+  --bs-dropdown-link-active-bg: #fff;
+  --bs-dropdown-min-width: 12.5rem;
+}
+
+
+.check-box {
+  accent-color: #fff;
+  border-radius: 0; 
+}
+
+.custom-toggler-icon::before {
+  content: "";
+  background-image: url("/src/atomo/filtos.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
+
+
+@media screen and (min-width: 1024px) {
+  .head {
+      flex-direction: row;
+      border: none;
+      font-size: 1rem;
+  }
+  .head__logo {
+    text-align: center;
+    display: flexbox;
+    
+  }
+  .head__enlace {
+    margin: 0;
+  }
+  #comentarios label input{
+    margin-bottom: 10px;
+    width: 100%;
+    color: green;
+  }
+}
+
+/*Barra del search*/
+
+.form-control {
+  border-color: black;
+  border-radius: 8px;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+}
+
+/*Boton del search*/
+
+.btn-outline-success {
+   --bs-btn-color: #fff; 
+   --bs-btn-border-color: #000; 
+   --bs-btn-hover-color: #fff; 
+   --bs-btn-hover-bg: #fff; 
+   --bs-btn-hover-border-color: #000; 
+   --bs-btn-focus-shadow-rgb: 0, 0, 0; 
+   --bs-btn-active-color: #fff; 
+   --bs-btn-active-bg: #661010; 
+   --bs-btn-active-border-color: #000; 
+   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0); 
+   --bs-btn-disabled-color: #fff; 
+   --bs-btn-disabled-bg: transparent; 
+   --bs-btn-disabled-border-color: #000; 
+   --bs-gradient: none;
+}
+
+.btn-outline-success {
+  border-left: none;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-custom {
+  background-image: url("/src/atomo/filtos.svg");
+  background-size: 100% 90%;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  --bs-dropdown-zindex: 1000;
+  --bs-dropdown-padding-x: 10px;
+  --bs-dropdown-padding-y: 13px;
+  --bs-dropdown-spacer: 0.2rem;
+  --bs-dropdown-font-size: 0.8rem;
+  --bs-dropdown-color: var(--bs-body-color);
+  --bs-dropdown-bg: var(--bs-body-bg);
+  --bs-dropdown-border-color: var(--bs-border-color-translucent);
+  --bs-dropdown-border-radius: var(--bs-border-radius);
+  --bs-dropdown-border-width: var(--bs-border-width);
+  --bs-dropdown-inner-border-radius: calc(var(--bs-border-radius) - var(--bs-border-width));
+  --bs-dropdown-divider-bg: var(--bs-border-color-translucent);
+  --bs-dropdown-divider-margin-y: 0.5rem;
+  --bs-dropdown-box-shadow: var(--bs-box-shadow);
+  --bs-dropdown-link-color: var(--bs-body-color);
+  --bs-dropdown-link-hover-color: var(--bs-body-color);
+  --bs-dropdown-link-disabled-color: var(--bs-tertiary-color);
+  --bs-dropdown-item-padding-x: 1rem;
+  --bs-dropdown-item-padding-y: 0.25rem;
+  --bs-dropdown-header-color: #6c757d;
+  --bs-dropdown-header-padding-x: 1rem;
+  --bs-dropdown-header-padding-y: 0.5rem;
+  z-index: var(--bs-dropdown-zindex);
+  --bs-dropdown-min-width: 11rem;;
+  padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+  font-size: var(--bs-dropdown-font-size);
+  color: var(--bs-dropdown-color);
+  text-align: left;
+  list-style: none;
+  background-color: var(--bs-dropdown-bg);
+  background-clip: padding-box;
+  border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
+  border-radius: var(--bs-dropdown-border-radius);
+}
+
+.form-check-input-recomendados {
+  background-color: rgb(255, 255, 255); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-right: 0px;
+}
+
+
+.form-check-input {
+  background-color: rgb(255, 255, 255); 
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-right: 10px;
+}
+
+.form-check-input:checked {
+  background-color: #fff;
+  border-color: #fff;
+  background-image: url("/src/atomo/black\ check.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  box-shadow: none;
+}
+
+.form-check-input[type=checkbox] {
+  box-shadow: none;
+  border-color: #a6a6a6;
+  border-radius: 0px;
+}
+
+.filtro-boton-submit {
+margin-top: 16px;
+width: 100%;
+color: rgb(255, 255, 255);
+width: 150px;
+height: 48px;
+border-radius: 8px;
+background-color: #8C8C8C;
+border: 1px;
+}
+
+.filtro-boton-submit:hover {
+  width: 100%;
+  background-color: #000;
+  border-color: #000;
+  width: 150px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+
+.offcanvas-header{
+--bs-offcanvas-padding-x: 4px;
+--bs-offcanvas-padding-y: 16px;
+}
+
+.offcanvas-body {
+  --bs-offcanvas-padding-x: 0px;
+
+}
+
+.form-control-precio {
+  border-color: black;
+  border-radius: 8px;
+}
+
+.form-control-precio {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.form-control-xs { 
+  width: 90px; 
+}
+
+.sugerencias{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 12px 0 12px 0;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.nav-bajo-item .btn-outline-secondary {
+--bs-btn-color: #fff;
+--bs-btn-border-color: #661010;
+--bs-btn-hover-color: #661010;
+--bs-btn-hover-bg: #661010;
+--bs-btn-hover-border-color: #661010;
+--bs-btn-focus-shadow-rgb: 108, 117, 125;
+--bs-btn-active-color: #fff;
+--bs-btn-active-bg: #661010;
+--bs-btn-active-border-color: #661010;
+--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+--bs-btn-disabled-color: #6c757d;
+--bs-btn-disabled-bg: transparent;
+--bs-btn-disabled-border-color: #6c757d;
+--bs-gradient: none;
+}
+.nav-bajo-item .btn {
+  --bs-btn-padding-x: 0.50rem;
+  --bs-btn-padding-y: 0.375rem;
+  --bs-btn-font-family: ;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-font-weight: 400;
+  --bs-btn-line-height: 1.5;
+    font-style: normal;
+  --bs-btn-color: #9c9c9c;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-width: var(--bs-border-width);
+  --bs-btn-border-color: transparent;
+  --bs-btn-border-radius: var(--bs-border-radius);
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 1px rgba(0, 0, 0, 0.075);
+  --bs-btn-disabled-opacity: 0.65;
+  --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
+  display: inline-block;
+  padding: var(--bs-btn-padding-y) var(--bs-btn-padding-x);
+  font-family: var(--bs-btn-font-family);
+  font-size: var(--bs-btn-font-size);
+  font-weight: var(--bs-btn-font-weight);
+  line-height: var(--bs-btn-line-height);
+  color: var(--bs-btn-color);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+  --bs-border-radius: 20.58px;
+  background-color: var(--bs-btn-bg);
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.publicidad{
+display: flex;
+justify-content: center;
+margin: 20px 0 20px 0;
+}
+
+.imagen-flecha-izq {
+width: 20px;
+height: 20px;
+}
+
+.imagen-flecha-der {
+width: 22px;
+height: 22px;
+
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: var(--bs-pagination-padding-y) var(--bs-pagination-padding-x);
+  font-size: var(--bs-pagination-font-size);
+  color: #000000;
+  text-decoration: none;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: #000;
+  background-color: var(--bs-pagination-hover-bg);
+  border-color: var(--bs-pagination-hover-border-color);
+}
+
+.pagination {
+  --bs-pagination-padding-x: 0.75rem;
+  --bs-pagination-padding-y: 0.375rem;
+  --bs-pagination-font-size: 1rem;
+  --bs-pagination-color: #000;
+  --bs-pagination-bg: var(--bs-body-bg);
+  --bs-pagination-border-width: var(--bs-border-width);
+  --bs-pagination-border-color: var(--bs-border-color);
+  --bs-pagination-border-radius: var(--bs-border-radius);
+  --bs-pagination-hover-color: var(--bs-link-hover-color);
+  --bs-pagination-hover-bg: var(--bs-tertiary-bg);
+  --bs-pagination-hover-border-color: var(--bs-border-color);
+  --bs-pagination-focus-color: var(--bs-link-hover-color);
+  --bs-pagination-focus-bg: var(--bs-secondary-bg);
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  --bs-pagination-active-color: #fff;
+  --bs-pagination-active-bg: #0d6efd;
+  --bs-pagination-active-border-color: #0d6efd;
+  --bs-pagination-disabled-color: var(--bs-secondary-color);
+  --bs-pagination-disabled-bg: var(--bs-secondary-bg);
+  --bs-pagination-disabled-border-color: var(--bs-border-color);
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+
+
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#back-to-top img{
+  width: 22px;
+  height: 30px;
+  padding-bottom: 4px;
+}
+
+/*Login*/
+
+.login-logo-Zenith {
+  position: static;
+  width: 90%;
+  margin-top:40px;
+  margin-bottom: 40px;
+}
+
+.form-control-login {
+  display: flex;
+  flex-wrap: wrap;
+  border-color: black;
+  border-radius: 8px;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100%;
+  
+}
+
+.link-registro-login {
+  color: #661010;
+}
+
+.login-boton-submit {
+  margin-top: 16px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 150px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #8C8C8C;
+  border: 1px;
+  }
+  
+.login-boton-submit:hover {
+    width: 100%;
+    background-color: #000;
+    border-color: #000;
+    width: 150px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+.login-logo-google {
+    background-color: #661010;
+    width: 32px;
+    height: 32px;
+    border-width: 
+    5px; 
+    border-style: 
+    solid; 
+    border-color: #661010;
+    border-radius: 50%;
+  }
+
+.login-logo-facebook {
+    width: 32px;
+    height: 32px;
+  }
+
+.form-control-login-sub {
+  display: flex;
+  flex-wrap: wrap;
+  border-color: #661010;
+  border-radius: 8px;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 60%;
+  
+}
+
+.link-olvido-contraseña {
+  color: #000;
+  text-decoration: none;
+}
+
+/*Registro*/
+
+.registro-logo-Zenith {
+  position: static;
+  width: 90%;
+  margin-top:30px;
+  margin-bottom: 30px;
+}
+
+.registro-boton-submit {
+  margin-top: 168px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 310px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #000;
+  border: 1px;
+}
+  
+.registro-boton-submit:hover {
+    width: 100%;
+    background-color: #000;
+    border-color: #000;
+    width: 310px;
+    height: 48px;
+    border-radius: 8px;
+}
+
+.registro2-boton-submit {
+    margin-top: 100px;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    width: 310px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #000;
+    border: 1px;
+}
+  
+.registro2-boton-submit:hover {
+      width: 100%;
+      background-color: #000;
+      border-color: #000;
+      width: 310px;
+      height: 48px;
+      border-radius: 8px;
+}
+
+.titulo-registro-finalizado {
+      position: fixed;
+      top: 210px;
+      right: 92px;
+      margin: 0;
+}
+
+.texto-registro-finalizado {
+  margin:0;
+}
+
+.imagen-celebracion {
+  position: absolute;
+  height: 100px;
+  left: 50%;
+  width: 100%;
+}
+
+.imagen-conffeti {
+  width: 231.086px;
+  height: 110.26px;
+  position: absolute;
+  top: 100px;
+  right: 240px;
+}
+
+.imagen-chica {
+  width: 83.096px;
+  height: 183.635px;
+  position: absolute;
+  left: -20%;
+  top: 113px;
+}
+
+
+.imagen-chico {
+  width: 91.72px;
+  height: 188.733px;
+  position: absolute;
+  left: 2%;
+  top: 113px;
+}
+
+.registro3-boton-submit {
+  margin-top: 395px;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 310px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #000;
+  border: 1px;
+}

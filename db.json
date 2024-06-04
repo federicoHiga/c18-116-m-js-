@@ -1,0 +1,259 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "nombre":"Terreneitor",
+      "image1": "../src/productos/nikeB1.png",
+      "image2": "../src/productos/nikeB2.png",
+      "image3": "../src/productos/nikeB3.png",
+      "marca": "Nike",
+      "precio": 1000,
+      "categorias": [
+        "Hombre"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+
+    },
+    {
+      "id": 2,
+      "nombre":"Cañonero",
+      "image1": "../src/productos/niker1.png",
+      "image2": "../src/productos/niker2.png",
+      "image3": "../src/productos/niker3.png",
+      "marca": "Adidas",
+      "precio": 500,
+      "categorias": [
+        "Hombre"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo",
+        "Verde"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+
+    },
+    {
+      "id": 3,
+      "nombre":"Assassin",
+      "image1": "../src/productos/nikev1.png",
+      "image2": "../src/productos/nikev2.png",
+      "image3": "../src/productos/nikev3.png",
+      "marca": "Puma",
+      "precio": 800,
+      "categorias": [
+        "Mujer"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+    },
+    {
+      "id": 4,
+      "nombre":"Kwirt-mart",
+      "image1": "src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard_hover.png",
+      "image2": "src/productos/Zapatillas_Response_Runner_Gris_ID7333_01_standard.png",      
+      "image3": "src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard.png",
+      "marca": "Topper",
+      "precio": 7500,
+      "categorias": [
+        "Mujer"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ], 
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+
+    },
+    {
+      "id": 5,
+      "nombre":"Rancho relaxo",
+      "image1": "/src/productos/zapatillas-running-mujer-new-balance-1080-v13-beige-superior.png",
+      "image2": "/src/productos/zapatillas-running-mujer-new-balance-1080-v13-beige-lateral.png",
+      "image3": "/src/productos/zapatillas-running-mujer-new-balance-1080-v13-beige-lateral-interior.png",
+      "marca": "New balance",
+      "precio": 4500,
+      "categorias": [
+        "Niño"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+
+    },
+    {
+      "id": 6,
+      "nombre":"Siempreviva",
+      "image1": "/src/productos/zapatillas-urbanas-ni-a-new-balance-500-bicolor-lateral-interior.png",
+      "image2": "/src/productos/zapatillas-urbanas-ni-a-new-balance-500-bicolor-lateral.png",
+      "image3": "/src/productos/zapatillas-urbanas-ni-a-new-balance-500-bicolor-superior.png",
+      "marca": "New balance",
+      "precio": 740,
+      "categorias": [
+        "Niño"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+    },
+    {
+      "id": 7,
+      "nombre":"Tomaco",
+      "image1": "/src/productos/Zapatillas_X9000L3_Negro_FZ0778_04_standard.png",
+      "image2": "/src/productos/Zapatillas_X9000L3_Negro_FZ0778_02_standard.png",
+      "image3": "/src/productos/Zapatillas_X9000L3_Negro_FZ0778_01_standard.png",
+      "marca": "Nike",
+      "precio": 290,
+      "categorias": [
+        "Hot Sale"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+    },
+    {
+      "id": 8,
+      "nombre":"Rafa",
+      "image1": "/src/productos/Zapatillas_Response_Runner_Gris_ID7333_01_standard.png",
+      "image2": "/src/productos/Zapatillas_Response_Runner_Gris_ID7333_02_standard.png" ,
+      "image3": "/src/productos/Zapatillas_Response_Runner_Gris_ID7333_04_standard.png",
+      "marca": "Nike",
+      "precio": 340,
+      "categorias": [
+        "Hot Sale"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+    },
+    {
+      "id": 9,
+      "nombre":"Monoriel",
+      "image1": "../src/productos/Yellow_Shoe (1).svg",
+      "image2": "../src/productos/Yellow_Shoe (1).svg",
+      "image3": "../src/productos/Yellow_Shoe (1).svg",
+      "marca": "Nike",
+      "precio": 750,
+      "categorias": [
+        "Hot Sale"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+    },
+    {
+      "id": 10,
+      "nombre":"Cuca",
+      "image1": "../src/productos/Yellow_Shoe (1).svg",
+      "image2": "../src/productos/Yellow_Shoe (1).svg",
+      "image3": "../src/productos/Yellow_Shoe (1).svg",
+      "marca": "Nike",
+      "precio": 100,
+      "categorias": [
+        "Hot Sale"
+      ],
+      "color": [
+        "Negro",
+        "Blanco",
+        "Rojo"
+      ],
+      "talle": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "descripcion":"zapatilla liviana, comoda y confiable. ideal para la gente que quiere correr hasta que el alma no pueda más."
+    }
+  ]
+}
