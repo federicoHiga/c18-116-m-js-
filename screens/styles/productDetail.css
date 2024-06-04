@@ -1,0 +1,104 @@
+.product-container {
+  margin: 0 auto;
+  padding: 0 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+/* Css Product detail */
+.colorProducto{
+  display: inline;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.colorNegro{
+  background-color: #0D0D0D;
+  stroke-width: 2px;
+  stroke: #661010;
+}
+.colorBlanco{
+  background-color: #FFF;
+  stroke-width: 1px;
+  stroke: #000;
+}
+.colorRojo{
+  background-color: #B74040;
+  stroke-width: 1px;
+  stroke: #000;
+}
+.colorAzul{
+  background-color: #5F92A7;
+  stroke-width: 1px;
+  stroke: #000;
+}
+.colorAmarillo{
+  background-color: #B4D261;
+  stroke-width: 1px;
+  stroke: #000;
+}
+
+.talles{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;}
+
+.talleProducto{
+  border-radius: 8px;
+  border: 1px solid #8C8C8C;
+  background: #F2F2F2;
+}
+
+.cajaColor{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.cajaTalles{
+display: flex;
+width: 328px;
+height: 160px;
+justify-content: center;
+align-items: center;
+align-content: center;
+gap: 8px;
+flex-wrap: wrap;
+}
+.titulotalles{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* form productos */
+#comentarios label {
+  color: #000;
+  justify-content: center;
+}
+
+
+/* puntuacion producto */
+.puntuacion {
+  margin-bottom: 1%;
+  margin-top: 1%;
+
+}
+.estrella {
+  color: #8C8C8C;
+  font-size: 20px;
+}
+.estrella:hover,
+.estrella.activa {
+  color: #661010;
+}

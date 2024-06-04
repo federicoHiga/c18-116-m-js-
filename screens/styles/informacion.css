@@ -1,0 +1,143 @@
+.titulo h2 {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+}
+.accordion-item:last-child {
+    border-bottom: none;
+}
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+.accordion-header:hover {
+    background-color: #e7e7e7;
+}
+.accordion-header h2 {
+    font-size: 1em;
+    margin: 0;
+}
+.accordion-header .arrow {
+    transition: transform 0.3s;
+}
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background-color: #ffffff;
+}
+.accordion-item.active .accordion-content {
+    display: block;
+}
+.accordion-item.active .arrow {
+    transform: rotate(180deg);
+}
+
+
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#back-to-top img{
+    width: 22px;
+    height: 30px;
+    padding-bottom: 4px;
+}
+
+.Contacto{
+    display: flex;
+    justify-content: center;
+}
+.contacto_p{
+    margin-left: 20px;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+    height: 40px;
+}
+.contact-form textarea {
+    height: 80px;
+}
+.contact-form button {
+    width: 50%;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.contact-form button:hover {
+    background-color: #333;
+}
+.button{
+    display: flex;
+    justify-content: center;
+}
+
+.titulo-de-busqueda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.titulo-de-busqueda a{
+    position: absolute;
+    left: 0;
+}
+.titulo-de-busqueda p{
+    margin: 0 auto;
+}

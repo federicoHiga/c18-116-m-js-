@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENITH</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./styles/productDetail.css" />
+  <link rel="stylesheet" href="../styles/cards.css" />
+  <link rel="stylesheet" href="../styles/carrousel.css" />
+  <link rel="stylesheet" href="../styles/productos.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/home.css" />
+</head>
+
+<body>
+  <header>
+    <!--Barra de navegacion -->
+    <div class="container-fluid p-1">
+      <div class="row d-flex justify-content-between">
+        <div class="p-1 position-static">
+          <nav class="navbar navbar-expand-xl navbar-light">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-between container-fluid" id="nav-toggler">
+                <a class="navbar-brand" href="/index.html">
+                  <img src="../src/atomo/logo_zenith.svg" width="75" alt="Logo de Zenith">
+                </a>
+                <!--Acordion-->
+                <ul class="navbar-nav d-flex justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a>
+                  </li>
+                  <li class="nav-item justify-content-evenly">
+                    <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
+                        class="nav-link active" aria-current="page" href="#">Ver Todo</a></p>
+                  </li>
+                  <li class="nav-item">
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Hombre
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                          data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="list-group align-items-center">
+                              <a href="/screens/productos.html" class="list-group-item list-group">Zapatos Casuales</a>
+                              <a href="/screens/productos.html" class="list-group-item list-group">Zapatos de Vestir</a>
+                              <a href="/screens/productos.html" class="list-group-item list-group">Botas y Botines</a>
+                              <a href="/screens/productos.html" class="list-group-item list-group">Zapatillas
+                                Urbanas</a>
+                              <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
+                              <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button bg-white shadow-none collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            Mujer
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <div class="list-group align-items-center">
+                              <a href="#" class="list-group-item list-group">Zapatos Mujer</a>
+                              <a href="#" class="list-group-item list-group">Botas y Botines</a>
+                              <a href="#" class="list-group-item list-group">Sandalias</a>
+                              <a href="#" class="list-group-item list-group">Zapatillas Urbanas</a>
+                              <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
+                              <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button bg-white shadow-none collapsed" type="button"
+                              data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
+                              aria-controls="collapseThree">
+                              Niño
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <div class="list-group align-items-center">
+                                <a href="#" class="list-group-item list-group">Zapatos Niños</a>
+                                <a href="#" class="list-group-item list-group">Zapatos Niñas</a>
+                                <a href="#" class="list-group-item list-group">Zapatos Bebé</a>
+                                <a href="#" class="list-group-item list-group">Zapatillas</a>
+                                <a href="#" class="list-group-item list-group">Sandalias</a>
+                                <a href="#" class="list-group-item list-group">Ver todo Niños</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button bg-white shadow-none collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
+                                aria-controls="collapseFour">
+                                Hot Sale
+                              </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse"
+                              data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <div class="list-group align-items-center">
+                                  <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
+                                  <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
+                                  <a href="#" class="list-group-item list-group">Ver todo Niños</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                  </li>
+                </ul>
+                <div class="iconos-RRSS-nav container-fluid d-flex justify-content-center">
+                  <div class="row">
+                    <div class="col d-flex justify-content-center">
+                      <a class="nav-link active d-flex justify-content-center" aria-current="page" href="#">¿Necesitas
+                        Ayuda?</a>
+                    </div>
+                    <div class="iconos-RRSS-nav d-flex flex-wrap">
+                      <div>
+                        <img class="iconos-RRSS-nav-insta row" src="../src/atomo/instagram.svg" width="24"
+                          alt="Logo de Instagram">
+                        <div>
+                          <img class="iconos-RRSS-nav-face row" src="../src/atomo/facebook.svg" width="24"
+                            alt="Logo de Facebook">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </nav>
+        </div>
+        <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 pb-2">
+          <img src="../src/atomo/logo_zenith.svg" width="150" alt="Logo de Zenith">
+        </div>
+        <!--Barra de navegacion-->
+        <!--Barra de Busqueda-->
+        <div class="barraBusqueda container-fluid py-2 d-flex justify-content-center">
+          <form class="d-flex col-11 justify-content-center" role="search">
+            <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search">
+            <button class="btn btn-outline-success mx-0" type="submit"><img src="../src/atomo/serch.svg"></button>
+          </form>
+          <!--Barra de Busqueda-->
+
+
+
+        </div>
+        <!-- CART -->
+        <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-0 ml-2"
+          data-bs-toggle="modal" data-bs-target="#cartModal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag"
+            viewBox="0 0 16 16">
+            <path
+              d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+          </svg>
+        </div>
+        <!-- CART -->
+      </div>
+      <!-- MODAL -->
+      <div class="modal" tabindex="-1" aria-labelledby="cartModal" id="cartModal">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title">Carrito de compras</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MODAL -->
+  </header>
+  <main>
+
+    <!-- Filtro -->
+    <section>
+      <div>
+
+      </div>
+      <div class="titulo-de-busqueda">
+        <a href="../index.html">
+          <img src="../src/atomo/Frame 29.png" alt="volver" width="40px" height="40px">
+        </a>
+        <p class="textoProductos d-flex justify-content-center mb-1"> Hombre / Zapatillas Deportivas </p>
+      </div>
+      <div id="resultados">
+      </div>
+      <div class="hrdiv"><hr></div>
+    </section>
+    <section class="recomendadosFiltro">
+      <div class="recomendadosFiltro container d-flex justify-content-around mb-2">
+        <p class="ordenarFiltro m-0 pt-3"> Ordenar por: </p>
+
+        <div class="recomendadosFiltroDesplegable dropdown">
+          <button
+            class="recomendadosFiltroDesplegable btn btn-secondary dropdown-toggle my-0 pt-3  d-flex align-self-start"
+            type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            Recomendados
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="filtro-form-check">
+              <label class="form-check-label" for="exampleCheck1">
+                Recomendados
+              </label>
+              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+            </div>
+            <div class="filtro-form-check">
+              <label class="form-check-label" for="exampleCheck1">
+                Precio, menor a mayor
+              </label>
+              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+            </div>
+            <div class="filtro-form-check">
+              <label class="form-check-label" for="exampleCheck1">
+                Precio, mayor a menor
+              </label>
+              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+            </div>
+            <div class="filtro-form-check">
+              <label class="form-check-label" for="exampleCheck1">
+                Más Vendidos
+              </label>
+              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+            </div>
+          </div>
+        </div>
+
+
+        <button class="btn btn-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight">
+          <i class="<fas fa-bars>"></i>
+        </button>
+        <div class="offcanvas offcanvas-end filtro-nav container-fluid d-flex" tabindex="-1" id="offcanvasRight"
+          aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Filtros</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="filtro-off navbar-nav d-flex justify-content-center">
+              <div class="filtro-form-check">
+                <label class="form-check-label" for="envioFree">
+                  Envios Gratis
+                </label>
+                <input class="form-check-input text-primary" type="checkbox" value="true" id="envioFree">
+              </div>
+              <li class="filtro-off nav-item">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        <p class="filtro-off accordion-text m-0">Tipo de Producto</p>
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                      <div class="accordion-body p-0">
+                        <div class="filtro-off list-group align-items-center">
+                          <div class="filtro-form-check">
+                            <input class="form-check-input text-primary" type="checkbox" value="true"
+                              id="Running">
+                            <label class="form-check-label" for="Running">
+                              Running
+                            </label>
+                          </div>
+                          <div class="filtro-form-check">
+                            <input class="form-check-input text-primary" type="checkbox" value="true"
+                              id="Training">
+                            <label class="form-check-label" for="Training">
+                              Training
+                            </label>
+                          </div>
+                          <div class="filtro-form-check">
+                            <input class="form-check-input text-primary" type="checkbox" value="true"
+                              id="Trekking">
+                            <label class="form-check-label" for="Trekking">
+                              Trekking
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                        data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        <p class="accordion-text m-0">Marca</p>
+                      </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                      <div class="accordion-body p-0">
+                        <div class="filtro-off list-group align-items-center">
+                          <div class="filtro-form-check">
+                            <input class="form-check-input text-primary" type="checkbox" value="true" id="Nike" data-filter-type="marca">
+                            <label class="form-check-label" for="Nike">
+                              Nike
+                            </label>
+                          </div>
+                          <div class="filtro-form-check">
+                            <input class="form-check-input text-primary" type="checkbox" value="true" id="Adidas" data-filter-type="marca">
+                            <label class="form-check-label" for="Adidas">
+                              Adidas
+                            </label>
+                          </div>
+                          <div class="filtro-form-check">
+                            <input class="form-check-input text-primary" type="checkbox" value="true" id="New balance" data-filter-type="marca">
+                            <label class="form-check-label" for="New balance">
+                              New Balance
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                          data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                          aria-controls="panelsStayOpen-collapseThree">
+                          <p class="accordion-text m-0">Precio</p>
+                        </button>
+                      </h2>
+                      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                        <div class="accordion-body p-0">
+                          <div class="filtro-off list-group align-items-center">
+                            <p class="filtro-off list-group-item list-group">Zapatos Niños</p>
+                            <p class="filtro-off list-group-item list-group">Zapatos Niñas</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed bg-white shadow-none d-flex " type="button"
+                            data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                            aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                            <p class="accordion-text m-0">Talla</p>
+                          </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                          <div class="accordion-body p-0">
+                            <div class="filtro-off list-group align-items-center">
+                              <div class="filtro-form-check">
+                                <input class="form-check-input text-primary" type="checkbox" value="true" id="39.5" data-filter-type="talle">
+                                <label class="form-check-label" for="39.5">
+                                  39.5
+                                </label>
+                              </div>
+                              <div class="filtro-form-check">
+                                <input class="form-check-input text-primary" type="checkbox" value="true" id="40" data-filter-type="talle">
+                                <label class="form-check-label" for="40">
+                                  40
+                                </label>
+                              </div>
+                              <div class="filtro-form-check">
+                                <input class="form-check-input text-primary" type="checkbox" value="true" id="40.5" data-filter-type="talle">
+                                <label class="form-check-label" for="40.5">
+                                  40.5
+                                </label>
+                              </div>
+                              <div class="filtro-form-check">
+                                <input class="form-check-input text-primary" type="checkbox" value="true" id="41" data-filter-type="talle">
+                                <label class="form-check-label" for="41">
+                                  41
+                                </label>
+                              </div>
+                              <div class="filtro-form-check">
+                                <input class="form-check-input text-primary" type="checkbox" value="true" id="41.5" data-filter-type="talle">
+                                <label class="form-check-label" for="41.5">
+                                  41.5
+                                </label>
+                              </div>
+                              <div class="filtro-form-check">
+                                <input class="form-check-input text-primary" type="checkbox" value="true" id="42" data-filter-type="talle">
+                                <label class="form-check-label" for="42">
+                                  42
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
+                              <p class="accordion-text m-0">Color</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
+                            <div class="accordion-body p-0">
+                              <div class="filtro-off list-group align-items-center">
+                                <div class="cajaColor">
+                                  <button class="colorProducto colorNegro" type="checkbox" value="true" id="Negro" data-filter-type="color"></button>
+                                  <button class="colorProducto colorBlanco" type="checkbox" value="true" id="Blanco" data-filter-type="color"></button>
+                                  <button class="colorProducto colorRojo" type="checkbox" value="true" id="Rojo" data-filter-type="color"></button>
+                                  <button class="colorProducto colorAzul" type="checkbox" value="true" id="Azul" data-filter-type="color"></button>
+                                  <button class="colorProducto colorAmarillo" type="checkbox" value="true" id="Amarillo" data-filter-type="color"></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                              data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix"
+                              aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+                              <p class="accordion-text m-0">Género</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
+                            <div class="accordion-body p-0">
+                              <div class="list-group align-items-center">
+                                <div class="filtro-form-check">
+                                  <input class="form-check-input text-primary" type="checkbox" value="true" id="Hombre" data-filter-type="genero">
+                                  <label class="form-check-label" for="Hombre">
+                                    Hombre
+                                  </label>
+                                </div>
+                                <div class="filtro-form-check">
+                                  <input class="form-check-input text-primary" type="checkbox" value="true" id="Mujer" data-filter-type="genero">
+                                  <label class="form-check-label" for="Mujer">
+                                    Mujer
+                                  </label>
+                                </div>
+                                <div class="filtro-form-check">
+                                  <input class="form-check-input text-primary" type="checkbox" value="true" id="Niño" data-filter-type="genero">
+                                  <label class="form-check-label" for="Niño">
+                                    Niño
+                                  </label>
+                                </div>
+                                <div class="filtro-form-check">
+                                  <input class="form-check-input text-primary" type="checkbox" value="true" id="Niña" data-filter-type="genero">
+                                  <label class="form-check-label" for="Niña">
+                                    Niña
+                                  </label>
+                                </div>
+                                <div class="filtro-form-check">
+                                  <input class="form-check-input text-primary" type="checkbox" value="true" id="Bebe" data-filter-type="genero">
+                                  <label class="form-check-label" for="Bebe">
+                                    Bebé
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="container-aplicar">
+                            <button type="button" class="btn btn-secondary" id="aplicar">Aplicar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Filtro-->
+
+
+    <div class="filters"></div>
+    <div class="cantidad-resultados"></div>
+    <div id="card-container"></div>
+    <div class="button-container">
+      <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
+    </div>
+    <button id="back-to-top"><img src="../src/atomo/flecha arriba.png" alt="↑"></button>
+  </main>
+  <!-- Footer section Begin -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+          <div class="footer-widget">
+            <h6>Necesitas ayuda?</h6>
+          </div>
+        </div>
+        <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+          <div class="footer-widget">
+            <h6>Información</h6>
+            <ul>
+              <li><a href="#">Quienes somos?</a></li>
+              <li><a href="#">Politica de privacidad</a></li>
+              <li><a href="#">Términos y condiciones</a></li>
+              <li><a href="#">Politica de cambio y devoluciones</a></li>
+              <li><a href="#">Envios a domicilio y plazos de entrega</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+          <div class="footer-widget">
+            <h6>Contacto</h6>
+            <div class="footer-newslatter">
+              <p>Suscribete para recibir nuestras ofertas y descuentos</p>
+              <form action="#">
+                <input type="text" placeholder="Escribir correo electronico">
+                <button type="submit"><span><i class="fa fa-envelope" arial-hidden="true"></i></span></button>
+              </form>
+            </div>
+          </div>
+          <ul>
+            <p></a>Siguenos en nuestras redes:</p>
+          </ul>
+          <ul class="social-icons">
+            <li><a href=""><i class="fab fa-facebook"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+              <div class="footer-newslatter">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <div class="footer-copyright-text">
+          <p>&copy; 2024. Todos los derechos reservados
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+</body>
+<script src="../scripts/productos.js"></script>
+<!-- <script>
+  init(loadCards);
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

@@ -1,0 +1,214 @@
+.button-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#card-container {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    width: 100%;
+    height: 250px; /* ajustar a 228px si es necesario */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #F2F2F2;
+    box-sizing: border-box; /* Asegúrate de que el padding se incluya en el tamaño total */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Ajusta la altura según sea necesario */
+    padding: 10px 10px 0px 10px;
+
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    border-radius: 8px;
+    border: solid 1px #3333332e;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    display: none;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block;
+    margin:0;
+}
+
+.carousel img {
+    width: 100%;
+    /* height: 140px; */
+    object-fit: cover;
+}
+
+.card-details {
+    text-align: start;
+    height: 78px;
+    padding: 0px 10px 0px 10px;
+}
+
+.text-title {
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0;
+}
+/* body{
+    background-color: #F5F5F5;
+} */
+
+.text-Body {
+    font-size: 16pt;
+    font-weight: bold;
+    text-align-last: end;
+    margin: 0;
+}
+
+/* Media Queries */
+@media screen and (min-width: 1000px) {
+    #card-container {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #card-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #card-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 540px) {
+    #card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 430px) {
+    main {
+        margin-top: 0;
+    }
+    #card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 400px) {
+    main {
+        margin-top: 0;
+    }
+    #card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 319px) {
+    #card-container {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        width: 100%;
+    }
+    main {
+        margin: 30px;
+    }
+}
+
+main .carousel-item img {
+    width: 100%;
+    border-radius: 20px 20px 10px 10px;
+    object-fit: fill; /* Esto asegura que la imagen se ajuste y recorte adecuadamente */
+}
+.container-aplicar{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+#aplicar{
+    background-color: rgba(13, 13, 13, 0.5);
+    border:solid 1px rgba(140, 140, 140, 1);
+    color:rgba(255, 255, 255, 1);
+    border-radius: 8;
+    padding: 10px;
+    width: 150px;
+    height: 48px;
+    gap: 10px;
+}
+.offcanvas-body{
+    padding: 0px !important;
+}
+
+.resultadosProductos{
+    margin-top: 4px;
+    margin-left: 25px;
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 0px;
+}
+.hrdiv{
+    display: flex;
+    justify-content: center;
+}
+hr{
+    width: 90%;
+}
+
+.titulo-de-busqueda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.titulo-de-busqueda a{
+    margin-left: 20px;
+    position: absolute;
+    left: 0;
+}
+.titulo-de-busqueda p{
+    margin: 0 auto;
+}
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #back-to-top img{
+    width: 22px;
+    height: 30px;
+    padding-bottom: 4px;
+  }
+  

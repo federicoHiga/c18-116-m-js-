@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zenith</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/cards.css" />
+    <link rel="stylesheet" href="./styles/carrousel.css" />
+  </head>
+  <body>
+    <header>
+      <!--Barra de navegacion -->
+      <div class="container-fluid p-1">
+        <div class="row d-flex justify-content-between">
+          <div class="p-1 position-static">
+            <nav class="navbar navbar-expand-xl navbar-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between container-fluid" id="nav-toggler">
+                  <a class="navbar-brand" href="#">
+                    <img src="src/atomo/logo_zenith.svg" width="75" alt="Logo de Zenith">
+                  </a>
+                  <!--Acordion-->
+                  <ul class="navbar-nav d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item justify-content-evenly">
+                  <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a class="nav-link active" aria-current="page" href="#">Ver Todo</a></p>
+                    </li> 
+                    <li class="nav-item">
+                      <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                              <p class="accordion-text">Hombre</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                              <div class="list-group align-items-center">
+                                <a href="/screens/productos.html" class="list-group-item list-group">Zapatos Casuales</a>
+                              <a href="/screens/productos.html" class="list-group-item list-group">Zapatos de Vestir</a>
+                              <a href="/screens/productos.html" class="list-group-item list-group">Botas y Botines</a>
+                              <a href="/screens/productos.html" class="list-group-item list-group">Zapatillas Urbanas</a>
+                                <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                              <p class="accordion-text">Mujer</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group align-items-center">
+                                <a href="#" class="list-group-item list-group">Zapatos Mujer</a>
+                                <a href="#" class="list-group-item list-group">Botas y Botines</a>
+                                <a href="#" class="list-group-item list-group">Sandalias</a>
+                                <a href="#" class="list-group-item list-group">Zapatillas Urbanas</a>
+                                <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
+                                <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
+                            </div>
+                            </div>
+                          </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                              <p class="accordion-text">Niño</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group align-items-center">
+                                <a href="#" class="list-group-item list-group">Zapatos Niños</a>
+                                <a href="#" class="list-group-item list-group">Zapatos Niñas</a>
+                                <a href="#" class="list-group-item list-group">Zapatos Bebé</a>
+                                <a href="#" class="list-group-item list-group">Zapatillas</a>
+                                <a href="#" class="list-group-item list-group">Sandalias</a>
+                                <a href="#" class="list-group-item list-group">Ver todo Niños</a>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed bg-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                <p class="accordion-text hotSaleText">Hot Sale</p>
+                              </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                              <div class="accordion-body">
+                                <div class="list-group align-items-center">
+                                  <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
+                                  <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
+                                  <a href="#" class="list-group-item list-group">Ver todo Niños</a>
+                              </div>
+                              </div>
+                            </div>
+                        </div>
+                    </li>
+                  </ul>
+                  <section class="container-fluid d-flex justify-content-center">
+                  <div class="iconos-RRSS-nav container-fluid d-flex justify-content-center">
+                      <div class="row">
+                          <a class="iconos-RRSS-nav-texto" aria-current="page" href="#">¿Necesitas Ayuda?</a>
+                      </div>
+                  </div>    
+                  </section>
+                    <div class="iconos-RRSS-nav w-100"> 
+                        <div class="iconos-RRSS-nav-img container d-flex justify-content-center aling.align-items-center">
+                          <a href="#"><img class="iconos-RRSS-nav-insta" src="/src/atomo/instagram.svg" width="23" alt="Logo de Instagram"></a>
+                          <a href="#"></a><img class="iconos-RRSS-nav-face" src="/src/atomo/facebook.svg" width="25" alt="Logo de Facebook"></a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </nav> 
+          </div>
+          <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 mt-2">
+            <img src="src/atomo/logo_zenith.svg" width="150" alt="Logo de Zenith">
+          </div>
+          <!--Barra de navegacion-->
+          <!--Barra de Busqueda-->
+          <div class="barraBusqueda container-fluid py-2 d-flex justify-content-center">
+            <form class="d-flex col-11 justify-content-center" role="search">
+              <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search">
+              <button class="btn btn-outline-success mx-0" type="submit"><img src="/src/atomo/serch.svg"></button>
+            </form>
+           </div> 
+          <!--Barra de Busqueda-->
+          <!-- CART -->
+          <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-3 ml-2" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+              <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
+            </svg>
+          </div>
+          <!-- CART -->
+        </div>
+      <!-- MODAL -->
+      <div class="modal" tabindex="-1" aria-labelledby="cartModal" id="cartModal">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title">Carrito de compras</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MODAL -->
+              <!-- CARROUSEL -->
+              <section class="carrousel">
+                <div
+                  id="carouselExampleAutoplaying"
+                  class="carousel slide carrousel-div"
+                  data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="src/images/image 14.png"
+                        class="d-block w-100 carrousel-img"
+                        alt="..."/>
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="src/images/image 13.png"
+                        class="d-block w-100 carrousel-img"
+                        alt="..."/>
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="src/images/otoño chico grande 1.png"
+                        class="d-block w-100 carrousel-img"
+                        alt="..."/>
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </section>
+              <!-- CARROUSEL -->
+              </header>
+              <main>
+                <section class="nav-bajo-item container-fluid row button-container d-flex justify-content-center ">
+                  <div class="col d-flex justify-content-center p-0">
+                    <button id="nav-bajo-banner" class="btn btn-outline-secondary btn-block text-center d-flex px-0 py-12">Todos</button>
+                  </div>
+                  <div class="col d-flex justify-content-center p-0">
+                    <button id="nav-bajo-banner" class="btn btn-outline-secondary btn-block text-center d-flex px-0 py-12">Hombre</button>
+                  </div>
+                  <div class="col d-flex justify-content-center p-0">
+                    <button id="nav-bajo-banner" class="btn btn-outline-secondary btn-block text-center d-flex px-0 py-12">Mujer</button>
+                  </div>
+                  <div class="col d-flex justify-content-center p-0">
+                    <button id="nav-bajo-banner" class="btn btn-outline-secondary btn-block text-center d-flex px-0 py-12">Niño</button>
+                  </div>
+                </section>
+                  <section">  
+                    <div class="sugerencias container">Los más vendidos</div>
+                  </section>
+                  <section>
+                    <div id="card-container-1" class="card-container"></div>
+                  </section>
+                  <section>
+                    <div class="publicidad">
+                      <img src="src/images/PUBLICIDAD 1 1.png" alt="publicidad">
+                      <img src="src/images/VERSION BLACK 1.png" alt="publicidad">
+                    </div>
+                  </section>
+                  <section>  
+                    <div class="sugerencias container">Aprovecha estos descuentos</div>
+                    <div id="card-container-2" class="card-container"></div>
+                  </section>
+                  <button id="back-to-top"><img src="../src/atomo/flecha arriba.png" alt="↑"></button>
+                </main>
+                <!-- Footer section Begin -->
+              <footer class="footer">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                      <div class="footer-widget">
+                        <h6>Necesitas ayuda?</h6>
+                      </div>
+                    </div>
+                    <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                      <div class="footer-widget">
+                        <h6>Información</h6>
+                        <ul>
+                          <li><a href="#">Quienes somos?</a></li>
+                          <li><a href="#">Politica de privacidad</a></li>
+                          <li><a href="#">Términos y condiciones</a></li>
+                          <li><a href="#">Politica de cambio y devoluciones</a></li>
+                          <li><a href="#">Envios a domicilio y plazos de entrega</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                      <div class="footer-widget">
+                        <h6>Contacto</h6>
+                        <div class="footer-newslatter">
+                          <p>Suscribete para recibir nuestras ofertas y descuentos</p>
+                          <form action="#">
+                            <input type="text" placeholder="Escribir correo electronico">
+                            <button type="submit"><span><i class="fa fa-envelope" arial-hidden="true"></i></span></button>
+                          </form>
+                        </div>                    
+                      </div>
+                      <ul> <p></a>Siguenos en nuestras redes:</p></ul>
+                      <ul class="social-icons">
+                          <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                          <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                      <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                        <div class="footer-newslatter">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <div class="row">
+                      <div class="col-lg-12 text-center">
+                          <div class="footer-copyright-text">
+                            <p>&copy; 2024. Todos los derechos reservados                   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </footer>
+  </body>
+  <!-- <script src="./scripts/cardPrueba.js"></script> -->
+  <script src="/screens/scripts/productos.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </html>
+  
