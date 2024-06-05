@@ -100,3 +100,44 @@ await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json",
     body: JSON.stringify(nuevoElemento)
 })
 }
+
+
+
+// Función para obtener y manipular datos
+// Función para leer datos de Firebase
+const leerDatos = async () => {
+  try {
+    const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
+    if (!response.ok) {
+      throw new Error('Error al leer datos');
+    }
+    const data = await response.json();
+    console.log('Datos leídos:', data);
+    return data;
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+// Función para obtener y manipular datos
+const obtenerYManipularDatos = async () => {
+  const datos = await leerDatos();
+  if (datos) {
+    // Asegúrate de que `datos` es un objeto y no está vacío
+    const products = datos;
+    if (products && typeof products === 'object' && Object.keys(products).length > 0) {
+      // Accede y manipula los datos de products
+      Object.keys(products).forEach(key => {
+        const product = products[key];
+        console.log(`Producto ${key}:`, product);
+      });
+    } else {
+      console.log('No se encontraron productos o el formato de datos es incorrecto');
+    }
+  } else {
+    console.log('No se encontraron datos');
+  }
+};
+
+// Llamar a la función para obtener y manipular datos
+obtenerYManipularDatos();
