@@ -643,4 +643,33 @@ height: 22px;
   border-radius: 8px;
   background-color: #000;
   border: 1px;
+}  /*NAVBAR*/
+/* NAVBAR */
+
+.navbar {
+  padding: 0.1rem;
+  background-color:white;
+}
+
+.navbar-collaps {
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*Acordion*/
+
+.accordion-item {
+  border: none;
+}
+
+.list-group {
+  border: none;
+}
+
+.accordion-text{
+  color:#000;
+}
+
+.hotSaleText {
+  color: #661010;
 }

@@ -23,7 +23,7 @@ function createCard(product, index, containerId) {
     const newCardDetail = document.createElement("div");
     const newTextTitle = document.createElement("h2");
     const newTextPrice = document.createElement("p");
-    const newTextId = document.createElement("p");
+    const newTextNombre = document.createElement("p");
     newCard.onclick = () => redirectToPage(`../screens/productDetail.html?productId=${product.id}`);
 
     newCard.classList.add("card");
@@ -32,8 +32,8 @@ function createCard(product, index, containerId) {
     carouselInner.classList.add("carousel-inner");
     newCardDetail.classList.add("card-details");
     newTextTitle.classList.add("text-title");
+    newTextNombre.classList.add("text-title");
     newTextPrice.classList.add("text-Body");
-    newTextId.classList.add("text-Body");
 
     // Añadir imágenes al carrusel
     [product.image1, product.image2, product.image3].forEach((imgSrc, imgIndex) => {
@@ -82,14 +82,14 @@ function createCard(product, index, containerId) {
     newCarousel.appendChild(nextButton);
 
     newTextTitle.textContent = product.marca;  // Usar 'marca' como título
+    newTextNombre.textContent = product.nombre;
     newTextPrice.textContent = `$${product.precio}`;  // Usar 'precio'
     // modifique id por nombre para que aparezcan los nombres de los productos
-    newTextId.textContent = product.nombre;
 
     newCard.appendChild(newCarousel);
     newCardDetail.appendChild(newTextTitle);
+    newCardDetail.appendChild(newTextNombre);
     newCardDetail.appendChild(newTextPrice);
-    newCardDetail.appendChild(newTextId);
     newCard.appendChild(newCardDetail);
 
     cardContainer.appendChild(newCard);
