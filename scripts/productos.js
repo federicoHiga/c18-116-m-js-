@@ -8,12 +8,30 @@ let allProducts = []; // Almacena todos los productos
 let loadedProductsCount = 0; // Cuenta los productos cargados
 const productsPerLoad = 6; // Número de productos a cargar por clic
 
+// async function getProducts() {
+//     try {
+//         const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
+//         const data = await response.json();
+
+//         if (Array.isArray(data)) {
+//             allProducts = data; // Guardar todos los productos
+//             return data;
+//         } else {
+//             console.error('La estructura de la respuesta no es la esperada:', data);
+//             return [];
+//         }
+//     } catch (error) {
+//         console.error('Error al obtener productos:', error);
+//         return [];
+//     }
+// }
+
 async function getProducts() {
     try {
-        const response = await fetch('http://localhost:3000/products');
+        const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
         const data = await response.json();
 
-        if (Array.isArray(data)) {
+        if (data) {
             allProducts = data; // Guardar todos los productos
             return data;
         } else {
@@ -51,20 +69,36 @@ function handleCheckboxClick(event) {
     console.log('Filtros seleccionados:', filtros);
 }
 
-function filtro(filtros, products) {
-    if (!products || !Array.isArray(products)) {
-        console.error('Productos no está definido o no es un array:', products);
-        return [];
-    }
+// function filtro(filtros, products) {
+//     if (!products || !Array.isArray(products)) {
+//         console.error('Productos no está definido o no es un array:', products);
+//         return [];
+//     }
+// return (products.filter(p => {
+//     const matchMarca = filtros.marca.length === 0 || filtros.marca.includes(p.marca);
+//     const matchGenero = filtros.genero.length === 0 || filtros.genero.some(g => p.categorias.includes(g));
+//     const matchTalle = filtros.talle.length === 0 || filtros.talle.some(t => p.talle.includes(parseInt(t)));
+//     const matchColor = filtros.color.length === 0 || filtros.color.some(c => p.color.includes(c));
 
-    return products.filter(p => {
+//     return matchMarca && matchGenero && matchTalle && matchColor;
+// }));
+// }
+
+    function filtro(filtros, products) {
+        const productsArray = Object.values(products);
+        if (!products) {
+            console.error('Productos no está definido o no es un array:', products);
+            return [];
+        }
+
+    return (productsArray.filter(p => {
         const matchMarca = filtros.marca.length === 0 || filtros.marca.includes(p.marca);
         const matchGenero = filtros.genero.length === 0 || filtros.genero.some(g => p.categorias.includes(g));
         const matchTalle = filtros.talle.length === 0 || filtros.talle.some(t => p.talle.includes(parseInt(t)));
         const matchColor = filtros.color.length === 0 || filtros.color.some(c => p.color.includes(c));
 
         return matchMarca && matchGenero && matchTalle && matchColor;
-    });
+    }));
 }
 
 function createCard(product, index) {
