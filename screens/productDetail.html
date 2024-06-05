@@ -458,12 +458,14 @@
 <script src="../scripts/productos.js"></script>
   
 <script>
-  console.log("algo");
+  console.log("fuera");
   init(() => {
+    console.log("dentro");
     const productId = new URL(document.location.toString()).searchParams.get('productId');
-    const product = products.find(p => p.id == productId);
+    const productsArray = Object.values(products);
+    const product = productsArray.find(p => p.id == productId);
     // products.filter(p => p.categorias.includes("Hombre") && p.categorias.includes("Hot Sale"));
-    console.log('product desde html', product);
+    console.log('productId: ', productId);
     // console.log(product.marca)
     const precioDetail = document.querySelector("#precioDetail");
     const marcaDetail = document.querySelector("#marcaDetail")
@@ -544,4 +546,3 @@
 </html>
 
 
-<img src="/src/productos/Zapatillas_Response_Runner_Gris_ID7333_0"
