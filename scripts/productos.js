@@ -213,6 +213,12 @@ loadMoreButton.addEventListener('click', () => {
     cargarMasProductos(productosFiltrados);
 });
 
+async function init(onFinish) {
+    const data = await getProducts();
+    products = data;
+    onFinish();
+}
+
 function redirectToPage(url) {
     window.location.href = url;
 }
