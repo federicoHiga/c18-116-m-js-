@@ -1,12 +1,3 @@
-.titulo{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-.titulo a{
-    align-self: start;
-}
 .titulo h2 {
     flex-grow: 1;
     text-align: center;
@@ -135,4 +126,18 @@
 .button{
     display: flex;
     justify-content: center;
+}
+
+.titulo-de-busqueda{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.titulo-de-busqueda a{
+    position: absolute;
+    left: 0;
+}
+.titulo-de-busqueda p{
+    margin: 0 auto;
 }

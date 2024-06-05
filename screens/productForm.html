@@ -113,11 +113,20 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./scripts/productForm.js"></script>
-
-
-
+    <script src="./scripts/productDetail.js"></script>
+    <script src="../scripts/productos.js"></script>
+    <script>init(()=>{
+    async function getProducts() {
+        try {
+            const response = await fetch('http://localhost:3000/products');
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error('Error al obtener productos:', error);
+            return {};
+        }
+    }
+});
     </script>
-    
 </body>
-
 </html>
