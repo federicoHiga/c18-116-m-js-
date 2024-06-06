@@ -8,32 +8,14 @@ let allProducts = []; // Almacena todos los productos
 let loadedProductsCount = 0; // Cuenta los productos cargados
 const productsPerLoad = 6; // Número de productos a cargar por clic
 
-// async function getProducts() {
-//     try {
-//         const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
-//         const data = await response.json();
-
-//         if (Array.isArray(data)) {
-//             allProducts = data; // Guardar todos los productos
-//             return data;
-//         } else {
-//             console.error('La estructura de la respuesta no es la esperada:', data);
-//             return [];
-//         }
-//     } catch (error) {
-//         console.error('Error al obtener productos:', error);
-//         return [];
-//     }
-// }
-
 async function getProducts() {
     try {
         const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
         const data = await response.json();
 
         if (data) {
-            allProducts = data; // Guardar todos los productos
-            return data;
+            allProducts = Object.values(data); // Convertir los productos en un array
+            return allProducts;
         } else {
             console.error('La estructura de la respuesta no es la esperada:', data);
             return [];
@@ -48,13 +30,11 @@ function handleCheckboxClick(event) {
     const checkboxId = event.target.id;
     const filterType = event.target.dataset.filterType;
 
-    // Verificar si el filtroType existe en el objeto filtros
     if (!filtros[filterType]) {
         console.error('Tipo de filtro no reconocido:', filterType);
         return;
     }
 
-    // Toggle active class
     if (event.target.classList.contains('active')) {
         event.target.classList.remove('active');
         const index = filtros[filterType].indexOf(checkboxId);
@@ -69,36 +49,20 @@ function handleCheckboxClick(event) {
     console.log('Filtros seleccionados:', filtros);
 }
 
-// function filtro(filtros, products) {
-//     if (!products || !Array.isArray(products)) {
-//         console.error('Productos no está definido o no es un array:', products);
-//         return [];
-//     }
-// return (products.filter(p => {
-//     const matchMarca = filtros.marca.length === 0 || filtros.marca.includes(p.marca);
-//     const matchGenero = filtros.genero.length === 0 || filtros.genero.some(g => p.categorias.includes(g));
-//     const matchTalle = filtros.talle.length === 0 || filtros.talle.some(t => p.talle.includes(parseInt(t)));
-//     const matchColor = filtros.color.length === 0 || filtros.color.some(c => p.color.includes(c));
+function filtro(filtros, products) {
+    if (!Array.isArray(products)) {
+        console.error('Productos no está definido o no es un array:', products);
+        return [];
+    }
 
-//     return matchMarca && matchGenero && matchTalle && matchColor;
-// }));
-// }
-
-    function filtro(filtros, products) {
-        const productsArray = Object.values(products);
-        if (!products) {
-            console.error('Productos no está definido o no es un array:', products);
-            return [];
-        }
-
-    return (productsArray.filter(p => {
+    return products.filter(p => {
         const matchMarca = filtros.marca.length === 0 || filtros.marca.includes(p.marca);
         const matchGenero = filtros.genero.length === 0 || filtros.genero.some(g => p.categorias.includes(g));
         const matchTalle = filtros.talle.length === 0 || filtros.talle.some(t => p.talle.includes(parseInt(t)));
         const matchColor = filtros.color.length === 0 || filtros.color.some(c => p.color.includes(c));
 
         return matchMarca && matchGenero && matchTalle && matchColor;
-    }));
+    });
 }
 
 function createCard(product, index) {
@@ -240,7 +204,6 @@ aplicarButton.addEventListener('click', async () => {
     await mostrarProductosFiltrados();
 });
 
-
 const loadMoreButton = document.getElementById('load-more');
 loadMoreButton.addEventListener('click', () => {
     const productosFiltrados = filtro(filtros, allProducts);
@@ -274,3 +237,28 @@ document.getElementById('back-to-top').addEventListener('click', function() {
         behavior: 'smooth'
     });
 });
+
+// Función de búsqueda
+function buscarProductos(query) {
+    query = query.toLowerCase();
+    return allProducts.filter(product => 
+        product.nombre.toLowerCase().includes(query) || 
+        product.marca.toLowerCase().includes(query)
+    );
+}
+
+// Evento de búsqueda
+document.getElementById('search-bar').addEventListener('input', async function() {
+    const query = this.value;
+    const productosFiltrados = buscarProductos(query);
+
+    const productosContainer = document.getElementById('card-container');
+    productosContainer.innerHTML = ''; // Limpiar contenido anterior
+
+    productosFiltrados.forEach((producto, index) => {
+        createCard(producto, index);
+    });
+
+    actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
+});
+
