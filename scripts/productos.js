@@ -56,10 +56,10 @@ function filtro(filtros, products) {
     }
 
     return products.filter(p => {
-        const matchMarca = filtros.marca.length === 0 || filtros.marca.includes(p.marca);
-        const matchGenero = filtros.genero.length === 0 || filtros.genero.some(g => p.categorias.includes(g));
-        const matchTalle = filtros.talle.length === 0 || filtros.talle.some(t => p.talle.includes(parseInt(t)));
-        const matchColor = filtros.color.length === 0 || filtros.color.some(c => p.color.includes(c));
+        const matchMarca = filtros.marca.length === 0 || (p.marca && filtros.marca.includes(p.marca));
+        const matchGenero = filtros.genero.length === 0 || (Array.isArray(p.categorias) && filtros.genero.some(g => p.categorias.includes(g)));
+        const matchTalle = filtros.talle.length === 0 || (Array.isArray(p.talle) && filtros.talle.some(t => p.talle.includes(parseInt(t))));
+        const matchColor = filtros.color.length === 0 || (Array.isArray(p.color) && filtros.color.some(c => p.color.includes(c)));
 
         return matchMarca && matchGenero && matchTalle && matchColor;
     });
@@ -262,3 +262,31 @@ document.getElementById('search-bar').addEventListener('input', async function()
     actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
 });
 
+//color al presionar boton de filtro
+document.addEventListener('DOMContentLoaded', () => {
+    const hoverNegro = document.querySelector('.colorProducto-colorNegro');
+    const hoverBlanco = document.querySelector('.colorProducto-colorBlanco');
+    const hoverRojo = document.querySelector('.colorProducto-colorRojo');
+    const hoverAzul = document.querySelector('.colorProducto-colorAzul');
+    const hoverAmarillo = document.querySelector('.colorProducto-colorAmarillo');
+
+    hoverNegro.addEventListener('click', () => {
+        hoverNegro.classList.toggle('red-border');
+    });
+
+    hoverBlanco.addEventListener('click', () => {
+        hoverBlanco.classList.toggle('red-border');
+    });
+
+    hoverRojo.addEventListener('click', () => {
+        hoverRojo.classList.toggle('red-border');
+    });
+
+    hoverAzul.addEventListener('click', () => {
+        hoverAzul.classList.toggle('red-border');
+    });
+
+    hoverAmarillo.addEventListener('click', () => {
+        hoverAmarillo.classList.toggle('red-border');
+    });
+});
