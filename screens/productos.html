@@ -145,7 +145,7 @@
                 </div>
           </nav>
         </div>
-        <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 pb-2">
+        <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 mt-2">
           <img src="../src/atomo/logo_zenith.svg" width="150" alt="Logo de Zenith">
         </div>
         <!--Barra de navegacion-->
@@ -158,7 +158,7 @@
           <!--Barra de Busqueda-->
         </div>
         <!-- CART -->
-        <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-0 ml-2"
+        <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-3 ml-2"
           data-bs-toggle="modal" data-bs-target="#cartModal">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag"
             viewBox="0 0 16 16">
@@ -220,25 +220,25 @@
               <label class="form-check-label" for="exampleCheck1">
                 Recomendados
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Precio, menor a mayor
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Precio, mayor a menor
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Más Vendidos
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
           </div>
         </div>
@@ -256,7 +256,7 @@
           </div>
           <div class="offcanvas-body">
             <ul class="filtro-off navbar-nav d-flex justify-content-center">
-              <div class="filtro-form-check">
+              <div class="filtro-form-check d-flex justify-content-between">
                 <label class="form-check-label" for="envioFree">
                   Envios Gratis
                 </label>
@@ -266,30 +266,30 @@
                 <div class="accordion" id="accordionPanelsStayOpenExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header">
-                      <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse"
+                      <button class="accordion-button bg-white shadow-none px-0" type="button" data-bs-toggle="collapse"
                         data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                         aria-controls="panelsStayOpen-collapseOne">
-                        <p class="filtro-off accordion-text m-0">Tipo de Producto</p>
+                        <p class="filtro-off accordion-text mb-0">Tipo de Producto</p>
                       </button>
                     </h2>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                       <div class="accordion-body p-0">
-                        <div class="filtro-off list-group align-items-center">
-                          <div class="filtro-form-check">
+                        <div class="filtro-off list-group d-flex">
+                          <div class="filtro-form-check py-2">
                             <input class="form-check-input text-primary" type="checkbox" value="true"
                               id="Running">
                             <label class="form-check-label" for="Running">
                               Running
                             </label>
                           </div>
-                          <div class="filtro-form-check">
+                          <div class="filtro-form-check py-2">
                             <input class="form-check-input text-primary" type="checkbox" value="true"
                               id="Training">
                             <label class="form-check-label" for="Training">
                               Training
                             </label>
                           </div>
-                          <div class="filtro-form-check">
+                          <div class="filtro-form-check py-2">
                             <input class="form-check-input text-primary" type="checkbox" value="true"
                               id="Trekking">
                             <label class="form-check-label" for="Trekking">
@@ -302,7 +302,7 @@
                   </div>
                   <div class="accordion-item">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                      <button class="accordion-button collapsed bg-white shadow-none px-0" type="button"
                         data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseTwo">
                         <p class="accordion-text m-0">Marca</p>
@@ -310,20 +310,20 @@
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                       <div class="accordion-body p-0">
-                        <div class="filtro-off list-group align-items-center">
-                          <div class="filtro-form-check">
+                        <div class="filtro-off list-group d-flex">
+                          <div class="filtro-form-check py-2">
                             <input class="form-check-input text-primary" type="checkbox" value="true" id="Nike" data-filter-type="marca">
                             <label class="form-check-label" for="Nike">
                               Nike
                             </label>
                           </div>
-                          <div class="filtro-form-check">
+                          <div class="filtro-form-check py-2">
                             <input class="form-check-input text-primary" type="checkbox" value="true" id="Adidas" data-filter-type="marca">
                             <label class="form-check-label" for="Adidas">
                               Adidas
                             </label>
                           </div>
-                          <div class="filtro-form-check">
+                          <div class="filtro-form-check py-2">
                             <input class="form-check-input text-primary" type="checkbox" value="true" id="New balance" data-filter-type="marca">
                             <label class="form-check-label" for="New balance">
                               New Balance
@@ -334,7 +334,7 @@
                     </div>
                     <div class="accordion-item">
                       <h2 class="accordion-header">
-                        <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                        <button class="accordion-button collapsed bg-white shadow-none px-0" type="button"
                           data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                           aria-controls="panelsStayOpen-collapseThree">
                           <p class="accordion-text m-0">Precio</p>
@@ -342,15 +342,21 @@
                       </h2>
                       <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                         <div class="accordion-body p-0">
-                          <div class="filtro-off list-group align-items-center">
-                            <p class="filtro-off list-group-item list-group">Zapatos Niños</p>
-                            <p class="filtro-off list-group-item list-group">Zapatos Niñas</p>
+                          <div class="filtro-off list-group">
+                            <div class="precio row"> 
+                              <div class="col d-flex justify-content-end"> 
+                                <input type="text" class="form-control-xs form-control-precio" placeholder="$ 0" aria-label="$ 0"> 
+                              </div> 
+                              <div class="col"> 
+                                <input type="text" class="form-control-xs form-control-precio" placeholder="$ 10.000" aria-label="$ 10.000"> 
+                              </div> 
+                            </div>
                           </div>
                         </div>
                       </div>
                       <div class="accordion-item">
                         <h2 class="accordion-header">
-                          <button class="accordion-button collapsed bg-white shadow-none d-flex " type="button"
+                          <button class="accordion-button collapsed bg-white shadow-none d-flex px-0" type="button"
                             data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
                             aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
                             <p class="accordion-text m-0">Talla</p>
@@ -358,38 +364,38 @@
                         </h2>
                         <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
                           <div class="accordion-body p-0">
-                            <div class="filtro-off list-group align-items-center">
-                              <div class="filtro-form-check">
+                            <div class="filtro-off list-group d-flex">
+                              <div class="filtro-form-check py-2">
                                 <input class="form-check-input text-primary" type="checkbox" value="true" id="39.5" data-filter-type="talle">
                                 <label class="form-check-label" for="39.5">
                                   39.5
                                 </label>
                               </div>
-                              <div class="filtro-form-check">
+                              <div class="filtro-form-check py-2">
                                 <input class="form-check-input text-primary" type="checkbox" value="true" id="40" data-filter-type="talle">
                                 <label class="form-check-label" for="40">
                                   40
                                 </label>
                               </div>
-                              <div class="filtro-form-check">
+                              <div class="filtro-form-check py-2">
                                 <input class="form-check-input text-primary" type="checkbox" value="true" id="40.5" data-filter-type="talle">
                                 <label class="form-check-label" for="40.5">
                                   40.5
                                 </label>
                               </div>
-                              <div class="filtro-form-check">
+                              <div class="filtro-form-check py-2">
                                 <input class="form-check-input text-primary" type="checkbox" value="true" id="41" data-filter-type="talle">
                                 <label class="form-check-label" for="41">
                                   41
                                 </label>
                               </div>
-                              <div class="filtro-form-check">
+                              <div class="filtro-form-check py-2">
                                 <input class="form-check-input text-primary" type="checkbox" value="true" id="41.5" data-filter-type="talle">
                                 <label class="form-check-label" for="41.5">
                                   41.5
                                 </label>
                               </div>
-                              <div class="filtro-form-check">
+                              <div class="filtro-form-check py-2">
                                 <input class="form-check-input text-primary" type="checkbox" value="true" id="42" data-filter-type="talle">
                                 <label class="form-check-label" for="42">
                                   42
@@ -400,7 +406,7 @@
                         </div>
                         <div class="accordion-item">
                           <h2 class="accordion-header">
-                            <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                            <button class="accordion-button collapsed bg-white shadow-none px-0" type="button"
                               data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive"
                               aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
                               <p class="accordion-text m-0">Color</p>
@@ -408,7 +414,7 @@
                           </h2>
                           <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
                             <div class="accordion-body p-0">
-                              <div class="filtro-off list-group align-items-center">
+                              <div class="filtro-off list-group align-items-center py-2">
                                 <div class="cajaColor">
                                   <button class="colorProducto colorNegro" type="checkbox" value="true" id="Negro" data-filter-type="color"></button>
                                   <button class="colorProducto colorBlanco" type="checkbox" value="true" id="Blanco" data-filter-type="color"></button>
@@ -422,7 +428,7 @@
                         </div>
                         <div class="accordion-item">
                           <h2 class="accordion-header">
-                            <button class="accordion-button collapsed bg-white shadow-none" type="button"
+                            <button class="accordion-button collapsed bg-white shadow-none px-0" type="button"
                               data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix"
                               aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
                               <p class="accordion-text m-0">Género</p>
@@ -430,54 +436,52 @@
                           </h2>
                           <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
                             <div class="accordion-body p-0">
-                              <div class="list-group align-items-center">
-                                <div class="filtro-form-check">
+                              <div class="list-group d-flex">
+                                <div class="filtro-form-check py-2">
                                   <input class="form-check-input text-primary" type="checkbox" value="true" id="Hombre" data-filter-type="genero">
                                   <label class="form-check-label" for="Hombre">
                                     Hombre
                                   </label>
                                 </div>
-                                <div class="filtro-form-check">
+                                <div class="filtro-form-check py-2">
                                   <input class="form-check-input text-primary" type="checkbox" value="true" id="Mujer" data-filter-type="genero">
                                   <label class="form-check-label" for="Mujer">
                                     Mujer
                                   </label>
                                 </div>
-                                <div class="filtro-form-check">
+                                <div class="filtro-form-check py-2">
                                   <input class="form-check-input text-primary" type="checkbox" value="true" id="Niño" data-filter-type="genero">
                                   <label class="form-check-label" for="Niño">
                                     Niño
                                   </label>
                                 </div>
-                                <div class="filtro-form-check">
+                                <div class="filtro-form-check py-2">
                                   <input class="form-check-input text-primary" type="checkbox" value="true" id="Niña" data-filter-type="genero">
                                   <label class="form-check-label" for="Niña">
                                     Niña
                                   </label>
                                 </div>
-                                <div class="filtro-form-check">
+                                <div class="filtro-form-check py-2">
                                   <input class="form-check-input text-primary" type="checkbox" value="true" id="Bebe" data-filter-type="genero">
                                   <label class="form-check-label" for="Bebe">
                                     Bebé
                                   </label>
                                 </div>
-                              </div>
+                            </div>
                             </div>
                           </div>
-                          <div class="container-aplicar">
-                            <button type="button" class="btn btn-secondary" id="aplicar">Aplicar</button>
-                          </div>
                         </div>
-                      </div>
+                      </li>
+                     </ul>
+                    <div class="filtro-boton d-flex justify-content-center m-0">
+                      <label for="submit"></label>
+                        <input class="filtro-boton-submit" type="submit" value="Aplicar" id="aplicar">
                     </div>
                   </div>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+            </div>
+        </section>
+                          
 
     <!--Filtro-->
 
@@ -485,9 +489,30 @@
     <div class="filters"></div>
     <div class="cantidad-resultados"></div>
     <div id="card-container"></div>
-    <div class="button-container">
+   <!--- <div class="button-container">
       <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
-    </div>
+    </div> -->
+    <div class="button-container">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link bg-white shadow-none" href="#" aria-label="Previous">
+              <span aria-hidden="true"><image class="imagen-flecha-izq" src="/src/images/flechaizq.png"></span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link bg-white shadow-none" href="#">1</a></li>
+          <li class="page-item"><a class="page-link bg-white shadow-none" href="#">2</a></li>
+          <li class="page-item"><a class="page-link bg-white shadow-none" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link bg-white shadow-none" href="#" aria-label="Next">
+              <span aria-hidden="true"><image class="imagen-flecha-der" src="/src/images/flechader.png"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div> 
+
+
     <button id="back-to-top"><img src="../src/atomo/flecha arriba.png" alt="↑"></button>
   </main>
   <!-- Footer section Begin -->
