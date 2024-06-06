@@ -35,23 +35,23 @@
 //   }
   
 
-async function getProducts() {
-  try {
-      const response = await fetch('http://localhost:3000/products');
+// async function getProducts() {
+//   try {
+//       const response = await fetch('http://localhost:3000/products');
       
-      if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      // console.log('data desde filtro: ', data[0].color[2]); //accediendo al array objeto 0, objteo de colores y elemento 3 (rojo)
-      return data; // En este caso data ya es el array de productos
+//       if (!response.ok) {
+//           throw new Error(`HTTP error! status: ${response.status}`);
+//       }
+//       const data = await response.json();
+//       // console.log('data desde filtro: ', data[0].color[2]); //accediendo al array objeto 0, objteo de colores y elemento 3 (rojo)
+//       return data; // En este caso data ya es el array de productos
       
-  } catch (error) {
-      console.error('Error al obtener productos:', error);
-      return []; // Devuelve un array vacío en caso de error
-  }
-}
+//   } catch (error) {
+//       console.error('Error al obtener productos:', error);
+//       return []; // Devuelve un array vacío en caso de error
+//   }
+// }
 
-getProducts();
+// getProducts();
 
-// console.log('color desde html',product.color[1]);
+// // console.log('color desde html',product.color[1]);
