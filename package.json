@@ -1,7 +1,7 @@
 {
   "name": "c18-116-m-js-",
   "version": "1.0.0",
-  "description": "",
+  "description": "**ZENITH** es un proyecto de e-commerce de zapatillas, desarrollado como parte de una simulación brindada por la empresa NOCountry. Este proyecto utiliza HTML, CSS, Bootstrap y JavaScript para crear una experiencia de usuario atractiva y funcional.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "bootstrap-icons": "^1.11.3",
+    "firebase": "^10.12.2",
+    "firebaseui": "^6.1.0"
   }
 }
