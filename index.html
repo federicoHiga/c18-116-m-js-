@@ -137,11 +137,11 @@
           <!--Barra de navegacion-->
           <!--Barra de Busqueda-->
           <div class="barraBusqueda container-fluid py-2 d-flex justify-content-center">
-            <form class="d-flex col-11 justify-content-center" role="search">
-              <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search">
-              <button class="btn btn-outline-success mx-0" type="submit"><img src="/src/atomo/serch.svg"></button>
+            <form class="d-flex col-11 justify-content-center" id="search-form">
+              <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search" id="search-bar">
+              <button class="btn btn-outline-success mx-0" type="button" id="search-button"><img src="/src/atomo/serch.svg"></button>
             </form>
-           </div> 
+          </div>
           <!--Barra de Busqueda-->
           <!-- CART -->
           <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-3 ml-2" data-bs-toggle="modal" data-bs-target="#cartModal">
@@ -234,6 +234,7 @@
                   <section">  
                     <div class="sugerencias container">Los más vendidos</div>
                   </section>
+                  <div id="loader" style="display:none;">Cargando...</div>
                   <section>
                     <div id="card-container-1" class="card-container"></div>
                   </section>
@@ -306,7 +307,6 @@
 <script src="./scripts/cardPrueba.js"></script>
   <script src="/screens/scripts/productos.js"></script>
   <script src="./scripts/script.js"></script>
-  <script src="./scripts/cart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </html>
   
