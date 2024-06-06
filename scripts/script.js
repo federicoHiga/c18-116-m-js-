@@ -1,15 +1,24 @@
-// Obtener productos desde el servidor
+// Nueva función para obtener productos desde el servidor
 async function getProducts() {
     try {
         const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
+
         const data = await response.json();
-        return data; // En este caso data ya es el array de productos
+
+        if (data) {
+            // Transformar el objeto en un array
+            const productsArray = Object.values(data);
+            return productsArray;
+        } else {
+            console.error('La estructura de la respuesta no es la esperada:', data);
+            return [];
+        }
     } catch (error) {
         console.error('Error al obtener productos:', error);
-        return []; // Devuelve un array vacío en caso de error
+        return [];
     }
 }
 
@@ -98,20 +107,14 @@ function createCard(product, index, containerId) {
     new bootstrap.Carousel(newCarousel);
 }
 
-// // Función para extraer productos del JSON
-// function extractProducts(data) {
-//     let extractedProducts = [];
-//     for (const category in data) {
-//         for (const product in data[category]) {
-//             extractedProducts.push(data[category][product]);
-//         }
-//     }
-//     return extractedProducts;
-// }
-
 // Función para inicializar la carga de productos en un contenedor específico
 async function init(containerId) {
-    const products = await getProducts(); ;
+    const loader = document.getElementById('loader');
+    loader.style.display = 'block';  // Mostrar indicador de carga
+
+    const products = await getProducts();
+
+    loader.style.display = 'none';  // Ocultar indicador de carga
 
     // Crear las tarjetas
     products.forEach((product, index) => {
@@ -119,30 +122,45 @@ async function init(containerId) {
     });
 }
 
-
 function redirectToPage(url) {
     window.location.href = url;
 }
+
+
+const searchForm = document.getElementById('search-form');
+console.log(searchForm); // Verificar si el formulario se selecciona correctamente
+
+if (searchForm) {
+    const searchButton = document.getElementById('search-button');
+    console.log(searchButton); // Verificar si el botón de búsqueda se selecciona correctamente
+
+    searchButton.addEventListener('click', function(event) {
+        console.log("Botón de búsqueda clicado"); // Verificar si el evento de clic se activa
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del botón
+
+        const query = document.getElementById('search-bar').value;
+        // Redirigir a la página de productos y pasar la consulta de búsqueda como parámetro en la URL
+        window.location.href = `screens/productos.html?query=${encodeURIComponent(query)}`;
+    });
+}
+// Mostrar botón de "Volver arriba" después de cierto desplazamiento
+window.onscroll = function() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        backToTopButton.style.display = "block";
+    } else {
+        backToTopButton.style.display = "none";
+    }
+};
+
+// Funcionalidad del botón de "Volver arriba"
+document.getElementById('back-to-top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
 // Inicializar contenedores
 init('card-container-1');
 init('card-container-2');
-
-
-
-    // Mostrar botón de "Volver arriba" después de cierto desplazamiento
-    window.onscroll = function() {
-        const backToTopButton = document.getElementById('back-to-top');
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            backToTopButton.style.display = "block";
-        } else {
-            backToTopButton.style.display = "none";
-        }
-    };
-
-    // Funcionalidad del botón de "Volver arriba"
-    document.getElementById('back-to-top').addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
