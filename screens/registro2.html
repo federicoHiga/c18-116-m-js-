@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="/styles/productos.css">
   <link rel="stylesheet" href="/styles/footer.css">
   <link rel="stylesheet" href="/styles/home.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script type="module" src="/scripts/registrarse.js" defer></script>
 </head>
 <body>
     <main>
@@ -27,35 +29,34 @@
                 <h3 class="titulo-registro d-flex justify-content-center">¡Vamos a crearte una cuenta!</h3>
               </div>
               <div class="container mb-1 mt-4 position-static px-16">
-                <label for="exampleFormControlInput1" class="form-label">User</label>
-                <input type="text" class="form-control-login" id="exampleFormControlInput1" placeholder="User123">
+                <label for="email" class="form-label">Correo electrónico:</label>
+                <input type="email" class="form-control-login" id="email" placeholder="Ingresa tus datos">
               </div>
-            <div class="container mb-1 mt-4 position-static px-16">
-                <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
-                <input type="text" class="form-control-login" id="exampleFormControlInput1" placeholder="Crea tu clave">
+              <div class="container mb-1 mt-4 position-static px-16">
+                <label for="password" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control-login" id="password" placeholder="tucorreo123@gmail.com">
               </div>
-              <div class="container mb-5 mt-4 position-static px-16">
+              <!-- <div class="container mb-5 mt-4 position-static px-16">
                 <label for="exampleFormControlInput1" class="form-label">Confirmar contraseña</label>
                 <input type="tex" class="form-control-login" id="exampleFormControlInput1" placeholder="Repetí tu clave anterior">
-              </div>
+              </div> -->
 
               <!--input para radio para terminos y condiciones-->
               <div class="container d-flex justify-content-center">
-                <input class="d-flex flex-nowrap w-33 p-1" type="radio" id="opcion1" name="opciones" value="opcion1">
-                  <label for="opcion1">
-                  </label> 
-                  <p class="texto-login mr-1 mb-0 w-33 px-1">Acepto los </p>
+                <label for="opcion1"></label> 
+                <input class="d-flex flex-nowrap w-33 p-1" type="radio" id="opcion1" name="opciones" value="opcion1" required>
+                         <p class="texto-login mr-1 mb-0 w-33 px-1">Acepto los </p>
                     <a class="link-registro-login decoration-none d-flex w-33" href="/terminosycondiciones.html">  términos y condiciones  </a>
               </div>
-
-              <div class="registro2-boton d-flex justify-content-center">
-                <label for="submit"></label>
-                  <input class="registro2-boton-submit" type="submit" value="Siguiente">
-              </div>
+                <div class="registro-boton d-flex justify-content-center">
+                  <label for="submit"></label>
+                  <button class="registro2-boton-submit" type="submit" id="submit" type="login">Registrarse</button>
+                </div>
+                
               <!--Boton de Progreso-->
-              <div class="boton-de-progreso container d-flex justify-content-center mt-2">
+              <!-- <div class="boton-de-progreso container d-flex justify-content-center mt-2">
                 <img src="/src/atomo/barra de progreso2.svg">
-              </div>
+              </div> -->
                 
         </section>
 
