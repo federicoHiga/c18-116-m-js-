@@ -18,13 +18,18 @@ function cargarEventos() {
 
 // Llamamos a cargarEventos para asegurarnos de que los eventos se añadan cuando se cargue la página.
 cargarEventos();
-
+function remplazarUrl(){
+imgpath = document.getElementById("img1").value;
+newPath = imgpath.replace("C:\\fakepath\\", "../src/productos/")
+return newPath
+}
 
   nuevoElemento =
   
     function nuevoProducto() {
       getTalles();
       getColores();
+      remplazarUrl();
      nuevoElemento = nuevoProducto = { 
         nombre: nombreDetail.value,
         marca: marcaDetail.value,
@@ -34,9 +39,9 @@ cargarEventos();
         talle: talleDetail,
         color: colorDetail,
         genero: generoDetail.value,
-        imagen1: img1Detail,
-        imagen2: img2Detail,
-        imagen3: img3Detail,};
+        image1: newPath,
+        image2: newPath1,
+        image3: newPath2};
       return nuevoElemento  
     }
 
@@ -87,6 +92,15 @@ cargarEventos();
       colorDetail= [selectedItems];
       return colorDetail
     }
+    function remplazarUrl(){
+      imgpath = document.getElementById("img1").value;
+      newPath = imgpath.replace("C:\\fakepath\\", "../src/productos/")
+      imgpath1 = document.getElementById("img2").value;
+      newPath1 = imgpath1.replace("C:\\fakepath\\", "../src/productos/")
+      imgpath2 = document.getElementById("img3").value;
+      newPath2 = imgpath2.replace("C:\\fakepath\\", "../src/productos/")
+      return newPath, newPath1, newPath2
+      }
   
 
 
