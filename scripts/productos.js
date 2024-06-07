@@ -6,7 +6,7 @@ let filtros = {
 };
 let allProducts = []; // Almacena todos los productos
 let loadedProductsCount = 0; // Cuenta los productos cargados
-const productsPerLoad = 6; // Número de productos a cargar por clic
+const productsPerLoad = 8; // Número de productos a cargar por clic
 
 async function getProducts() {
     try {
@@ -56,10 +56,10 @@ function filtro(filtros, products) {
     }
 
     return products.filter(p => {
-        const matchMarca = filtros.marca.length === 0 || filtros.marca.includes(p.marca);
-        const matchGenero = filtros.genero.length === 0 || filtros.genero.some(g => p.categorias.includes(g));
-        const matchTalle = filtros.talle.length === 0 || filtros.talle.some(t => p.talle.includes(parseInt(t)));
-        const matchColor = filtros.color.length === 0 || filtros.color.some(c => p.color.includes(c));
+        const matchMarca = filtros.marca.length === 0 || (p.marca && filtros.marca.includes(p.marca));
+        const matchGenero = filtros.genero.length === 0 || (Array.isArray(p.categorias) && filtros.genero.some(g => p.categorias.includes(g)));
+        const matchTalle = filtros.talle.length === 0 || (Array.isArray(p.talle) && filtros.talle.some(t => p.talle.includes(parseInt(t))));
+        const matchColor = filtros.color.length === 0 || (Array.isArray(p.color) && filtros.color.some(c => p.color.includes(c)));
 
         return matchMarca && matchGenero && matchTalle && matchColor;
     });
@@ -179,8 +179,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const products = await getProducts();
     console.log('Productos obtenidos:', products);
 
-    // Mostrar todos los productos inicialmente
-    await mostrarProductosFiltrados();
+    // Obtener el valor del parámetro "query" de la URL y filtrar productos si existe
+    const query = obtenerParametroQuery();
+    if (query) {
+        const productosFiltrados = buscarProductos(query);
+        mostrarProductosFiltradosConQuery(productosFiltrados, query);
+    } else {
+        // Mostrar todos los productos inicialmente
+        await mostrarProductosFiltrados();
+    }
 });
 
 function actualizarContadorDeResultados(cantidad) {
@@ -238,6 +245,34 @@ document.getElementById('back-to-top').addEventListener('click', function() {
     });
 });
 
+// color al presionar boton de filtro
+document.addEventListener('DOMContentLoaded', () => {
+    const hoverNegro = document.querySelector('.colorProducto-colorNegro');
+    const hoverBlanco = document.querySelector('.colorProducto-colorBlanco');
+    const hoverRojo = document.querySelector('.colorProducto-colorRojo');
+    const hoverAzul = document.querySelector('.colorProducto-colorAzul');
+    const hoverAmarillo = document.querySelector('.colorProducto-colorAmarillo');
+
+    hoverNegro.addEventListener('click', () => {
+        hoverNegro.classList.toggle('red-border');
+    });
+
+    hoverBlanco.addEventListener('click', () => {
+        hoverBlanco.classList.toggle('red-border');
+    });
+
+    hoverRojo.addEventListener('click', () => {
+        hoverRojo.classList.toggle('red-border');
+    });
+
+    hoverAzul.addEventListener('click', () => {
+        hoverAzul.classList.toggle('red-border');
+    });
+
+    hoverAmarillo.addEventListener('click', () => {
+        hoverAmarillo.classList.toggle('red-border');
+    });
+});
 // Función de búsqueda
 function buscarProductos(query) {
     query = query.toLowerCase();
@@ -260,5 +295,48 @@ document.getElementById('search-bar').addEventListener('input', async function()
     });
 
     actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
+    actualizarTerminoDeBusqueda(query); // Mostrar el término de búsqueda
 });
 
+// Función para obtener el valor del parámetro "query"
+function obtenerParametroQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('query');
+}
+
+// Mostrar productos filtrados por query
+async function mostrarProductosFiltradosConQuery(productosFiltrados, query) {
+    const productosContainer = document.getElementById('card-container');
+    productosContainer.innerHTML = ''; // Limpiar contenido anterior
+    loadedProductsCount = 0; // Reiniciar el contador de productos cargados
+
+    // Mostrar los primeros productosPerLoad productos
+    cargarMasProductos(productosFiltrados);
+
+    actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
+    actualizarTerminoDeBusqueda(query); // Mostrar el término de búsqueda
+
+    return productosFiltrados;
+}
+
+// Función para actualizar el término de búsqueda en la página
+function actualizarTerminoDeBusqueda(query) {
+    const searchTermElement = document.getElementById('search-term');
+    if (query) {
+        searchTermElement.textContent = `Buscando: ${query}`;
+    } else {
+        searchTermElement.textContent = 'Todos los productos';
+    }
+}
+
+// Llamar a la función para obtener el valor del parámetro "query" y mostrar los productos filtrados
+document.addEventListener('DOMContentLoaded', async () => {
+    const query = obtenerParametroQuery();
+    if (query) {
+        const productosFiltrados = buscarProductos(query);
+        await mostrarProductosFiltradosConQuery(productosFiltrados, query);
+    } else {
+        await mostrarProductosFiltrados();
+        actualizarTerminoDeBusqueda(null); // Establecer "Todos los productos" por defecto
+    }
+});
