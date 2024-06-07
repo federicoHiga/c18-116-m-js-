@@ -32,7 +32,7 @@
                 <!--Acordion-->
                 <ul class="navbar-nav d-flex justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./screens/login.html">Iniciar sesión</a>
+                    <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a>
                   </li>
                   <li class="nav-item justify-content-evenly">
                     <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
@@ -456,11 +456,12 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="../screens/scripts/productDetail.js"></script>
 <script src="../scripts/productos.js"></script>
+<script src="../scripts/cardPrueba.js"></script>
   
 <script>
-  console.log("fuera");
+  // console.log("fuera");
   init(() => {
-    console.log("dentro");
+    // console.log("dentro");
     const productId = new URL(document.location.toString()).searchParams.get('productId');
     const productsArray = Object.values(products);
     const product = productsArray.find(p => p.id == productId);
@@ -500,7 +501,7 @@
     colores.forEach(function (color) {
       colorsDiv.appendChild(color);
     });
-    // console.log('colores desde html',colores);
+    console.log('colores desde html',colores);
     //filtro colores
 
     //cart inicio
@@ -508,7 +509,9 @@
       // Check if cart data exists in localStorage
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       // Find existing product in cart (if any)
+      // findIndex evalua la condition si es true return: 1 sino: -1
       const existingProductIndex = cart.findIndex(item => item.id === product.id);
+      console.log("exist: ",existingProductIndex)
       const cartCount = document.querySelector("#cartCount")
 
       if (existingProductIndex !== -1) {
@@ -527,7 +530,7 @@
       const count = cart[existingProductIndex !== -1 ? existingProductIndex : cart.length - 1].quantity
       cartCount.innerHTML = count
       console.log(`${product.nombre} added to cart (quantity: ${cart[existingProductIndex !== -1 ? existingProductIndex : cart.length - 1].quantity})`);
-      console.log('let cart: ', count)
+      console.log('cart data: ', cart)
     }
       //call
     const addToCartButton = document.getElementById('btnAddToCart');
@@ -538,7 +541,7 @@
   });
 
   const product = products.find(p => p.id == productId);
-
+leerDatos();
 </script>
 <script src="./scripts/cart.js"></script>
 <script src="./scripts/filtro.js"></script>
