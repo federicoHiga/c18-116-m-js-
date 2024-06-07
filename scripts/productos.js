@@ -179,8 +179,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const products = await getProducts();
     console.log('Productos obtenidos:', products);
 
-    // Mostrar todos los productos inicialmente
-    await mostrarProductosFiltrados();
+    // Obtener el valor del parámetro "query" de la URL y filtrar productos si existe
+    const query = obtenerParametroQuery();
+    if (query) {
+        const productosFiltrados = buscarProductos(query);
+        mostrarProductosFiltradosConQuery(productosFiltrados, query);
+    } else {
+        // Mostrar todos los productos inicialmente
+        await mostrarProductosFiltrados();
+    }
 });
 
 function actualizarContadorDeResultados(cantidad) {
@@ -238,31 +245,7 @@ document.getElementById('back-to-top').addEventListener('click', function() {
     });
 });
 
-// Función de búsqueda
-function buscarProductos(query) {
-    query = query.toLowerCase();
-    return allProducts.filter(product => 
-        product.nombre.toLowerCase().includes(query) || 
-        product.marca.toLowerCase().includes(query)
-    );
-}
-
-// Evento de búsqueda
-document.getElementById('search-bar').addEventListener('input', async function() {
-    const query = this.value;
-    const productosFiltrados = buscarProductos(query);
-
-    const productosContainer = document.getElementById('card-container');
-    productosContainer.innerHTML = ''; // Limpiar contenido anterior
-
-    productosFiltrados.forEach((producto, index) => {
-        createCard(producto, index);
-    });
-
-    actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
-});
-
-//color al presionar boton de filtro
+// color al presionar boton de filtro
 document.addEventListener('DOMContentLoaded', () => {
     const hoverNegro = document.querySelector('.colorProducto-colorNegro');
     const hoverBlanco = document.querySelector('.colorProducto-colorBlanco');
@@ -289,4 +272,71 @@ document.addEventListener('DOMContentLoaded', () => {
     hoverAmarillo.addEventListener('click', () => {
         hoverAmarillo.classList.toggle('red-border');
     });
+});
+// Función de búsqueda
+function buscarProductos(query) {
+    query = query.toLowerCase();
+    return allProducts.filter(product => 
+        product.nombre.toLowerCase().includes(query) || 
+        product.marca.toLowerCase().includes(query)
+    );
+}
+
+// Evento de búsqueda
+document.getElementById('search-bar').addEventListener('input', async function() {
+    const query = this.value;
+    const productosFiltrados = buscarProductos(query);
+
+    const productosContainer = document.getElementById('card-container');
+    productosContainer.innerHTML = ''; // Limpiar contenido anterior
+
+    productosFiltrados.forEach((producto, index) => {
+        createCard(producto, index);
+    });
+
+    actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
+    actualizarTerminoDeBusqueda(query); // Mostrar el término de búsqueda
+});
+
+// Función para obtener el valor del parámetro "query"
+function obtenerParametroQuery() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('query');
+}
+
+// Mostrar productos filtrados por query
+async function mostrarProductosFiltradosConQuery(productosFiltrados, query) {
+    const productosContainer = document.getElementById('card-container');
+    productosContainer.innerHTML = ''; // Limpiar contenido anterior
+    loadedProductsCount = 0; // Reiniciar el contador de productos cargados
+
+    // Mostrar los primeros productosPerLoad productos
+    cargarMasProductos(productosFiltrados);
+
+    actualizarContadorDeResultados(productosFiltrados.length); // Actualizar el contador de resultados
+    actualizarTerminoDeBusqueda(query); // Mostrar el término de búsqueda
+
+    return productosFiltrados;
+}
+
+// Función para actualizar el término de búsqueda en la página
+function actualizarTerminoDeBusqueda(query) {
+    const searchTermElement = document.getElementById('search-term');
+    if (query) {
+        searchTermElement.textContent = `Buscando: ${query}`;
+    } else {
+        searchTermElement.textContent = 'Todos los productos';
+    }
+}
+
+// Llamar a la función para obtener el valor del parámetro "query" y mostrar los productos filtrados
+document.addEventListener('DOMContentLoaded', async () => {
+    const query = obtenerParametroQuery();
+    if (query) {
+        const productosFiltrados = buscarProductos(query);
+        await mostrarProductosFiltradosConQuery(productosFiltrados, query);
+    } else {
+        await mostrarProductosFiltrados();
+        actualizarTerminoDeBusqueda(null); // Establecer "Todos los productos" por defecto
+    }
 });
