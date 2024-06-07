@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZENITH</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+  <link rel="stylesheet" href="./styles/productDetail.css" />
+  <link rel="stylesheet" href="/styles/cards.css" />
+  <link rel="stylesheet" href="/styles/carrousel.css" />
+  <link rel="stylesheet" href="/styles/productos.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/home.css" />
+  <script type="module" src="/scripts/login.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <section>
+      <div class="container-fluid login-logo-Zenith d-flex justify-content-center col-4">
+        <a class="login-logo-Zenith d-flex justify-content-center" href="/index.html"><img class="login-logo-Zenith"
+            src="/src/atomo/logo_zenith.svg" alt="Logo de Zenith"></a>
+      </div>
+    </section>
+    <section>
+      <div class="container mb-3 mt-5 position-static px-16">
+        <label for="username" class="form-label">Email</label>
+        <input type="email" class="form-control-login" id="email" placeholder="Ingresa tu Email">
+      </div>
+      <div class="container mb-4 mt-5 position-static px-16">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" class="form-control-login" id="password"
+          placeholder="Ingresa tu contraseña">
+      </div>
+      <div class="container d-flex justify-content-center position-static px-16">
+        <p class="texto-login mx-2">¿Aún no tienes cuenta?</p><a class="link-registro-login decoration-none"
+          href="./registro2.html"> Registrate </a>
+      </div>
+      <div class="login-boton d-flex justify-content-center my-2">
+        <label for="submit"></label>
+<button type="submit" id="submit" type="login" class="registro2-boton-submit">Iniciar sesion</button>      </div>
+      <div class="container d-flex justify-content-center my-5">
+        <img class="login-logo-google mx-3" src="/src/atomo/bi_google.svg" alt="logo de google">
+        <!-- <img class="login-logo-facebook mx-3" src="/src/atomo/bi_facebook.svg" alt="logo de facebook"> -->
+      </div>
+      <div class="container d-flex justify-content-center px-16 pt-4 mt-5">
+        <a class="link-olvido-contraseña mx-2 position-absolute d-flex justify-content-center" href="./registro.html">
+          <p class="link-olvido-contraseña">¿Olvidaste tu contraseña?</p>
+        </a>
+        <input type="input" class="form-control-login-sub" id="exampleFormControlInput1" placeholder="">
+      </div>
+    </section>
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+
+
+  <script src="/scripts/login.js"></script>
+
+</body>
+
+</html>
