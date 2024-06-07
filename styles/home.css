@@ -240,12 +240,13 @@
   height: 20px;
   font-size: 1.5rem;
   margin-top: 0;
-  margin-right: 10px;
+  margin-right: 0px;
+  margin-bottom: 2px;
 }
 
 .form-check-input:checked {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: #ffffff;
+  border-color: #ffffff;
   background-image: url("/src/atomo/black\ check.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -273,6 +274,26 @@ border: 1px;
 }
 
 .filtro-boton-submit:hover {
+  width: 100%;
+  background-color: #000;
+  border-color: #000;
+  width: 150px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+#aplicar{
+margin-top: 16px;
+width: 100%;
+color: rgb(255, 255, 255);
+width: 150px;
+height: 48px;
+border-radius: 8px;
+background-color: #8C8C8C;
+border: 1px;
+}
+
+#aplicar:hover {
   width: 100%;
   background-color: #000;
   border-color: #000;
