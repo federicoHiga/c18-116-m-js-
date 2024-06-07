@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const hoverBlanco = document.querySelector('.colorProducto-colorBlanco');
     const hoverRojo = document.querySelector('.colorProducto-colorRojo');
     const hoverAzul = document.querySelector('.colorProducto-colorAzul');
-    const hoverAmarillo = document.querySelector('.colorProducto-colorAmarillo');
+    const hoverVerde = document.querySelector('.colorProducto-colorVerde');
 
     hoverNegro.addEventListener('click', () => {
         hoverNegro.classList.toggle('red-border');
@@ -269,8 +269,8 @@ document.addEventListener('DOMContentLoaded', () => {
         hoverAzul.classList.toggle('red-border');
     });
 
-    hoverAmarillo.addEventListener('click', () => {
-        hoverAmarillo.classList.toggle('red-border');
+    hoverVerde.addEventListener('click', () => {
+        hoverVerde.classList.toggle('red-border');
     });
 });
 // Función de búsqueda

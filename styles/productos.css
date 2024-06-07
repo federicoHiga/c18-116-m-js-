@@ -245,14 +245,14 @@ hr{
     background-color: blue;
     padding: 2px;
 }
-.colorProducto-colorAmarillo{
+.colorProducto-colorVerde{
     display: inline;
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    background-color: yellow;
+    background-color: green;
 }
 
 .red-border {
-    border: 2px solid #661010;
+    border: 3px solid #661010;
 }
