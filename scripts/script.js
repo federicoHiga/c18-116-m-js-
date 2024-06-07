@@ -2,6 +2,10 @@
 async function getProducts() {
     try {
         const response = await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json");
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         if (data) {

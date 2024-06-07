@@ -6,7 +6,7 @@ let filtros = {
 };
 let allProducts = []; // Almacena todos los productos
 let loadedProductsCount = 0; // Cuenta los productos cargados
-const productsPerLoad = 6; // Número de productos a cargar por clic
+const productsPerLoad = 8; // Número de productos a cargar por clic
 
 async function getProducts() {
     try {

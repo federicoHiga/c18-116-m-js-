@@ -32,7 +32,7 @@
                 <!--Acordion-->
                 <ul class="navbar-nav d-flex justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./screens/login.html">Iniciar sesión</a>
+                    <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a>
                   </li>
                   <li class="nav-item justify-content-evenly">
                     <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
@@ -123,27 +123,25 @@
                           </div>
                   </li>
                 </ul>
-                <div class="iconos-RRSS-nav container-fluid d-flex justify-content-center">
-                  <div class="row">
-                    <div class="col d-flex justify-content-center">
-                      <a class="nav-link active d-flex justify-content-center" aria-current="page" href="#">¿Necesitas
-                        Ayuda?</a>
-                    </div>
-                    <div class="iconos-RRSS-nav d-flex flex-wrap">
-                      <div>
-                        <img class="iconos-RRSS-nav-insta row" src="../src/atomo/instagram.svg" width="24"
-                          alt="Logo de Instagram">
-                        <div>
-                          <img class="iconos-RRSS-nav-face row" src="../src/atomo/facebook.svg" width="24"
-                            alt="Logo de Facebook">
-                        </div>
+                <section class="container-fluid d-flex justify-content-center">
+                  <div class="iconos-RRSS-nav container-fluid d-flex justify-content-center">
+                      <div class="row">
+                          <a class="iconos-RRSS-nav-texto" aria-current="page" href="#">¿Necesitas Ayuda?</a>
                       </div>
+                  </div>    
+                  </section>
+                  <div class="iconos-RRSS-nav w-100"> 
+                    <div class="iconos-RRSS-nav-img container d-flex justify-content-center aling.align-items-center">
+                      <a href="#"><img class="iconos-RRSS-nav-insta" src="/src/atomo/instagram.svg" width="23" alt="Logo de Instagram"></a>
+                      <a href="#"></a><img class="iconos-RRSS-nav-face" src="/src/atomo/facebook.svg" width="25" alt="Logo de Facebook"></a>
                     </div>
                   </div>
-                </div>
-          </nav>
+              </div>
+            </div>
+          </div>
+        </nav> 
         </div>
-        <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 pb-2">
+        <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 mt-2">
           <a href="/index.html">
             <img src="../src/atomo/logo_zenith.svg" width="150" alt="Logo de Zenith">
           </a>
@@ -162,7 +160,7 @@
 
         </div>
         <!-- CART -->
-        <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-0 ml-2"
+        <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-3 ml-2"
           data-bs-toggle="modal" data-bs-target="#cartModal">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag"
             viewBox="0 0 16 16">
@@ -456,11 +454,12 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="../screens/scripts/productDetail.js"></script>
 <script src="../scripts/productos.js"></script>
+<script src="../scripts/cardPrueba.js"></script>
   
 <script>
-  console.log("fuera");
+  // console.log("fuera");
   init(() => {
-    console.log("dentro");
+    // console.log("dentro");
     const productId = new URL(document.location.toString()).searchParams.get('productId');
     const productsArray = Object.values(products);
     const product = productsArray.find(p => p.id == productId);
@@ -500,7 +499,7 @@
     colores.forEach(function (color) {
       colorsDiv.appendChild(color);
     });
-    // console.log('colores desde html',colores);
+    console.log('colores desde html',colores);
     //filtro colores
 
     //cart inicio
@@ -508,7 +507,9 @@
       // Check if cart data exists in localStorage
       let cart = JSON.parse(localStorage.getItem('cart')) || [];
       // Find existing product in cart (if any)
+      // findIndex evalua la condition si es true return: 1 sino: -1
       const existingProductIndex = cart.findIndex(item => item.id === product.id);
+      console.log("exist: ",existingProductIndex)
       const cartCount = document.querySelector("#cartCount")
 
       if (existingProductIndex !== -1) {
@@ -527,7 +528,7 @@
       const count = cart[existingProductIndex !== -1 ? existingProductIndex : cart.length - 1].quantity
       cartCount.innerHTML = count
       console.log(`${product.nombre} added to cart (quantity: ${cart[existingProductIndex !== -1 ? existingProductIndex : cart.length - 1].quantity})`);
-      console.log('let cart: ', count)
+      console.log('cart data: ', cart)
     }
       //call
     const addToCartButton = document.getElementById('btnAddToCart');
@@ -538,7 +539,7 @@
   });
 
   const product = products.find(p => p.id == productId);
-
+leerDatos();
 </script>
 <script src="./scripts/cart.js"></script>
 <script src="./scripts/filtro.js"></script>
