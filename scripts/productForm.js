@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function cargarEventos() {
   document.getElementById("nuevo-producto").addEventListener("submit", function(event) {
     event.preventDefault();
-    // nuevoProducto();
+    this.reset();
   }, false);
 }
 
@@ -113,9 +113,12 @@ await fetch("https://c-18-116-m-html-default-rtdb.firebaseio.com/products.json",
     },
     body: JSON.stringify(nuevoElemento)
 })
+
 }
 
 
+
+// PREGUNTAR SI ESTO SE USA EN OTRA
 
 // Función para obtener y manipular datos
 // Función para leer datos de Firebase
