@@ -24,7 +24,7 @@ var producto = [
     descripcion: descripcionDetail,
     precio: precioDetail,
     // tipo: usoDetail,
-    medida: talleDetail,
+    medida: [talleDetail],
     color: [colorDetail],
     // genero: generoDetail,
     img1: img1Detail,
@@ -93,20 +93,3 @@ colorDetail = document.getElementById("colorDetail");
 
 
 // HASTA ACÁ NO VA
-document.getElementById("nuevo-producto").addEventListener("click", function(event){
-  event.preventDefault()
-});
-
-
-
-
-
-// const precioDetail = document.querySelector("#precioDetail");
-// const marcaDetail = document.querySelector("#marcaDetail")
-
-
-// marcaDetail.innerHTML= productos.marca
-// precioDetail.innerHTML= ("$", product.precio)
-
-
-// 
