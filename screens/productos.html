@@ -215,25 +215,26 @@
               <label class="form-check-label" for="exampleCheck1">
                 Recomendados
               </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
-            </div>
-            <div class="filtro-form-check">
-              <label class="form-check-label" for="exampleCheck1">
-                Precio, menor a mayor
-              </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
-            </div>
-            <div class="filtro-form-check">
-              <label class="form-check-label" for="exampleCheck1">
-                Precio, mayor a menor
-              </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="radio" value="true" id="exampleCheck1" name="orden">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Más Vendidos
               </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="radio" value="true" id="exampleCheck1" name="orden">
+            </div>
+            <hr>
+            <div class="filtro-form-check">
+              <label class="form-check-label" for="menor-mayor">
+                Precio, menor a mayor
+              </label>
+              <input class="form-check-input-recomendados text-primary" type="radio" value="true" id="menor-mayor" name="precio">
+            </div>
+            <div class="filtro-form-check">
+              <label class="form-check-label" for="mayor-menor">
+                Precio, mayor a menor
+              </label>
+              <input class="form-check-input-recomendados text-primary" type="radio" value="true" id="mayor-menor" name="precio">
             </div>
           </div>
         </div>
@@ -340,10 +341,10 @@
                           <div class="filtro-off list-group">
                             <div class="precio row"> 
                               <div class="col d-flex justify-content-end"> 
-                                <input type="text" class="form-control-xs form-control-precio" placeholder="$ 0" aria-label="$ 0"> 
+                                <input type="number" class="form-control-xs form-control-precio" id="minimo" name="minimo" placeholder="$ 0" aria-label="$ 0"> 
                               </div> 
                               <div class="col"> 
-                                <input type="text" class="form-control-xs form-control-precio" placeholder="$ 10.000" aria-label="$ 10.000"> 
+                                <input type="number" class="form-control-xs form-control-precio" id="maximo" name="maximo" placeholder="$ 10.000" aria-label="$ 10.000"> 
                               </div> 
                             </div>
                           </div>
@@ -470,7 +471,7 @@
                      </ul>
                     <div class="filtro-boton d-flex justify-content-center m-0">
                       <label for="submit"></label>
-                        <input class="filtro-boton-submit" type="submit" value="Aplicar" id="aplicar">
+                        <input class="filtro-boton-submit" type="submit" value="Aplicar" id="aplicar" onclick="filtrarPrecio()">
                     </div>
                   </div>
                 </div>

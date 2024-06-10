@@ -103,7 +103,7 @@
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
     main {
         margin-top: 0;
     }
@@ -112,7 +112,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
     main {
         margin-top: 0;
     }
@@ -170,6 +170,7 @@ main .carousel-item img {
 }
 hr{
     width: 90%;
+    margin: 5px;
 }
 
 .titulo-de-busqueda{
