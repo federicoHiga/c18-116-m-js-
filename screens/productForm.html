@@ -16,7 +16,9 @@
       
         </script>
 </head>
-<body>
+<body class="container">
+
+
     <header>
         <!--Barra de navegacion -->
         <div class="container-fluid p-1">
@@ -188,75 +190,104 @@
           </div>
           <!-- MODAL -->
       </header>
+
     <div>
-        <h1>Agrega producto al e-commerce</h1>
+        <h3 class="containter d-flex justify-content-center mt-2 mb-3">Agrega producto <br>al e-commerce</h3>
             <form id="nuevo-producto" enctype="multipart/form-data">
-                <div class="mb-3">
-                <label for="nombreDetail">Nombre <input type="text" name="nombreDetail" id="nombreDetail" placeholder="Nombre del producto">
-                </label>
+                <div class="m-3 d-flex justify-content-around">
+                <label class="mr-1" for="nombreDetail">Nombre</label>
+                <input type="text" name="nombreDetail" id="nombreDetail" placeholder="Nombre del producto">
             </div>
-            <div class="mb-3">
-                <label for="marcaDetail">Marca <input type="text" name="marcaDetail" id="marcaDetail" placeholder="">
-                </label>
+            <div class="m-3 d-flex justify-content-around">
+                <label for="marcaDetail">Marca</label>
+                <input type="text" name="marcaDetail" id="marcaDetail" placeholder="Marca zapatilla">
             </div>
-            <div class="mb-3">
-                <label for="descripcionDetail">Descripción <textarea placeholder="" name="descripcionDetail" id="descripcionDetail"></textarea>
-                </label>
+            <div class="mb-3 d-flex justify-content-center flex-wrap">
+                <label class="col-12 d-flex justify-content-center mb-2" for="descripcionDetail">Descripción</label>
+                <textarea margin-bottom="2px" rows="4" cols="30" resize="both" placeholder="Añadir descripción" name="descripcionDetail" id="descripcionDetail"></textarea>
             </div>
-            <div class="mb-3">
-                <label for="precioDetail">Precio <input type="number" name="precioDetail" id="precioDetail" placeholder="">
-                </label>
+            <div class="my-3 d-flex justify-content-around">
+                <label for="precioDetail">Precio</label>
+                <input type="number" name="precioDetail" id="precioDetail" placeholder=" 0$">
             </div>
-            <div class="mb-3"> <label for="usoDetail">USO:
-                    <select name="usoDetail" id="usoDetail" class="form-control">
+            <div class="m-3 d-flex justify-content-between py-2 px-3"> 
+                <label for="usoDetail">USO:</label>
+                    <select class="boton-productForm" name="usoDetail" id="usoDetail" class="form-control">
                         <option value="urbano">Urbano</option>
                         <option value="deportivo">Deportivo</option>
                         <option  value="de vestir">De vestir</option>
-                    </select></label>
+                    </select>
             </div>
-            <div class="mb-3">
-                <label for="generoDetail">Genero:
-                    <select name="generoDetail" id="generoDetail" class="form-control">
+            <div class="m-3 d-flex justify-content-between py-2 px-3">
+                <label for="generoDetail">Genero:</label>
+                    <select class="boton-productoForm" name="generoDetail" id="generoDetail" class="form-control">
                         <option value="Masculino">Masculino</option>
                         <option value="Femenino">Femenino</option>
-                        <option value="Niños">Niños</option>
-                        <option value="Niñas">Niñas</option>
-                        <option value="Hot sale">Liquidación</option>
-
-
-                    </select></label>
+                        <option value="Para Chicos">Para chicos</option>
+                    </select>
             </div>
-            <div class="mb-3">
-                <label for="talles">Tallas:</label>
-                <input id="talleDetail" name="tallas" type="checkbox" value="25" />25
-                <input id="talleDetail" name="tallas" type="checkbox" value="26" />26
-                <input id="talleDetail" name="tallas" type="checkbox" value="27" />27
-                <input id="talleDetail" name="tallas" type="checkbox" value="28" />28
-                <input id="talleDetail" name="tallas" type="checkbox" value="29" />29
-                <input id="talleDetail" name="tallas" type="checkbox" value="30" />30
-                <input id="talleDetail" name="tallas" type="checkbox" value="31" />31
-                <input id="talleDetail" name="tallas" type="checkbox" value="32" />32
-                <input id="talleDetail" name="tallas" type="checkbox" value="33" />33
-                <input id="talleDetail" name="tallas" type="checkbox" value="34" />34
-                <input id="talleDetail" name="tallas" type="checkbox" value="35" />35
-                <input id="talleDetail" name="tallas" type="checkbox" value="36" />36
-                <input id="talleDetail" name="tallas" type="checkbox" value="37" />37
-                <input id="talleDetail" name="tallas" type="checkbox" value="38" />38
-                <input id="talleDetail" name="tallas" type="checkbox" value="39" />39
-                <input id="talleDetail" name="tallas" type="checkbox" value="40" />40
-                <input id="talleDetail" name="tallas" type="checkbox" value="41" />41
-                <input id="talleDetail" name="tallas" type="checkbox" value="42" />42
-                <input id="talleDetail" name="tallas" type="checkbox" value="43" />43
-                <input id="talleDetail" name="tallas" type="checkbox" value="44" />45
-                <input id="talleDetail" name="tallas" type="checkbox" value="44" />46
-                <input id="talleDetail" name="tallas" type="checkbox" value="44" />47
-                <input id="talleDetail" name="tallas" type="checkbox" value="44" />48
-                <input id="talleDetail" name="tallas" type="checkbox" value="44" />49
+            <div class="m-3 d-flex flex-wrap col-2 justify-content-end">
+                <label class="mb-3" for="talles">Tallas:</label>
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="25">25
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="26">26
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="27">27
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="28">28
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="29">29
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="30">30
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="31">31
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="32">32
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="33">33
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="34">34
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="35">35
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="36">36
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="37">37
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="38">38
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="39">39
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="40">40
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="41">41
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="42">42
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="43">43
+                <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="44">44
+            </div>  
+            <section class="m-3 d-flex flex-wrap col-3 justify-content-between ">
+                <div>
+                <label class="labeldecolor p-3 w-100" for="colorDetail">Color:</label>
+                </div>
 
-               </div>  
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="Color" type="checkbox" value="Blanco">Blanco
+                </div>
+
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Negro">Negro
+                </div>
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Verde">Verde
+                </div>
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Gris">Gris
+                </div>
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Café">Café
+                </div>
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Amarillo">Amarillo
+                </div>
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Rojo">Rojo
+                </div>
+                <div class="d-flex">
+                    <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Azul">Azul
+                </div>
+                </div>
+            </section>
+
             <div class="mb-3">
-                <label for="colores">Color:</label>
-                    <input id="colorDetail" name="color" type="checkbox" value="Blanco" />Blanco
+
+                <label class="d-flex justify-content-center" for="formFile" class="form-label">Ingrese imagen principal</label>
+
+                <label for="colores">Color:
+                    <input id="colorDetail" name="Color" type="checkbox" value="Blanco" />Blanco
                     <input id="colorDetail" name="color" type="checkbox" value="Negro" />Negro
                     <input id="colorDetail" name="color" type="checkbox" value="Verde" />Verde
                     <input id="colorDetail" name="color" type="checkbox" value="Rojo" />Rojo
@@ -265,21 +296,21 @@
             </div>
             <div class="mb-3">
                 <label for="img1Detail" class="form-label">Ingrese imagen principal</label>
-                <input class="form-control" type="file" name="img1" id="img1" accept ="image/jpeg, image/png, image/jpg">
-              </div>
+
+                <input class="form-control" type="file" name="img1" id="img1" accept ="image/jpeg, image/png, image/jpg">              </div>
               <div class="mb-3">
-                <label for="formFile" class="form-label">Primer imagen secundaria</label>
+                <label class="d-flex justify-content-center" for="formFile" class="form-label">Primer imagen secundaria</label>
                 <input class="form-control" type="file" name="img2" id="img2" accept ="image/jpeg, image/png, image/jpg">
               </div>
               <div class="mb-3">
-                <label for="formFile" class="form-label">Segunda imagen secundaria</label>
+                <label class="d-flex justify-content-center" for="formFile" class="form-label">Segunda imagen secundaria</label>
                 <input class="form-control" type="file" name="img3" id="img3" accept ="image/jpeg, image/png, image/jpg">
               </div>
-            <div class="mb-3">
-                <label for="submit">
-                <input type="submit" id="submit" value="nuevo producto" onclick="nuevoElemento(), enviar()">
-            </label>
-            </div>
+
+              <div class="nuevoproducto-boton d-flex justify-content-center m-0">
+                <label for="submit"></label>
+                <input class="nuevoproducto-boton-submit" type="submit" id="submit" value="Nuevo producto" onclick="nuevoElemento(), enviar()">
+              </div>
         </form>
     </div>
     
