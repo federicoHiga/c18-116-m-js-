@@ -33,7 +33,7 @@
                 <!--Acordion-->
                 <ul class="navbar-nav d-flex justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Iniciar sesión</a>
+                    <a class="nav-link active" aria-current="page" href="/screens/login.html">Iniciar sesión</a>
                   </li>
                   <li class="nav-item justify-content-evenly">
                     <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
@@ -194,7 +194,8 @@
         <a href="../index.html">
           <img src="../src/atomo/Frame 29.png" alt="volver" width="40px" height="40px">
         </a>
-        <p class="textoProductos d-flex justify-content-center mb-1"> Hombre / Zapatillas Deportivas </p>
+        <p class="textoProductos d-flex justify-content-center mb-1" id="search-term">Todos los productos</p>
+
       </div>
       <div id="resultados">
       </div>
@@ -215,25 +216,25 @@
               <label class="form-check-label" for="exampleCheck1">
                 Recomendados
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Precio, menor a mayor
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Precio, mayor a menor
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
             <div class="filtro-form-check">
               <label class="form-check-label" for="exampleCheck1">
                 Más Vendidos
               </label>
-              <input class="form-check-input text-primary" type="checkbox" value="true" id="exampleCheck1">
+              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
             </div>
           </div>
         </div>
@@ -411,11 +412,11 @@
                             <div class="accordion-body p-0">
                               <div class="filtro-off list-group align-items-center py-2">
                                 <div class="cajaColor">
-                                  <button class="colorProducto color-negro" type="checkbox" value="true" id="Negro" data-filter-type="color"></button>
-                                  <button class="colorProducto color-blanco" type="checkbox" value="true" id="Blanco" data-filter-type="color"></button>
-                                  <button class="colorProducto color-rojo" type="checkbox" value="true" id="Rojo" data-filter-type="color"></button>
-                                  <button class="colorProducto color-azul" type="checkbox" value="true" id="Azul" data-filter-type="color"></button>
-                                  <button class="colorProducto color-amarillo" type="checkbox" value="true" id="Amarillo" data-filter-type="color"></button>
+                                  <button class="colorProducto-colorNegro" type="checkbox" value="true" id="Negro" data-filter-type="color"></button>
+                                  <button class="colorProducto-colorBlanco" type="checkbox" value="true" id="Blanco" data-filter-type="color"></button>
+                                  <button class="colorProducto-colorRojo" type="checkbox" value="true" id="Rojo" data-filter-type="color"></button>
+                                  <button class="colorProducto-colorAzul" type="checkbox" value="true" id="Azul" data-filter-type="color"></button>
+                                  <button class="colorProducto-colorVerde" type="checkbox" value="true" id="Verde" data-filter-type="color"></button>
                                 </div>
                               </div>
                             </div>
@@ -484,28 +485,20 @@
     <div class="filters"></div>
     <div class="cantidad-resultados"></div>
     <div id="card-container"></div>
-   <!--- <div class="button-container">
-      <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
-    </div> -->
+
     <div class="button-container">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link bg-white shadow-none" href="#" aria-label="Previous">
-              <span aria-hidden="true"><image class="imagen-flecha-izq" src="/src/images/flechaizq.png"></span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link bg-white shadow-none" href="#">1</a></li>
-          <li class="page-item"><a class="page-link bg-white shadow-none" href="#">2</a></li>
-          <li class="page-item"><a class="page-link bg-white shadow-none" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link bg-white shadow-none" href="#" aria-label="Next">
-              <span aria-hidden="true"><image class="imagen-flecha-der" src="/src/images/flechader.png"></span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div> 
+      <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
+    </div>
+
+    <!--
+    
+        Paginacion para un futuro
+    <div class="button-container">
+
+   - <div class="button-container">
+      <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
+    </div>
+    <!-- <div class="button-container">
 
 
     <button id="back-to-top"><img src="../src/atomo/flecha arriba.png" alt="↑"></button>
@@ -566,8 +559,5 @@
   </footer>
 </body>
 <script src="../scripts/productos.js"></script>
-<!-- <script>
-  init(loadCards);
-</script> -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </html>
