@@ -219,7 +219,8 @@
 }
 
 .form-check-input-recomendados {
-  background-color: rgb(255, 255, 255); 
+  background-color: rgb(255, 255, 255);
+  background-image: url("/src/atomo/black\ check.png"); 
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -233,6 +234,7 @@
 
 .form-check-input {
   background-color: rgb(255, 255, 255); 
+  background-image: url("/src/atomo/black\ check.png"); 
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
