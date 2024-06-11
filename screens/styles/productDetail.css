@@ -114,8 +114,9 @@ width: 20px;
 height: 20px;
 font-size: 1.5rem;
 margin-top: 4px;
-margin-right: 10px;
-margin-bottom: 10px;
+margin-right: 5px;
+margin-left: 5px;
+margin-bottom: 0px;
 }
 
 .checkboxcolor{
@@ -128,10 +129,10 @@ background-position: center;
 width: 20px;
 height: 20px;
 font-size: 1.5rem;
-margin-top: 4px;
+margin-top: 10px;
 margin-right: 10px;
-margin-bottom: 10px;
-margin-left: 10px;
+margin-bottom: 0px;
+margin-left: 2px;
 
 }
 
