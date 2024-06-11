@@ -2,300 +2,268 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carga dep productos</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="../screens/styles/productDetail.css">
-    <link rel="stylesheet" href="../styles/carrousel.css">
-    <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/home.css" />
-    <script type="text/javascript">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carga dep productos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../screens/styles/productDetail.css">
+  <link rel="stylesheet" href="../styles/carrousel.css">
+  <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/home.css" />
+  <script type="text/javascript">
 
-        function stopDefAction(evt) {
-          evt.preventDefault();
-        }
-        </script>
+
+  </script>
 </head>
-<body>
-    <header>
-        <!--Barra de navegacion -->
-        <div class="container-fluid p-1">
-          <div class="row d-flex justify-content-between">
-            <div class="p-1 position-static">
-              <nav class="navbar navbar-expand-xl navbar-light">
-                <div class="container-fluid">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler"
-                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse justify-content-between container-fluid" id="nav-toggler">
-                    <a class="navbar-brand" href="/index.html">
-                      <img src="../src/atomo/logo_zenith.svg" width="75" alt="Logo de Zenith">
-                    </a>
-                    <!--Acordion-->
-                    <ul class="navbar-nav d-flex justify-content-center">
-                      <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/screens/login.html">Iniciar sesión</a>
-                      </li>
-                      <li class="nav-item justify-content-evenly">
-                        <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
-                            class="nav-link active" aria-current="page" href="#">Ver Todo</a></p>
-                      </li>
-                      <li class="nav-item">
-                        <div class="accordion" id="accordionExample">
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Hombre
-                              </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show"
-                              data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <div class="list-group align-items-center">
-                                  <a href="/screens/productos.html" class="list-group-item list-group">Zapatos Casuales</a>
-                                  <a href="/screens/productos.html" class="list-group-item list-group">Zapatos de Vestir</a>
-                                  <a href="/screens/productos.html" class="list-group-item list-group">Botas y Botines</a>
-                                  <a href="/screens/productos.html" class="list-group-item list-group">Zapatillas
-                                    Urbanas</a>
-                                  <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
-                                  <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header">
-                              <button class="accordion-button bg-white shadow-none collapsed" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                aria-controls="collapseTwo">
-                                Mujer
-                              </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                              <div class="accordion-body">
-                                <div class="list-group align-items-center">
-                                  <a href="#" class="list-group-item list-group">Zapatos Mujer</a>
-                                  <a href="#" class="list-group-item list-group">Botas y Botines</a>
-                                  <a href="#" class="list-group-item list-group">Sandalias</a>
-                                  <a href="#" class="list-group-item list-group">Zapatillas Urbanas</a>
-                                  <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
-                                  <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header">
-                                <button class="accordion-button bg-white shadow-none collapsed" type="button"
-                                  data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                                  aria-controls="collapseThree">
-                                  Niño
-                                </button>
-                              </h2>
-                              <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                  <div class="list-group align-items-center">
-                                    <a href="#" class="list-group-item list-group">Zapatos Niños</a>
-                                    <a href="#" class="list-group-item list-group">Zapatos Niñas</a>
-                                    <a href="#" class="list-group-item list-group">Zapatos Bebé</a>
-                                    <a href="#" class="list-group-item list-group">Zapatillas</a>
-                                    <a href="#" class="list-group-item list-group">Sandalias</a>
-                                    <a href="#" class="list-group-item list-group">Ver todo Niños</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="accordion-item">
-                                <h2 class="accordion-header">
-                                  <button class="accordion-button bg-white shadow-none collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false"
-                                    aria-controls="collapseFour">
-                                    Hot Sale
-                                  </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse"
-                                  data-bs-parent="#accordionExample">
-                                  <div class="accordion-body">
-                                    <div class="list-group align-items-center">
-                                      <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
-                                      <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
-                                      <a href="#" class="list-group-item list-group">Ver todo Niños</a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                      </li>
-                    </ul>
-                    <section class="container-fluid d-flex justify-content-center">
-                      <div class="iconos-RRSS-nav container-fluid d-flex justify-content-center">
-                          <div class="row">
-                              <a class="iconos-RRSS-nav-texto" aria-current="page" href="#">¿Necesitas Ayuda?</a>
-                          </div>
-                      </div>    
-                      </section>
-                      <div class="iconos-RRSS-nav w-100"> 
-                        <div class="iconos-RRSS-nav-img container d-flex justify-content-center aling.align-items-center">
-                          <a href="#"><img class="iconos-RRSS-nav-insta" src="/src/atomo/instagram.svg" width="23" alt="Logo de Instagram"></a>
-                          <a href="#"></a><img class="iconos-RRSS-nav-face" src="/src/atomo/facebook.svg" width="25" alt="Logo de Facebook"></a>
-                        </div>
-                      </div>
-                  </div>
-                </div>
-              </div>
-            </nav>
-            </div>
-            <div class="logo-Zenith d-flex align-item-start justify-content-center col-4 mt-2">
-              <img src="../src/atomo/logo_zenith.svg" width="150" alt="Logo de Zenith">
-            </div>
-            <!--Barra de navegacion-->
-            <!--Barra de Busqueda-->
-            <div class="barraBusqueda container-fluid py-2 d-flex justify-content-center">
-              <form class="d-flex col-11 justify-content-center" role="search">
-                <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search" id="search-bar">
-                <button class="btn btn-outline-success mx-0" type="submit"><img src="../src/atomo/serch.svg"></button>
-              </form>
-              <!--Barra de Busqueda-->
-            </div>
-            <!-- CART -->
-            <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-3 ml-2"
-              data-bs-toggle="modal" data-bs-target="#cartModal">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag"
-                viewBox="0 0 16 16">
-                <path
-                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
-              </svg>
-            </div>
-            <!-- CART -->
-          </div>
-          <!-- MODAL -->
-          <div class="modal" tabindex="-1" aria-labelledby="cartModal" id="cartModal">
-            <div class="modal-dialog modal-fullscreen">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title">Carrito de compras</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- MODAL -->
-      </header>
+
+<body class="container">
+
+
+  <header>
+      <div><h3 class="containter d-flex justify-content-center mt-2 mb-3">
+        <a class="navbar-brand" href="/index.html">
+                  <img src="../src/atomo/logo_zenith.svg" width="200" style="margin-left: auto; margin-right: auto;" alt="Logo de Zenith">
+                </a>
+           </header>
+
+  <div>
     <div>
-        <h1>Agrega producto al e-commerce</h1>
-            <form id="nuevo-producto" enctype="multipart/form-data">
-                <div class="mb-3">
-                <label for="nombreDetail">Nombre <input type="text" name="nombreDetail" id="nombreDetail" placeholder="Nombre del producto">
+      <h3 class="containter d-flex justify-content-center mt-2 mb-3">Agrega producto <br>al e-commerce</h3>
+      <form id="nuevo-producto" enctype="multipart/form-data">
+        <div class="m-3 pt-2 d-flex justify-content-around">
+          <label class="mr-1" for="nombreDetail">Nombre</label>
+          <input type="text" name="nombreDetail" id="nombreDetail" placeholder="Nombre del producto">
+        </div>
+        <div class="m-3 pt-2 d-flex justify-content-around">
+          <label for="marcaDetail">Marca</label>
+          <input type="text" name="marcaDetail" id="marcaDetail" placeholder="Marca zapatilla">
+        </div>
+        <div class="mb-3 pt-2 d-flex justify-content-center flex-wrap">
+          <label class="col-12 d-flex justify-content-center mb-2" for="descripcionDetail">Descripción</label>
+          <textarea margin-bottom="2px" rows="4" cols="30" resize="both" placeholder="Añadir descripción"
+            name="descripcionDetail" id="descripcionDetail"></textarea>
+        </div>
+        <div class="my-3 pt-4 d-flex justify-content-around">
+          <label for="precioDetail">Precio</label>
+          <input type="number" name="precioDetail" id="precioDetail" placeholder=" 0$">
+        </div>
+        <div class="m-3 d-flex justify-content-between py-2 px-2">
+          <label for="usoDetail">USO:</label>
+          <select class="boton-productForm" name="usoDetail" id="usoDetail" class="form-control">
+            <option value="urbano">Urbano</option>
+            <option value="deportivo">Deportivo</option>
+            <option value="de vestir">De vestir</option>
+          </select>
+        </div>
+        <div class="m-3 d-flex justify-content-between py-2 px-2">
+          <label for="generoDetail">Genero:</label>
+          <select class="boton-productoForm" name="generoDetail" id="generoDetail" class="form-control">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Para Chicos">Para chicos</option>
+          </select>
+        </div>
+        <section class="Tallascheckboxes px-3">
+          <div class="container d-flex justify-content-center">
+            <label class="mb-3" for="talles">Tallas:</label>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <label class="labelCheboxtallas pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="25">25
                 </label>
-            </div>
-            <div class="mb-3">
-                <label for="marcaDetail">Marca <input type="text" name="marcaDetail" id="marcaDetail" placeholder="">
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="26">26
                 </label>
-            </div>
-            <div class="mb-3">
-                <label for="descripcionDetail">Descripción <textarea placeholder="" name="descripcionDetail" id="descripcionDetail"></textarea>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="27">27
                 </label>
-            </div>
-            <div class="mb-3">
-                <label for="precioDetail">Precio <input type="number" name="precioDetail" id="precioDetail" placeholder="">
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="28">28
                 </label>
-            </div>
-            <div class="mb-3"> <label for="usoDetail">USO:
-                    <select name="usoDetail" id="usoDetail" class="form-control">
-                        <option value="urbano">Urbano</option>
-                        <option value="deportivo">Deportivo</option>
-                        <option  value="de vestir">De vestir</option>
-                    </select></label>
-            </div>
-            <div class="mb-3">
-                <label for="generoDetail">Genero:
-                    <select name="generoDetail" id="generoDetail" class="form-control">
-                        <option value="Masculino">Masculino</option>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Para Chicos">Para chicos</option>
-                    </select></label>
-            </div>
-            <div class="mb-3">
-                <label for="talles">Tallas:</label>
-                <input id="talleDetail" name="tallas" type="checkbox" value="25" />25
-                <input id="talleDetail" name="tallas" type="checkbox" value="26" />26
-                <input id="talleDetail" name="tallas" type="checkbox" value="27" />27
-                <input id="talleDetail" name="tallas" type="checkbox" value="28" />28
-                <input id="talleDetail" name="tallas" type="checkbox" value="29" />29
-                <input id="talleDetail" name="tallas" type="checkbox" value="30" />30
-                <input id="talleDetail" name="tallas" type="checkbox" value="31" />31
-                <input id="talleDetail" name="tallas" type="checkbox" value="32" />32
-                <input id="talleDetail" name="tallas" type="checkbox" value="33" />33
-                <input id="talleDetail" name="tallas" type="checkbox" value="34" />34
-                <input id="talleDetail" name="tallas" type="checkbox" value="35" />35
-                <input id="talleDetail" name="tallas" type="checkbox" value="36" />36
-                <input id="talleDetail" name="tallas" type="checkbox" value="37" />37
-                <input id="talleDetail" name="tallas" type="checkbox" value="38" />38
-                <input id="talleDetail" name="tallas" type="checkbox" value="39" />39
-                <input id="talleDetail" name="tallas" type="checkbox" value="40" />40
-                <input id="talleDetail" name="tallas" type="checkbox" value="41" />41
-                <input id="talleDetail" name="tallas" type="checkbox" value="42" />42
-                <input id="talleDetail" name="tallas" type="checkbox" value="43" />43
-                <input id="talleDetail" name="tallas" type="checkbox" value="44" />44
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="29">29
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="30">30
+                </label>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="31">31
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="32">32
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="33">33
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="34">34
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="35">35
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="36">36
+                </label>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="37">37
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="38">38
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="39">39
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="40">40
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="41">41
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="42">42
+                </label>
+              </td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="43">43
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxtallas" id="talleDetail" name="tallas" type="checkbox" value="44">44
+                </label>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <section class="Colorcheckboxes px-3 pb-3">
+          <div class="container d-flex justify-content-center">
+            <label class="labeldecolor p-1" for="colorDetail">Color:</label>
+          </div>
+          <table>
+            <tr>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Blanco">Blanco
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Negro">Negro
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Verde">Verde
+                </label>
+              </td>
+             </tr>
+          </table>
+          <table>
+            <tr>
+            <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Rojo">Rojo
+                </label>
+              </td>
+              <td>
+                <label class="labelCheboxcolor pb-2">
+                  <input class="checkboxcolor" id="colorDetail" name="color" type="checkbox" value="Azul">Azul
+                </label>
+              </td>
+            </tr>
+          </table>
+        </section>
+        <div class="mb-3">
+          <label for="img1Detail" class="form-label">Ingrese imagen principal</label>
 
+          <input class="form-control" type="file" name="img1" id="img1" accept="image/jpeg, image/png, image/jpg">
+        </div>
+        <div class="mb-3">
+          <label class="d-flex justify-content-center" for="formFile" class="form-label">Primer imagen
+            secundaria</label>
+          <input class="form-control" type="file" name="img2" id="img2" accept="image/jpeg, image/png, image/jpg">
+        </div>
+        <div class="mb-3">
+          <label class="d-flex justify-content-center" for="formFile" class="form-label">Segunda imagen
+            secundaria</label>
+          <input class="form-control" type="file" name="img3" id="img3" accept="image/jpeg, image/png, image/jpg">
+        </div>
 
-
-
-            </div>  
-            <div class="mb-3">
-                <label for="colorDetail">Color:
-                    <input id="colorDetail" name="Color" type="checkbox" value="Blanco" />Blanco
-                    <input id="colorDetail" name="color" type="checkbox" value="Negro" />Negro
-                    <input id="colorDetail" name="color" type="checkbox" value="Verde" />Verde
-                    <input id="colorDetail" name="color" type="checkbox" value="Rojo" />Rojo
-                    <input id="colorDetail" name="color" type="checkbox" value="Azul" />Azul
-            </label>
-            </div>
-            <div class="mb-3">
-                <label for="formFile" class="form-label">Ingrese imagen principal</label>
-                <input class="form-control" type="file" name="img1" id="img1Detail">
-              </div>
-              <div class="mb-3">
-                <label for="formFile" class="form-label">Primer imagen secundaria</label>
-                <input class="form-control" type="file" name="img2" id="img2Detail" accept ="image/jpeg, image/png, image/jpg">
-              </div>
-              <div class="mb-3">
-                <label for="formFile" class="form-label">Segunda imagen secundaria</label>
-                <input class="form-control" type="file" name="img3" id="img3Detail">
-              </div>
-            <div class="mb-3">
-                <label for="submit">
-                <input type="submit" id="submit" value="nuevo producto" onclick="nuevoElemento(), enviar()">
-            </label>
-            </div>
-        </form>
+        <div class="nuevoproducto-boton d-flex justify-content-center m-0">
+          <label for="submit"></label>
+          <input class="nuevoproducto-boton-submit" type="submit" id="submit" value="Nuevo producto"
+            onclick="nuevoElemento(), enviar()">
+        </div>
+      </form>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/scripts/productForm.js"></script>
     <!-- <script src="./scripts/productDetail.js"></script> -->
     <script src="../scripts/productos.js"></script>
-    <script>init(()=>{
-    async function getProducts() {
-        try {
+    <script>init(() => {
+        async function getProducts() {
+          try {
             const response = await fetch('http://localhost:3000/products');
             const data = await response.json();
             return data;
-        } catch (error) {
+          } catch (error) {
             console.error('Error al obtener productos:', error);
             return {};
+          }
         }
-    }
-});
+      });
     </script>
 </body>
+
 </html>
