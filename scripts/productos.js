@@ -6,7 +6,7 @@ let filtros = {
 };
 let allProducts = []; // Almacena todos los productos
 let loadedProductsCount = 0; // Cuenta los productos cargados
-const productsPerLoad = 10; // Número de productos a cargar por clic
+const productsPerLoad = 20; // Número de productos a cargar por clic
 
 async function getProducts() {
     try {
@@ -47,6 +47,7 @@ function handleCheckboxClick(event) {
     }
 
     console.log('Filtros seleccionados:', filtros);
+    mostrarProductosFiltrados(); // Mostrar productos filtrados y ordenados después de actualizar los filtros
 }
 
 function filtro(filtros, products) {
@@ -65,6 +66,8 @@ function filtro(filtros, products) {
     });
 }
 
+
+////////////////////////////CREAR CARDS
 function createCard(product, index) {
     const newCard = document.createElement("div");
     const newCarousel = document.createElement("div");
@@ -139,9 +142,49 @@ function createCard(product, index) {
     newCard.appendChild(newCardDetail);
     
     const cardContainer = document.getElementById('card-container');
+    
     cardContainer.appendChild(newCard);
 }
+
+function ordenarProductos(productos) {
+    const menorMayorCheckbox = document.getElementById('menor-mayor').checked;
+    const mayorMenorCheckbox = document.getElementById('mayor-menor').checked;
     
+    // Desmarcar el otro checkbox si uno está marcado
+    if (menorMayorCheckbox) {
+        document.getElementById('mayor-menor').checked = false;
+    } else if (mayorMenorCheckbox) {
+        document.getElementById('menor-mayor').checked = false;
+    }
+    
+    // Ordenar los productos según el checkbox seleccionado
+    if (menorMayorCheckbox) {
+        productos.sort((a, b) => parseInt(a.precio) - parseInt(b.precio));
+    } else if (mayorMenorCheckbox) {
+        productos.sort((a, b) => parseInt(b.precio) - parseInt(a.precio));
+    }
+    
+    // Mostrar los productos ordenados
+    mostrarProductosOrdenados(productos);
+}
+
+async function aplicarFiltros() {
+    let productosFiltrados = allProducts;
+    
+    // Filtrar por precio
+    const minimo = parseInt(document.getElementById('minimo').value, 10);
+    const maximo = parseInt(document.getElementById('maximo').value, 10);
+    
+    if (!isNaN(minimo) && !isNaN(maximo) && minimo < maximo) {
+        productosFiltrados = filtrarPrecio(productosFiltrados);
+    }
+    
+    // Aplicar otros filtros
+    productosFiltrados = filtro(filtros, productosFiltrados);
+    
+    return productosFiltrados;
+}
+
 async function aplicarFiltrosYMostrar() {
     let productosFiltrados = allProducts;
 
@@ -150,6 +193,17 @@ async function aplicarFiltrosYMostrar() {
 
     // Aplicar otros filtros
     productosFiltrados = filtro(filtros, productosFiltrados);
+
+    // Ordenar productos si algún checkbox de orden está marcado
+    const menorMayorCheckbox = document.getElementById('menor-mayor').checked;
+    const mayorMenorCheckbox = document.getElementById('mayor-menor').checked;
+
+    if (menorMayorCheckbox || mayorMenorCheckbox) {
+        ordenarProductos(productosFiltrados);
+    } else {
+        // Mostrar los productos filtrados sin ordenación
+        mostrarProductosOrdenados(productosFiltrados);
+    }
 
     // Actualizar el contador de resultados
     actualizarContadorDeResultados(productosFiltrados.length);
@@ -166,6 +220,7 @@ function mostrarProductosOrdenados(productos) {
     actualizarContadorDeResultados(productos.length); // Actualizar el contador de resultados
 }
 
+////////MENSAJE DE CUANTOS PRODUCTOS SE CARGARON
 function actualizarContadorDeResultados(cantidad) {
     const resultados = document.getElementById("resultados");
     resultados.innerHTML = ''; // Limpiar el contenido anterior
@@ -176,17 +231,18 @@ function actualizarContadorDeResultados(cantidad) {
 
     resultados.appendChild(resultado);
 }
-
+//lector de todos los checkbox
 const checkboxes = document.querySelectorAll('input[type="checkbox"], .cajaColor button');
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('click', handleCheckboxClick);
 });
-
+//aplicar filtros
 const aplicarButton = document.getElementById('aplicar');
 aplicarButton.addEventListener('click', async () => {
     await aplicarFiltrosYMostrar();
 });
 
+///////////////////BOTON DE CARGAR MAS
 function cargarMasProductos(productosFiltrados) {
     const productosContainer = document.getElementById('card-container');
     const productosACargar = productosFiltrados.slice(loadedProductsCount, loadedProductsCount + productsPerLoad);
@@ -211,16 +267,18 @@ loadMoreButton.addEventListener('click', () => {
     cargarMasProductos(productosFiltrados);
 });
 
+/////////////////inicio pagina
 async function init(onFinish) {
     const data = await getProducts();
-    allProducts = data;
+    products = data;
     onFinish();
 }
-
+///////////////redireccion a producDetail
 function redirectToPage(url) {
     window.location.href = url;
 }
 
+//////////////////////////////// Mostrar botón de "Volver arriba" después de cierto desplazamiento
 window.onscroll = function() {
     const backToTopButton = document.getElementById('back-to-top');
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
@@ -230,6 +288,7 @@ window.onscroll = function() {
     }
 };
 
+// Funcionalidad del botón de "Volver arriba"
 document.getElementById('back-to-top').addEventListener('click', function() {
     window.scrollTo({
         top: 0,
@@ -237,6 +296,7 @@ document.getElementById('back-to-top').addEventListener('click', function() {
     });
 });
 
+/////////////////////////////// color al presionar boton de filtro
 document.addEventListener('DOMContentLoaded', () => {
     const hoverNegro = document.querySelector('.colorProducto-colorNegro');
     const hoverBlanco = document.querySelector('.colorProducto-colorBlanco');
@@ -265,6 +325,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+////////////////////////////////////////BUSCADOR////////////////////////
+// Función de búsqueda
 function buscarProductos(query) {
     query = query.toLowerCase();
     return allProducts.filter(product => 
@@ -273,6 +335,7 @@ function buscarProductos(query) {
     );
 }
 
+// Evento de búsqueda
 document.getElementById('search-bar').addEventListener('input', async function() {
     const query = this.value;
     const productosFiltrados = buscarProductos(query);
@@ -288,11 +351,13 @@ document.getElementById('search-bar').addEventListener('input', async function()
     actualizarTerminoDeBusqueda(query); // Mostrar el término de búsqueda
 });
 
+// Función para obtener el valor del parámetro "query"
 function obtenerParametroQuery() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get('query');
 }
 
+// Función para mostrar productos filtrados por query
 async function mostrarProductosFiltradosConQuery(productosFiltrados, query) {
     const productosContainer = document.getElementById('card-container');
     productosContainer.innerHTML = ''; // Limpiar contenido anterior
@@ -307,41 +372,42 @@ async function mostrarProductosFiltradosConQuery(productosFiltrados, query) {
     return productosFiltrados;
 }
 
+// Función para mostrar el término de búsqueda
 function actualizarTerminoDeBusqueda(query) {
-    const searchTermElement = document.getElementById('search-term');
-    if (query) {
-        searchTermElement.textContent = `Buscando: ${query}`;
-    } else {
-        searchTermElement.textContent = 'Todos los productos';
-    }
+    const searchTerm = document.getElementById('search-term');
+    searchTerm.textContent = `Buscando: ${query}`;
 }
 
+// Llamar a la función para obtener el valor del parámetro "query" y mostrar los productos filtrados
 document.addEventListener('DOMContentLoaded', async () => {
     const products = await getProducts();
     console.log('Productos obtenidos:', products);
     
+    // Obtener el valor del parámetro "query" de la URL y filtrar productos si existe
     const query = obtenerParametroQuery();
     if (query) {
         const productosFiltrados = buscarProductos(query);
         mostrarProductosFiltradosConQuery(productosFiltrados, query);
     } else {
-        mostrarProductosOrdenados(products);
+        // Mostrar todos los productos si no hay término de búsqueda en la URL
+        allProducts = products;
+        mostrarProductosOrdenados(allProducts); // Mostrar todos los productos ordenados inicialmente
     }
 });
 
+/////////////////////////filtro de precios que puede ingresar el usuario a gusto en los filtros
 function filtrarPrecio(productos) {
     // Verificar si 'productos' está definido y es un array
     if (!Array.isArray(productos)) {
-        console.error('La lista de productos no está definida o no es un array:', productos);
+        console.error('precio no definido:', productos);
         return [];
     }
-    
     let minimo = parseInt(document.getElementById('minimo').value, 10);
     let maximo = parseInt(document.getElementById('maximo').value, 10);
 
     // Asignar valores predeterminados si los inputs están vacíos o no son números
-    if (isNaN(minimo)) minimo = 1;
-    if (isNaN(maximo)) maximo = 9999999;
+    if (isNaN(minimo)) minimo = parseInt(1);
+    if (isNaN(maximo)) maximo = parseInt(9999999);
 
     if (minimo >= maximo) {
         alert("El precio mínimo no puede ser igual o más alto que el precio máximo");
@@ -349,8 +415,12 @@ function filtrarPrecio(productos) {
     }
     if(minimo < 0 || maximo < 0){
         alert("El precio no puede ser negativo");
-        minimo = 1;
-        maximo = 9999999;
+        minimo = parseInt(1);
+        maximo = parseInt(9999999);
     }
     return productos.filter(producto => producto.precio >= minimo && producto.precio <= maximo);
 }
+// Llamada a init
+init(() => {
+    console.log('Todos los productos han sido cargados y mostrados.');
+});
