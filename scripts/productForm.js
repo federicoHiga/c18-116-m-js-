@@ -63,8 +63,6 @@ return newPath
 
 
 
-
-
     //funciones:
     //funcion para obtener los talles seleccionados en el checkbox
     function getTalles() {

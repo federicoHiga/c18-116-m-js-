@@ -36,7 +36,7 @@ createUserWithEmailAndPassword(auth, email, password)
     // Signed in 
     const user = userCredential.user;
     alert("logueado")
-    window.location.href="grand.html"
+    window.location.href="registro3.html"
     // ...
   })
   .catch((error) => {
