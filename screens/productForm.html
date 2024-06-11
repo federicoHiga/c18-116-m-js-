@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="../styles/home.css" />
     <script type="text/javascript">
 
-        function stopDefAction(evt) {
-          evt.preventDefault();
-        }
+      
         </script>
 </head>
 <body class="container">
@@ -194,6 +192,7 @@
       </header>
 
     <div>
+      <div>
         <h3 class="containter d-flex justify-content-center mt-2 mb-3">Agrega producto <br>al e-commerce</h3>
             <form id="nuevo-producto" enctype="multipart/form-data">
                 <div class="m-3 pt-2 d-flex justify-content-around">
@@ -408,12 +407,26 @@
                 <input class="form-control" type="file" name="img1" id="img1Detail">
               </div>
               <div class="mb-3">
+
+                <!-- <label for="colores">Color:
+                    <input id="colorDetail" name="Color" type="checkbox" value="Blanco" />Blanco
+                    <input id="colorDetail" name="color" type="checkbox" value="Negro" />Negro
+                    <input id="colorDetail" name="color" type="checkbox" value="Verde" />Verde
+                    <input id="colorDetail" name="color" type="checkbox" value="Rojo" />Rojo
+                    <input id="colorDetail" name="color" type="checkbox" value="Azul" />Azul
+            </label> -->
+            </div>
+            <div class="mb-3">
+                <label for="img1Detail" class="form-label">Ingrese imagen principal</label>
+
+                <input class="form-control" type="file" name="img1" id="img1" accept ="image/jpeg, image/png, image/jpg">              </div>
+              <div class="mb-3">
                 <label class="d-flex justify-content-center" for="formFile" class="form-label">Primer imagen secundaria</label>
-                <input class="form-control" type="file" name="img2" id="img2Detail" accept ="image/jpeg, image/png, image/jpg">
+                <input class="form-control" type="file" name="img2" id="img2" accept ="image/jpeg, image/png, image/jpg">
               </div>
               <div class="mb-3">
                 <label class="d-flex justify-content-center" for="formFile" class="form-label">Segunda imagen secundaria</label>
-                <input class="form-control" type="file" name="img3" id="img3Detail">
+                <input class="form-control" type="file" name="img3" id="img3" accept ="image/jpeg, image/png, image/jpg">
               </div>
 
               <div class="nuevoproducto-boton d-flex justify-content-center m-0">
