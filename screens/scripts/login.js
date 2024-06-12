@@ -20,24 +20,34 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
-
+// distintos form
 
 
 // submit
 const submit = document.getElementById("submit");
 submit.addEventListener("click", function(event){
 event.preventDefault()
-//inputs
-const email = document.getElementById("email").value;
-const password =document.getElementById("password").value;
+  
+  //inputs
+  const email = document.getElementById("email").value;
+  const password =document.getElementById("password").value;
 
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    alert("logueado")
+    const userEmail = user.email; // Guardar el email del usuario en una variable
+
+     // Guardar el email en la Local Storage
+     localStorage.setItem('userEmail', userEmail);
+
+    alert(userEmail)
+    if (userEmail == "zenithadmin@zenith.com"){
     window.location.href="productForm.html"
-    // ...
+    }
+    else{// ...
+    window.location.href="../index.html"
+    }
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -61,3 +71,4 @@ signInWithEmailAndPassword(auth, email, password)
     const errorMessage = error.message;
     // ..
   })
+

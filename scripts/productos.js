@@ -443,3 +443,17 @@ document.querySelectorAll('.form-check-input-recomendados').forEach(input => {
         document.getElementById('recomendados').innerHTML = selectedOptions.join(' /<br>');
     });
 });
+
+
+//inicio de sesion guardada
+
+//usuario sesion
+document.addEventListener("DOMContentLoaded", function() {
+    const userStatus = document.getElementById("userStatus");
+    const storedEmail = localStorage.getItem('userEmail');
+  
+    if (storedEmail) {
+      userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
+    } else {
+      userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
+    }});
