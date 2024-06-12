@@ -175,5 +175,5 @@ document.addEventListener("DOMContentLoaded", function() {
     if (storedEmail) {
       userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
     } else {
-      userStatus.innerHTML = `<a href="login.html">Iniciar sesión</a>`;
+      userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
     }});
