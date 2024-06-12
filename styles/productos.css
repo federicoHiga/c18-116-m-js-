@@ -257,3 +257,17 @@ hr{
 .red-border {
     border: 3px solid #661010;
 }
+#recomendados {
+    font-size: 14px; /* Puedes ajustar el tamaño según necesites */
+    word-wrap: break-word; /* Permite que el texto se divida en varias líneas si es muy largo */
+    margin: 0px;
+}
+#dropdownMenuButton{
+    padding: 0px;
+}
+.pt-3 {
+    padding-top: 5px !important;
+}
+.mb-2 {
+    margin-bottom: 0px !important;
+}

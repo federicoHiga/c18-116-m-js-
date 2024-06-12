@@ -236,12 +236,19 @@ const checkboxes = document.querySelectorAll('input[type="checkbox"], .cajaColor
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener('click', handleCheckboxClick);
 });
+
+document.getElementById('menor-mayor').addEventListener('change', ordenarYMostrarProductos);
+document.getElementById('mayor-menor').addEventListener('change', ordenarYMostrarProductos);
+
 //aplicar filtros
 const aplicarButton = document.getElementById('aplicar');
 aplicarButton.addEventListener('click', async () => {
     await aplicarFiltrosYMostrar();
 });
 
+function ordenarYMostrarProductos() {
+    aplicarFiltrosYMostrar();
+}
 ///////////////////BOTON DE CARGAR MAS
 function cargarMasProductos(productosFiltrados) {
     const productosContainer = document.getElementById('card-container');
@@ -423,4 +430,16 @@ function filtrarPrecio(productos) {
 // Llamada a init
 init(() => {
     console.log('Todos los productos han sido cargados y mostrados.');
+});
+
+document.querySelectorAll('.form-check-input-recomendados').forEach(input => {
+    input.addEventListener('change', () => {
+        const selectedOptions = [];
+
+        document.querySelectorAll('.form-check-input-recomendados:checked').forEach(checkedInput => {
+            selectedOptions.push(checkedInput.value);
+        });
+
+        document.getElementById('recomendados').innerHTML = selectedOptions.join(' /<br>');
+    });
 });
