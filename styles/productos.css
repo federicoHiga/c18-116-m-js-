@@ -59,7 +59,7 @@
 .card-details {
     text-align: start;
     height: 78px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 5px 0px 5px;
 }
 
 .text-title {
@@ -97,13 +97,13 @@
     }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 600px) {
     #card-container {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 560px) {
     main {
         margin-top: 0;
     }
@@ -112,7 +112,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 417px) {
     main {
         margin-top: 0;
     }
@@ -121,7 +121,7 @@
     }
 }
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 280px) {
     #card-container {
         grid-template-columns: 1fr;
     }
@@ -170,6 +170,7 @@ main .carousel-item img {
 }
 hr{
     width: 90%;
+    margin: 5px;
 }
 
 .titulo-de-busqueda{
@@ -255,4 +256,18 @@ hr{
 
 .red-border {
     border: 3px solid #661010;
+}
+#recomendados {
+    font-size: 14px; /* Puedes ajustar el tamaño según necesites */
+    word-wrap: break-word; /* Permite que el texto se divida en varias líneas si es muy largo */
+    margin: 0px;
+}
+#dropdownMenuButton{
+    padding: 0px;
+}
+.pt-3 {
+    padding-top: 5px !important;
+}
+.mb-2 {
+    margin-bottom: 0px !important;
 }
