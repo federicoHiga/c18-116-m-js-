@@ -42,11 +42,11 @@ signInWithEmailAndPassword(auth, email, password)
      localStorage.setItem('userEmail', userEmail);
 
     alert(userEmail)
-    if (tipoUsuario.value == "usuario"){
-    window.location.href="/index.html"
-    }
-    if (tipoUsuario.value == "admin"){// ...
+    if (userEmail == "zenithadmin@zenith.com"){
     window.location.href="productForm.html"
+    }
+    else{// ...
+    window.location.href="../index.html"
     }
   })
   .catch((error) => {

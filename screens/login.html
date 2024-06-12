@@ -27,7 +27,7 @@
     </section>
     <section>
       <div>
-        <section>
+        <!-- <section>
           <label for="motivo" >Tipo de inicio:
             <select name="motivo" id="tipoElegido" >
               <option id="" value="" >Elegir</option>
@@ -35,8 +35,8 @@
               <option id="admin" value="admin">Administrador</option>
               
             </select></label>
-        </section>
-      <div id="inicioUsuario" class="d-none">
+        </section> -->
+      <div id="inicioUsuario" class="">
       <div class="container mb-3 mt-5 position-static px-16">
         <label for="username" class="form-label">Email</label>
         <input type="email" class="form-control-login" id="email" placeholder="Ingresa tu Email">
@@ -48,24 +48,10 @@
       </div>
       <div class="container d-flex justify-content-center position-static px-16">
         <p class="texto-login mx-2">¿Aún no tienes cuenta?</p><a class="link-registro-login decoration-none"
-          href="./login.html"> Registrate </a>
+          href="./registro2.html"> Registrate </a>
       </div>
       </div>
-      <div id="inicioAdmin" class="d-none">
-        <div class="container mb-3 mt-5 position-static px-16">
-          <label for="username" class="form-label">Email</label>
-          <input type="email" class="form-control-login" id="email" placeholder="Ingresa tu Email">
-        </div>
-        <div class="container mb-4 mt-5 position-static px-16">
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control-login" id="password"
-            placeholder="Ingresa tu contraseña">
-        </div>
-        <div class="container d-flex justify-content-center position-static px-16">
-          <p class="texto-login mx-2">¿Aún no tienes cuenta?</p><a class="link-registro-login decoration-none"
-            href="./registro2.html"> Registrate </a>
-        </div>
-    </div>
+      </div>
       </div></section>
       <div class="login-boton d-flex justify-content-center my-2">
         <label for="submit"></label>
@@ -76,27 +62,27 @@
 
     <script src="/scripts/login.js"></script>
     <script>
-    tipoUsuario= document.getElementById("tipoElegido")
-    tipoElegido = tipoUsuario.value
-    inicioUsuario = document.getElementById("inicioUsuario")  
-    inicioAdmin= document.getElementById("inicioAdmin")
-    tipoUsuario.onchange(mostrarOcultar())
+    // tipoUsuario= document.getElementById("tipoElegido")
+    // tipoElegido = tipoUsuario.value
+    // inicioUsuario = document.getElementById("inicioUsuario")  
+    // inicioAdmin= document.getElementById("inicioAdmin")
+    // // tipoUsuario.onchange(mostrarOcultar())
   
-      function mostrarOcultar(){
-    tipoUsuario.addEventListener("change", () => {
-    if(tipoUsuario.value == "usuario"){
-        inicioUsuario.classList.remove("d-none")
-        inicioAdmin.classList.add("d-none")
-      }
-      else if(tipoUsuario.value == "admin"){
-      inicioAdmin.classList.remove("d-none")
-      inicioUsuario.classList.add("d-none")
+    // //   function mostrarOcultar(){
+    // // tipoUsuario.addEventListener("change", () => {
+    // // if(tipoUsuario.value == "usuario"){
+    // //     inicioUsuario.classList.remove("d-none")
+    // //     inicioAdmin.classList.add("d-none")
+    // //   }
+    // //   else if(tipoUsuario.value == "admin"){
+    // //   inicioAdmin.classList.remove("d-none")
+    // //   inicioUsuario.classList.add("d-none")
 // else{
 //     inicioAdmin.classList.remove("d-none")
 //     inicioUsuario.classList.add("d-none")
 
-}
-})}
+// }
+// })}
 
   </script>
 </body>

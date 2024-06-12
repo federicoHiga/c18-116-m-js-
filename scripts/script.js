@@ -174,6 +174,8 @@ document.addEventListener("DOMContentLoaded", function() {
   
     if (storedEmail) {
       userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
-    } else {
+        if(storedEmail == "zenithadmin@zenith.com")
+            userStatus.innerHTML= `<a href="screens/productForm.html">Cargar producto</a>`
+    }   else {
       userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
     }});
