@@ -20,7 +20,7 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
-
+// distintos form
 
 
 // submit
@@ -36,8 +36,12 @@ signInWithEmailAndPassword(auth, email, password)
     // Signed in 
     const user = userCredential.user;
     alert("logueado")
+    if (tipoUsuario.value == "usuario"){
+    window.location.href="/index.html"
+    }
+    if (tipoUsuario.value == "admin"){// ...
     window.location.href="productForm.html"
-    // ...
+    }
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -61,3 +65,4 @@ signInWithEmailAndPassword(auth, email, password)
     const errorMessage = error.message;
     // ..
   })
+
