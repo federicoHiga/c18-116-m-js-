@@ -164,6 +164,7 @@
           <path
             d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
         </svg>
+        <div id="cartCount"></div>
       </div>
       <!-- CART -->
     </div>
@@ -176,7 +177,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            <div id='cart-items-conteiner'></div>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -312,6 +313,90 @@
     </div>
   </footer>
 </body>
+<script>
+  window.onload = function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = document.getElementById("cartCount")
+    cartCount.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);    
+};
+
+window.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
+
+const productId = new URL(document.location.toString()).searchParams.get('productId');
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+const cartItemsDiv = document.getElementById('cart-items-conteiner');
+const cartCount = document.getElementById("cartCount");
+
+// Update cart count initially
+updateCartCount(cart);
+
+window.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
+
+function loadCartFromLocalStorage() {
+  if (cart.length > 0) {
+    cartItemsDiv.innerHTML = ''; // Clear existing items
+    cart.forEach((product) => {
+      const cartItemHTML = generateCartItemHTML(product);
+      cartItemsDiv.appendChild(cartItemHTML);
+    });
+  }
+}
+
+function removeFromCart(productId) {
+  const productIndex = cart.findIndex(item => item.id === productId);
+  if (productIndex !== -1) {
+    if (cart[productIndex].quantity > 1) {
+      cart[productIndex].quantity--;
+      document.querySelector(`.cart-item[data-id='${productId}'] .item-quantity`).textContent = `Cantidad: ${cart[productIndex].quantity}`;
+    } else {
+      cart.splice(productIndex, 1);
+      document.querySelector(`.cart-item[data-id='${productId}']`).remove();
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount(cart);
+  }
+}
+
+function generateCartItemHTML(product) {
+  if (product) {
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    cartItem.dataset.id = product.id;
+
+    const itemName = document.createElement('span');
+    itemName.textContent = `Producto: ${product.nombre}`;
+    cartItem.appendChild(itemName);
+
+    const itemPrice = document.createElement('span');
+    itemPrice.textContent = `Precio: $${product.precio}`;
+    cartItem.appendChild(itemPrice);
+
+    const itemQuantity = document.createElement('span');
+    itemQuantity.textContent = `Cantidad: ${product.quantity}`;
+    itemQuantity.classList.add('item-quantity');
+    cartItem.appendChild(itemQuantity);
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Eliminar';
+    cartItem.appendChild(removeButton);
+    removeButton.addEventListener('click', () => {
+      removeFromCart(product.id);
+    });
+
+    return cartItem;
+  }
+}
+
+function updateCartCount(cart) {
+  const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
+  if (cartCount) {
+    cartCount.innerHTML = totalQuantity;
+  } else {
+    console.warn("Cart count element (cartCount) not found!");
+  }
+}
+</script>
 <script src="./scripts/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
