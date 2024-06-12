@@ -340,3 +340,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         actualizarTerminoDeBusqueda(null); // Establecer "Todos los productos" por defecto
     }
 });
+
+
+
+//inicio de sesion guardada
+
+//usuario sesion
+document.addEventListener("DOMContentLoaded", function() {
+    const userStatus = document.getElementById("userStatus");
+    const storedEmail = localStorage.getItem('userEmail');
+  
+    if (storedEmail) {
+      userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
+    } else {
+      userStatus.innerHTML = `<a href="login.html">Iniciar sesión</a>`;
+    }});

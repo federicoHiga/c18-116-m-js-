@@ -1,10 +1,23 @@
-// function cargarEventos() {
-  
-//   document.getElementById("nuevo-producto").addEventListener("submit", nuevoProducto, false);
-//   }
-//     document.getElementById("nuevo-producto").addEventListener("click", function(event){
-//       event.preventDefault()
-//     });
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const auth = getAuth();
+const user = auth.currentUser;
+if (user !== null) {
+  // The user object has basic properties such as display name, email, etc.
+  const displayName = user.displayName;
+  const email = user.email;
+  const photoURL = user.photoURL;
+  const emailVerified = user.emailVerified;
+
+  // The user's ID, unique to the Firebase project. Do NOT use
+  // this value to authenticate with your backend server, if
+  // you have one. Use User.getToken() instead.
+  const uid = user.uid;
+
+  alert(email)
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
   cargarEventos();
 });
@@ -15,7 +28,12 @@ function cargarEventos() {
     this.reset();
   }, false);
 }
-
+const storedEmail = localStorage.getItem('userEmail');
+if (storedEmail) {
+  console.log('El email del usuario es:', storedEmail);
+} else {
+  console.log('No se encontró ningún email guardado.');
+}
 // Llamamos a cargarEventos para asegurarnos de que los eventos se añadan cuando se cargue la página.
 cargarEventos();
 function remplazarUrl(){

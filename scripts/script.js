@@ -164,3 +164,16 @@ document.getElementById('back-to-top').addEventListener('click', function() {
 // Inicializar contenedores
 init('card-container-1');
 init('card-container-2');
+
+
+
+//usuario sesion
+document.addEventListener("DOMContentLoaded", function() {
+    const userStatus = document.getElementById("userStatus");
+    const storedEmail = localStorage.getItem('userEmail');
+  
+    if (storedEmail) {
+      userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
+    } else {
+      userStatus.innerHTML = `<a href="login.html">Iniciar sesión</a>`;
+    }});
