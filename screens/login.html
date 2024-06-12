@@ -26,6 +26,17 @@
       </div>
     </section>
     <section>
+      <div>
+        <!-- <section>
+          <label for="motivo" >Tipo de inicio:
+            <select name="motivo" id="tipoElegido" >
+              <option id="" value="" >Elegir</option>
+              <option id="usuario" value="usuario" >Usuario</option>
+              <option id="admin" value="admin">Administrador</option>
+              
+            </select></label>
+        </section> -->
+      <div id="inicioUsuario" class="">
       <div class="container mb-3 mt-5 position-static px-16">
         <label for="username" class="form-label">Email</label>
         <input type="email" class="form-control-login" id="email" placeholder="Ingresa tu Email">
@@ -39,26 +50,41 @@
         <p class="texto-login mx-2">¿Aún no tienes cuenta?</p><a class="link-registro-login decoration-none"
           href="./registro2.html"> Registrate </a>
       </div>
+      </div>
+      </div>
+      </div></section>
       <div class="login-boton d-flex justify-content-center my-2">
         <label for="submit"></label>
 <button type="submit" id="submit" type="login" class="registro2-boton-submit">Iniciar sesion</button>      </div>
       <div class="container d-flex justify-content-center my-5">
         <img class="login-logo-google mx-3" src="/src/atomo/bi_google.svg" alt="logo de google">
-        <!-- <img class="login-logo-facebook mx-3" src="/src/atomo/bi_facebook.svg" alt="logo de facebook"> -->
       </div>
-      <!-- <div class="container d-flex justify-content-center px-16 pt-4 mt-5">
-        <a class="link-olvido-contraseña mx-2 position-absolute d-flex justify-content-center" href="./registro.html">
-          <p class="link-olvido-contraseña">¿Olvidaste tu contraseña?</p>
-        </a>
-        <input type="input" class="form-control-login-sub" id="exampleFormControlInput1" placeholder="">
-      </div>
-    </section> -->
-    <!-- The surrounding HTML is left untouched by FirebaseUI.
-     Your app may use that space for branding, controls and other customizations.-->
 
+    <script src="/scripts/login.js"></script>
+    <script>
+    // tipoUsuario= document.getElementById("tipoElegido")
+    // tipoElegido = tipoUsuario.value
+    // inicioUsuario = document.getElementById("inicioUsuario")  
+    // inicioAdmin= document.getElementById("inicioAdmin")
+    // // tipoUsuario.onchange(mostrarOcultar())
+  
+    // //   function mostrarOcultar(){
+    // // tipoUsuario.addEventListener("change", () => {
+    // // if(tipoUsuario.value == "usuario"){
+    // //     inicioUsuario.classList.remove("d-none")
+    // //     inicioAdmin.classList.add("d-none")
+    // //   }
+    // //   else if(tipoUsuario.value == "admin"){
+    // //   inicioAdmin.classList.remove("d-none")
+    // //   inicioUsuario.classList.add("d-none")
+// else{
+//     inicioAdmin.classList.remove("d-none")
+//     inicioUsuario.classList.add("d-none")
 
-  <script src="/scripts/login.js"></script>
+// }
+// })}
 
+  </script>
 </body>
 
 </html>

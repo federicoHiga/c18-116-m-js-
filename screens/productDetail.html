@@ -32,7 +32,7 @@
                 <!--Acordion-->
                 <ul class="navbar-nav d-flex justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/screens/login.html">Iniciar sesión</a>
+                    <div id="userStatus"></div>
                   </li>
                   <li class="nav-item justify-content-evenly">
                     <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
@@ -256,73 +256,27 @@
   </div>
   </div>
   <!-- ACÁ VAN LOS RECTANGULOS DE LOS TALLES -->
-  <div style="margin-top: 16px; margin-left: 16px;" class="tituloTalles">
-    <h4>Talla:</h4>
-  </div>
-  <div class="cajaTalles"
-    style="width: 100%; height: 100%; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; background: #F2F2F2; border-radius: 8px; border: 1px #8C8C8C solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: #8C8C8C; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">37
-      </div>
+  <div>
+    <div style="margin-top: 16px; margin-left: 16px;" class="tituloTalles">
+        <h4>Talla:</h4>
     </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">39</div>
+    <div class="cajaTalles" id="cajaTalles"
+        style="width: 100%; height: 100%; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
+
     </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; background: #F2F2F2; border-radius: 8px; border: 1px #8C8C8C solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: #8C8C8C; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">41
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 2px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 600; word-wrap: break-word">37.5
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">39.5
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">41.5
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">38</div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; background: #F2F2F2; border-radius: 8px; border: 1px #8C8C8C solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: #8C8C8C; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">40
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">42</div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">38.5
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; background: #F2F2F2; border-radius: 8px; border: 1px #8C8C8C solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: #8C8C8C; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">40.5
-      </div>
-    </div>
-    <div
-      style="width: 72px; height: 48px; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 8px; border: 1px black solid; flex-direction: column; justify-content: center; align-items: center; gap: 8px; display: inline-flex">
-      <div style="color: black; font-size: 16px; font-family: Roboto; font-weight: 400; word-wrap: break-word">43</div>
-    </div>
-  </div>
+</div>
 
   <!-- <div class="container text-center"> -->
   <div style="margin-right:12px; margin:16px; width: 332px; display: flex; justify-content: space-between;">
-    <div style="width: 146px; height: 48px; display: flex; align-items: center;">
-      <h6>Conocé tu talla <a href="">aquí</a></h6>
+    <div >
+      <h6>Conocé tu talla <a href="#modal1">aquí</a></h6>
+      <div id="modal1" class="modalmask">
+        <div class="modalbox movedown" style="width: 146px; height: 48px; display: flex; align-items: center;">
+            <a href="#cerrar" title="Cerrar" class="cerrar">X</a>
+            <div style="max-width:300px; z-index: 100;">
+            <img style="max-width:300px; z-index: 100;" src="/src/productos/calzadoMujertalle.png">
+          </div>
+        </div>
     </div>
     <div
       style="width: 120px;border-radius: 8px; border: 1px solid black; display: flex; justify-content: space-between; align-items: center;">
@@ -332,6 +286,7 @@
       <button style="border: none; background-color:white ;" class="icon-button" id="increment-btn"><img
           src="../src/atomo/más.png"></button>
     </div>
+  </div>
   </div>
   <!-- add to cart -->
   <div class="row"
@@ -459,246 +414,6 @@
 <script src="../screens/scripts/productDetail.js"></script>
 <script src="../scripts/productos.js"></script>
 <script src="../scripts/cardPrueba.js"></script>
-
-<!-- <script>
-  const productId = new URL(document.location.toString()).searchParams.get('productId');
-
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  console.log('display cart1', cart)
-  const cartItemsDiv = document.getElementById('cart-items-conteiner');
-  const cartCount = document.getElementById("cartCount")
-  const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
-  cartCount.innerHTML = totalQuantity;
-  console.log('start totalQuantity:', totalQuantity)
-
-  window.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
-
-  function loadCartFromLocalStorage() {
-    console.log('display cart2', cart)
-    cart = localStorage.getItem('cart');
-    if (cart) {
-      const cartProducts = JSON.parse(cart);
-      // Aquí puedes iterar sobre los productos y agregarlos al carrito
-      cartProducts.forEach((product) => {
-        // Agrega el producto al carrito
-        generateCartItemHTML(product, quantity);
-        const cartItemHTML = generateCartItemHTML(product, quantity);
-        cartItemsDiv.appendChild(cartItemHTML);
-      });
-    }
-  }
-
-  function generateCartItemHTML(product, quantity) {
-    if (product || quantity) {
-      const cartItem = document.createElement('div');
-      cartItem.classList.add('cart-item');
-      // cartItem.dataset.productId = `[data-product-id="${productId}"]`;
-      cartItem.dataset.id = productId
-      const itemName = document.createElement('span');
-      itemName.textContent = `Producto: ${product.nombre}`;
-      cartItem.appendChild(itemName);
-
-      const itemPrice = document.createElement('span');
-      itemPrice.textContent = `Precio: $${product.precio}`;
-      cartItem.appendChild(itemPrice);
-
-      const itemQuantity = document.createElement('span');
-      itemQuantity.textContent = `Cantidad: ${quantity}`;
-      cartItem.appendChild(itemQuantity);
-
-      const removeButton = document.createElement('button');
-      removeButton.textContent = 'Eliminar';
-      cartItem.appendChild(removeButton);
-      removeButton.addEventListener('click', () => {
-        removeFromCart(product.id); // Pass product ID for removal
-      });
-
-      return cartItem;
-    }
-  }
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    init(() => {
-      // console.log("dentro");
-      // const productId = new URL(document.location.toString()).searchParams.get('productId');
-      const productsArray = Object.values(products);
-      const product = productsArray.find(p => p.id == productId);
-      // products.filter(p => p.categorias.includes("Hombre") && p.categorias.includes("Hot Sale"));
-      console.log('productId: ', productId);
-      // console.log(product.marca)
-      const precioDetail = document.querySelector("#precioDetail");
-      const marcaDetail = document.querySelector("#marcaDetail")
-      const nombreDetail = document.querySelector("#nombreDetail")
-      const descripcionDetail = document.querySelector("#descripcionDetail")
-      const imagenDetail = document.querySelector("#imagenDetail")
-      const codigoDetail = document.querySelector("#codigoDetail")
-      const img1Detail = document.querySelector("#img1Detail")
-      const img2Detail = document.querySelector("#img2Detail")
-      const img3Detail = document.querySelector("#img3Detail")
-
-      marcaDetail.innerHTML = product.marca
-      precioDetail.innerHTML = "$" + product.precio
-      nombreDetail.innerHTML = "Modelo: " + product.nombre
-      codigoDetail.innerHTML = "Codigo: " + product.id
-      descripcionDetail.innerHTML = product.descripcion
-      img1Detail.src = product.image1
-      img2Detail.src = product.image2
-      img3Detail.src = product.image3
-
-      //filtro colores
-      const colorsDiv = document.getElementById("colorsDiv")
-      const colores = product.color.map(color => {
-        const colorBtn = document.createElement("button")
-        colorBtn.classList.add('colorProducto', 'color-' + color.toLowerCase());
-        colorBtn.addEventListener("click", () => {
-          console.log("Button clicked:", color);
-        });
-        return colorBtn;
-      })
-
-      colores.forEach(function (color) {
-        colorsDiv.appendChild(color);
-      });
-      // console.log('colores desde html', colores);
-      //filtro colores
-
-      //cart inicio
-      // let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      // console.log('display cart1', cart)
-      // const cartItemsDiv = document.getElementById('cart-items-conteiner');
-
-      
-
-      // function loadCartFromLocalStorage(cart) {
-      //   console.log('display cart2', cart)
-      //   cart = localStorage.getItem('cart');
-      //   if (cart) {
-      //     const cartProducts = JSON.parse(cart);
-      //     // Aquí puedes iterar sobre los productos y agregarlos al carrito
-      //     cartProducts.forEach((product) => {
-      //       // Agrega el producto al carrito
-      //       generateCartItemHTML(product, quantity);
-      //       const cartItemHTML = generateCartItemHTML(product, count);
-      //       cartItemsDiv.appendChild(cartItemHTML);
-      //     });
-      //   }
-      // }
-
-      // function generateCartItemHTML(product, quantity) {
-      //   if (product || quantity) {
-      //     const cartItem = document.createElement('div');
-      //     cartItem.classList.add('cart-item');
-      //     // cartItem.dataset.productId = `[data-product-id="${productId}"]`;
-      //     cartItem.dataset.id = productId
-      //     const itemName = document.createElement('span');
-      //     itemName.textContent = `Producto: ${product.nombre}`;
-      //     cartItem.appendChild(itemName);
-
-      //     const itemPrice = document.createElement('span');
-      //     itemPrice.textContent = `Precio: $${product.precio}`;
-      //     cartItem.appendChild(itemPrice);
-
-      //     const itemQuantity = document.createElement('span');
-      //     itemQuantity.textContent = `Cantidad: ${quantity}`;
-      //     cartItem.appendChild(itemQuantity);
-
-      //     const removeButton = document.createElement('button');
-      //     removeButton.textContent = 'Eliminar';
-      //     cartItem.appendChild(removeButton);
-      //     removeButton.addEventListener('click', () => {
-      //       removeFromCart(product.id); // Pass product ID for removal
-      //     });
-
-      //     return cartItem;
-      //   }
-      // }
-
-      // const cartCount = document.getElementById("cartCount")
-      // const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
-      // cartCount.innerHTML = totalQuantity;
-      // console.log('start totalQuantity:', totalQuantity)
-
-      function addToCart(product) {
-        console.log('product desde adentro ', product)
-        // findIndex evalua la condition si es true return: index del match sino: -1
-        const existingProductIndex = cart.findIndex(item => item.id === product.id);
-        // console.log("exist: ", existingProductIndex)
-        if (existingProductIndex !== -1) {
-          // Product already exists, update quantity
-          cart[existingProductIndex].quantity++;
-        } else {
-          // Add new product to cart with quantity 1
-          cart.push({ ...product, quantity: 1 }); // Spread operator preserves product properties
-        }
-
-        //cart counter y consollogeos
-        const count = cart[existingProductIndex !== -1 ? existingProductIndex : cart.length - 1].quantity;
-        console.log(`${product.nombre} added to cart (quantity: ${cart[existingProductIndex !== -1 ? existingProductIndex : cart.length - 1].quantity})`);
-        console.log('count: ', count)
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-
-        updateCartCount(cart);
-        const cartItemHTML = generateCartItemHTML(product, count);
-        cartItemsDiv.appendChild(cartItemHTML);
-      }
-      // console.log('cart',cart)
-      // const cartItemToRemove = cartItem.querySelector(`[data-product-id="${productId}"]
-      //       `);
-      // function removeFromCart(productId) {
-      //   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      //   // console.log('cart desde removeF: ',cart[i])
-      //   const productIndex = cart.findIndex(item => item.id === productId);
-
-      //   if (productIndex !== -1) {
-      //     cart.splice(productIndex, 1);
-      //     localStorage.setItem('cart', JSON.stringify(cart));
-      //     // if (cartItem) {
-      //     //   // const cartItemToRemove = cartItem.querySelector(`[data-product-id="${productId}"]
-      //     //   // `); // Still use data attribute for UI removal (optional)
-      //     //   console.log('item a remover',cartItemToRemove)
-      //     //   if (cartItemToRemove) {
-      //     //     cartItemsDiv.removeChild(cartItemToRemove);
-      //     //   } else {
-      //     //     console.warn("Cart item element not found for removed product:", productId);
-      //     //   }
-      //     // }
-      //     updateCartCount(cart.length); // Update cart count after removal
-      //   } else {
-      //     console.warn("Product with ID:", productId, "not found in cart");
-      //   }
-      // };
-
-
-      function updateCartCount(itemCount) {
-        const clearCount = itemCount.reduce((acc, product) => acc + product.quantity, 0);
-        if (cartCount) {
-          console.log('cuenta:', clearCount)
-          cartCount.innerHTML = clearCount;
-        } else {
-          console.warn("Cart count element (cartCount) not found!");
-        }
-      }
-      //call
-      const addToCartButton = document.getElementById('btnAddToCart');
-      addToCartButton.addEventListener('click', () => {
-        addToCart(product); // Pass the product object to the function
-      });
-      //cart fin
-      console.log('start totalQuantity:', totalQuantity);
-    });
-    // window.onload = function () {
-    //   cartCount.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);
-    //   cartItemsDiv.appendChild(cartItemHTML);
-    // };
-    const product = products.find(p => p.id == productId);
-
-  });
-</script> -->
-
-
-
 <script>
   const productId = new URL(document.location.toString()).searchParams.get('productId');
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -835,10 +550,6 @@
     const product = products.find(p => p.id == productId);
   });
 </script>
-
-
-
-
 <script src="./scripts/cart.js"></script>
 <script src="./scripts/filtro.js"></script>
 

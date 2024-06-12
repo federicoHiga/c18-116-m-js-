@@ -33,7 +33,7 @@
                 <!--Acordion-->
                 <ul class="navbar-nav d-flex justify-content-center">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/screens/login.html">Iniciar sesión</a>
+                    <div id="userStatus"></div>
                   </li>
                   <li class="nav-item justify-content-evenly">
                     <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
@@ -206,39 +206,38 @@
         <p class="ordenarFiltro m-0 pt-3"> Ordenar por: </p>
 
         <div class="recomendadosFiltroDesplegable dropdown">
-          <button
-            class="recomendadosFiltroDesplegable btn btn-secondary dropdown-toggle my-0 pt-3  d-flex align-self-start"
-            type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Recomendados
+          <button class="recomendadosFiltroDesplegable btn btn-secondary dropdown-toggle my-0 pt-3 d-flex align-self-start"
+                  type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <p id="recomendados">Recomendados</p>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <div class="filtro-form-check">
-              <label class="form-check-label" for="exampleCheck1">
-                Recomendados
-              </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
-            </div>
-            <div class="filtro-form-check">
-              <label class="form-check-label" for="exampleCheck1">
-                Precio, menor a mayor
-              </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
-            </div>
-            <div class="filtro-form-check">
-              <label class="form-check-label" for="exampleCheck1">
-                Precio, mayor a menor
-              </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
-            </div>
-            <div class="filtro-form-check">
-              <label class="form-check-label" for="exampleCheck1">
-                Más Vendidos
-              </label>
-              <input class="form-check-input-recomendados text-primary" type="checkbox" value="true" id="exampleCheck1">
-            </div>
+              <div class="filtro-form-check">
+                  <label class="form-check-label" for="recomendados-radio">
+                      Recomendados
+                  </label>
+                  <input class="form-check-input-recomendados text-primary" type="radio" value="Recomendados" id="recomendados-radio" name="orden">
+              </div>
+              <div class="filtro-form-check">
+                  <label class="form-check-label" for="mas-vendidos-radio">
+                      Más Vendidos
+                  </label>
+                  <input class="form-check-input-recomendados text-primary" type="radio" value="Más Vendidos" id="mas-vendidos-radio" name="orden">
+              </div>
+              <hr>
+              <div class="filtro-form-check">
+                  <label class="form-check-label" for="menor-mayor-radio">
+                      Precio, menor a mayor
+                  </label>
+                  <input class="form-check-input-recomendados text-primary" type="radio" value="Precio, menor a mayor" id="menor-mayor" name="precio">
+              </div>
+              <div class="filtro-form-check">
+                  <label class="form-check-label" for="mayor-menor-radio">
+                      Precio, mayor a menor
+                  </label>
+                  <input class="form-check-input-recomendados text-primary" type="radio" value="Precio, mayor a menor" id="mayor-menor" name="precio">
+              </div>
           </div>
-        </div>
-
+      </div>
 
         <button class="btn btn-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
           aria-controls="offcanvasRight">
@@ -341,10 +340,10 @@
                           <div class="filtro-off list-group">
                             <div class="precio row"> 
                               <div class="col d-flex justify-content-end"> 
-                                <input type="text" class="form-control-xs form-control-precio" placeholder="$ 0" aria-label="$ 0"> 
+                                <input type="number" class="form-control-xs form-control-precio" id="minimo" name="minimo" placeholder="$ 0" aria-label="$ 0"> 
                               </div> 
                               <div class="col"> 
-                                <input type="text" class="form-control-xs form-control-precio" placeholder="$ 10.000" aria-label="$ 10.000"> 
+                                <input type="number" class="form-control-xs form-control-precio" id="maximo" name="maximo" placeholder="$ 10.000" aria-label="$ 10.000"> 
                               </div> 
                             </div>
                           </div>
@@ -471,7 +470,7 @@
                      </ul>
                     <div class="filtro-boton d-flex justify-content-center m-0">
                       <label for="submit"></label>
-                        <input class="filtro-boton-submit" type="submit" value="Aplicar" id="aplicar">
+                        <input class="filtro-boton-submit" type="submit" value="Aplicar" id="aplicar" onclick="filtrarPrecio()">
                     </div>
                   </div>
                 </div>
@@ -485,7 +484,7 @@
     <div class="filters"></div>
     <div class="cantidad-resultados"></div>
     <div id="card-container"></div>
-   - <div class="button-container">
+    <div class="button-container">
       <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
     </div>
     <!-- <div class="button-container">
