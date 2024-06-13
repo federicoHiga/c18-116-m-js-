@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zennith</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="./styles/footer.css">
-  <link rel="stylesheet" href="./styles/home.css" />
-  <link rel="stylesheet" href="./styles/cards.css" />
-  <link rel="stylesheet" href="./styles/carrousel.css" />
-</head>
-
-<body>
-  <header>
-    <!--Barra de navegacion -->
-    <div class="container-fluid p-1">
-      <div class="row d-flex justify-content-between">
-        <div class="p-1 position-static">
-          <nav class="navbar navbar-expand-xl navbar-light">
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-toggler"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-between container-fluid" id="nav-toggler">
-                <a class="navbar-brand" href="#">
-                  <img src="src/atomo/logo_zenith.svg" width="75" alt="Logo de Zenith">
-                </a>
-                <!--Acordion-->
-                <ul class="navbar-nav d-flex justify-content-center">
-                  <li class="nav-item">
-                    <div id="userStatus"></div>
-                    <button id="logout" style="display: none;">Cerrar sesión</button>
-                  </li>
-                  <li class="nav-item justify-content-evenly">
-                    <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a
-                        class="nav-link active" aria-current="page" href="./screens/productos.html">Ver Todo</a></p>
-                  </li>
-                  <li class="nav-item">
-                    <div class="accordion" id="accordionPanelsStayOpenExample">
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                            aria-controls="panelsStayOpen-collapseOne">
-                            <p class="accordion-text">Hombre</p>
-                          </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                          <div class="accordion-body">
-                            <div class="list-group align-items-center">
-                              <a href="./screens/productos.html" class="list-group-item list-group">Zapatos Casuales</a>
-                              <a href="./screens/productos.html" class="list-group-item list-group">Zapatos de
-                                Vestir</a>
-                              <a href="./screens/productos.html" class="list-group-item list-group">Botas y Botines</a>
-                              <a href="./screens/productos.html" class="list-group-item list-group">Zapatillas
-                                Urbanas</a>
-                              <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zennith</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/cards.css" />
+    <link rel="stylesheet" href="./styles/carrousel.css" />
+  </head>
+  <body>
+    <header>
+      <!--Barra de navegacion -->
+      <div class="container-fluid p-1">
+        <div class="row d-flex justify-content-between">
+          <div class="p-1 position-static">
+            <nav class="navbar navbar-expand-xl navbar-light">
+              <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#nav-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between container-fluid" id="nav-toggler">
+                  <a class="navbar-brand" href="#">
+                    <img src="src/atomo/logo_zenith.svg" width="75" alt="Logo de Zenith">
+                  </a>
+                  <!--Acordion-->
+                  <ul class="navbar-nav d-flex justify-content-center">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/screens/login.html">Iniciar sesión</a>
+                    </li>
+                    <li class="nav-item justify-content-evenly">
+                  <p class="d-flex flex-wrap align-items-center justify-content-between m-0">Calzados<a class="nav-link active" aria-current="page" href="./screens/productos.html">Ver Todo</a></p>
+                    </li> 
+                    <li class="nav-item">
+                      <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button bg-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                              <p class="accordion-text">Hombre</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                              <div class="list-group align-items-center">
+                                <a href="./screens/productos.html?query=casuales" id="casual" class="list-group-item list-group">Zapatos Casuales</a>
+                                <a href="./screens/productos.html?query=vestir"  class="list-group-item list-group">Zapatos de Vestir</a>
+                                <a href="./screens/productos.html?query=botines"  class="list-group-item list-group">Botas y Botines</a>
+                                <a href="./screens/productos.html?query=urbanas"  class="list-group-item list-group">Zapatillas Urbanas</a>
+                                <a href="#" class="list-group-item list-group">Ver todo Hombre</a>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button collapsed bg-white shadow-none" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                            aria-controls="panelsStayOpen-collapseTwo">
-                            <p class="accordion-text">Mujer</p>
-                          </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                          <div class="accordion-body">
-                            <div class="list-group align-items-center">
-                              <a href="#" class="list-group-item list-group">Zapatos Mujer</a>
-                              <a href="#" class="list-group-item list-group">Botas y Botines</a>
-                              <a href="#" class="list-group-item list-group">Sandalias</a>
-                              <a href="#" class="list-group-item list-group">Zapatillas Urbanas</a>
-                              <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
-                              <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                              <p class="accordion-text">Mujer</p>
+                            </button>
+                          </h2>
+                          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                              <div class="list-group align-items-center">
+                                <a href="#" class="list-group-item list-group">Zapatos Mujer</a>
+                                <a href="#" class="list-group-item list-group">Botas y Botines</a>
+                                <a href="#" class="list-group-item list-group">Sandalias</a>
+                                <a href="#" class="list-group-item list-group">Zapatillas Urbanas</a>
+                                <a href="#" class="list-group-item list-group">Zapatillas Deportivas</a>
+                                <a href="#" class="list-group-item list-group">Ver todo Mujer</a>
                             </div>
                           </div>
                         </div>
