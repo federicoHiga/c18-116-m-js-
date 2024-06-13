@@ -127,6 +127,7 @@ function redirectToPage(url) {
 }
 
 
+// Evento de búsqueda
 const searchForm = document.getElementById('search-form');
 console.log(searchForm); // Verificar si el formulario se selecciona correctamente
 
@@ -134,14 +135,17 @@ if (searchForm) {
     const searchButton = document.getElementById('search-button');
     console.log(searchButton); // Verificar si el botón de búsqueda se selecciona correctamente
 
-    searchButton.addEventListener('click', function(event) {
-        console.log("Botón de búsqueda clicado"); // Verificar si el evento de clic se activa
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del botón
+    const handleSearch = function(event) {
+        console.log("Evento de búsqueda activado"); // Verificar si el evento de búsqueda se activa
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
         const query = document.getElementById('search-bar').value;
         // Redirigir a la página de productos y pasar la consulta de búsqueda como parámetro en la URL
         window.location.href = `screens/productos.html?query=${encodeURIComponent(query)}`;
-    });
+    };
+
+    searchButton.addEventListener('click', handleSearch);
+    searchForm.addEventListener('submit', handleSearch);
 }
 // Mostrar botón de "Volver arriba" después de cierto desplazamiento
 window.onscroll = function() {
