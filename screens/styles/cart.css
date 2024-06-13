@@ -1,3 +1,6 @@
+/* .itemDeCompra{
+    left: 80% !important;
+} */
 .modal-body{
     padding: 0px;
 }
@@ -9,7 +12,7 @@
 .deleteButton{
     border: none; 
     background: none;
-    margin: 5px;
+    margin-right: 10px;
 }
 .product-cart-img{
     width: 100px;
@@ -24,4 +27,53 @@
 .item-name{
     font-weight: bold;
     font-size: 18px;
+}
+.item-price{
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+#resumenDeCuenta{
+    font-size: 25px;
+    font-weight: bold;
+}
+#btn-cart-close {
+    background-color: black;
+    color: white;
+}
+#botonFinal{
+    background-color: black;
+    color: white;
+}
+.cartCount{
+    background-color: rgb(145, 26, 26);
+    font-weight: bold;
+    font-size: 13px;
+    border-radius: 50%;
+    width: 21px;
+    height: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion-text{
+    font-weight: bold;
+    font-size: 20px;
+}
+.resumen{
+    margin-left: 20px;
+}
+.input-div input{
+    width: 350px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius: 10px;
+    
+}
+.input-div h2{
+    font-size: 17px;
+    font-weight: bold;
 }

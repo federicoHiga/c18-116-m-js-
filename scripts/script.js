@@ -127,6 +127,7 @@ function redirectToPage(url) {
 }
 
 
+// Evento de búsqueda
 const searchForm = document.getElementById('search-form');
 console.log(searchForm); // Verificar si el formulario se selecciona correctamente
 
@@ -134,14 +135,17 @@ if (searchForm) {
     const searchButton = document.getElementById('search-button');
     console.log(searchButton); // Verificar si el botón de búsqueda se selecciona correctamente
 
-    searchButton.addEventListener('click', function(event) {
-        console.log("Botón de búsqueda clicado"); // Verificar si el evento de clic se activa
-        event.preventDefault(); // Prevenir el comportamiento predeterminado del botón
+    const handleSearch = function(event) {
+        console.log("Evento de búsqueda activado"); // Verificar si el evento de búsqueda se activa
+        event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
 
         const query = document.getElementById('search-bar').value;
         // Redirigir a la página de productos y pasar la consulta de búsqueda como parámetro en la URL
         window.location.href = `screens/productos.html?query=${encodeURIComponent(query)}`;
-    });
+    };
+
+    searchButton.addEventListener('click', handleSearch);
+    searchForm.addEventListener('submit', handleSearch);
 }
 // Mostrar botón de "Volver arriba" después de cierto desplazamiento
 window.onscroll = function() {
@@ -172,14 +176,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const userStatus = document.getElementById("userStatus");
     const storedEmail = localStorage.getItem('userEmail');
 
+  
     if (storedEmail) {
       userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
     //  , <button id="logout" href="#">Cerrar sesión</button>`;
         
       if(storedEmail == "zenithadmin@zenith.com"){
-        userStatus.innerHTML = `<a href="screens/productForm.html">Cargar producto</a>`} 
+        userStatus.innerHTML = `<a href="./productForm.html">Cargar producto</a>,<div ><button id="logout" onclick="cerrarSesion()">Cerrar sesion</button></div>`} 
       else{
-        userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
+        userStatus.innerHTML = `Bienvenido: ${storedEmail}, <br>Cerrar sesion` 
       }      
     }   
 
@@ -187,16 +192,11 @@ document.addEventListener("DOMContentLoaded", function() {
     else {
       userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
     }});
-
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      })
+    const logoutButton = document.getElementById("logout");
+    
+    function cerrarSesion(){
+      localStorage.removeItem('userEmail');
+      userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
+      logoutButton.style.display = "none";
+      
+    }

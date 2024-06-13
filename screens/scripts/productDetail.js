@@ -83,9 +83,19 @@ colorDetail = document.getElementById("colorDetail");
 document.addEventListener("DOMContentLoaded", function() {
   const userStatus = document.getElementById("userStatus");
   const storedEmail = localStorage.getItem('userEmail');
+  const botonFinal = document.getElementById("botonFinal");
+  const imagenContainer = document.getElementById("imagenContainer");
+
 
   if (storedEmail) {
     userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
   } else {
-    userStatus.innerHTML = `<a href="./login.html">Iniciar sesión</a>`;
-  }});
+    userStatus.innerHTML = `<a href="./login.html">Iniciar sesión</a>`;}
+
+
+   });  
+   function finalizarCompra(){
+    botonFinal.addEventListener("click", function() {
+      
+      imagenContainer.innerHTML = `<div class="fondoFinal"><img class="imagenFinal" src="/src/atomo/imagenFinal.png"><p class="textoFinal">Tu compra se realizó con éxito!</p><p class="textoFinal2">Nos comunicaremos vía mail para informarte sobre el detalle de envío.</p></div>`
+    })}
