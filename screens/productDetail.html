@@ -534,6 +534,24 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    const userStatus = document.getElementById("userStatus");
+    const storedEmail = localStorage.getItem('userEmail');
+
+    if (storedEmail) {
+      userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
+    //  , <button id="logout" href="#">Cerrar sesión</button>`;
+        
+      if(storedEmail == "zenithadmin@zenith.com"){
+        userStatus.innerHTML = `<a href="screens/productForm.html">Cargar producto</a>`} 
+      else{
+        userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
+      }      
+    }   
+
+
+    else {
+      userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
+    }
     init(() => {
       const productsArray = Object.values(products);
       const product = productsArray.find(p => p.id == productId);
