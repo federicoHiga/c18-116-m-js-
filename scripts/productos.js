@@ -14,7 +14,7 @@ async function getProducts() {
         const data = await response.json();
 
         if (data) {
-            allProducts = Object.values(data); // Convertir los productos en un array
+            allProducts = Object.values(data).filter(Boolean); // Filtrar productos no nulos
             return allProducts;
         } else {
             console.error('La estructura de la respuesta no es la esperada:', data);
@@ -26,45 +26,43 @@ async function getProducts() {
     }
 }
 
-function handleCheckboxClick(event) {
-    const checkboxId = event.target.id;
-    const filterType = event.target.dataset.filterType;
+  function handleCheckboxClick(event) {
+        const checkboxId = event.target.id;
+        const filterType = event.target.dataset.filterType;
 
-    if (!filtros[filterType]) {
-        console.error('Tipo de filtro no reconocido:', filterType);
-        return;
-    }
+        if (!filtros[filterType]) {
+            console.error('Tipo de filtro no reconocido:', filterType);
+            return;
+        }
 
-    if (event.target.classList.contains('active')) {
-        event.target.classList.remove('active');
         const index = filtros[filterType].indexOf(checkboxId);
         if (index > -1) {
             filtros[filterType].splice(index, 1);
+            event.target.classList.remove('active');
+        } else {
+            filtros[filterType].push(checkboxId);
+            event.target.classList.add('active');
         }
-    } else {
-        event.target.classList.add('active');
-        filtros[filterType].push(checkboxId);
+
+        console.log('Filtros seleccionados:', filtros);
+        aplicarFiltrosYMostrar(); // Mostrar productos filtrados y ordenados después de actualizar los filtros
     }
 
-    console.log('Filtros seleccionados:', filtros);
-    mostrarProductosFiltrados(); // Mostrar productos filtrados y ordenados después de actualizar los filtros
-}
+ function filtro(filtros, products) {
+        if (!Array.isArray(products)) {
+            console.error('Productos no está definido o no es un array:', products);
+            return [];
+        }
 
-function filtro(filtros, products) {
-    if (!Array.isArray(products)) {
-        console.error('Productos no está definido o no es un array:', products);
-        return [];
+        return products.filter(p => {
+            const matchMarca = filtros.marca.length === 0 || (p.marca && filtros.marca.includes(p.marca));
+            const matchGenero = filtros.genero.length === 0 || (Array.isArray(p.categorias) && filtros.genero.some(g => p.categorias.includes(g)));
+            const matchTalle = filtros.talle.length === 0 || (Array.isArray(p.talle) && filtros.talle.some(t => p.talle.includes(parseInt(t))));
+            const matchColor = filtros.color.length === 0 || (Array.isArray(p.color) && filtros.color.some(c => p.color.includes(c)));
+
+            return matchMarca && matchGenero && matchTalle && matchColor;
+        });
     }
-
-    return products.filter(p => {
-        const matchMarca = filtros.marca.length === 0 || (p.marca && filtros.marca.includes(p.marca));
-        const matchGenero = filtros.genero.length === 0 || (Array.isArray(p.categorias) && filtros.genero.some(g => p.categorias.includes(g)));
-        const matchTalle = filtros.talle.length === 0 || (Array.isArray(p.talle) && filtros.talle.some(t => p.talle.includes(parseInt(t))));
-        const matchColor = filtros.color.length === 0 || (Array.isArray(p.color) && filtros.color.some(c => p.color.includes(c)));
-
-        return matchMarca && matchGenero && matchTalle && matchColor;
-    });
-}
 
 
 ////////////////////////////CREAR CARDS
@@ -74,8 +72,11 @@ function createCard(product, index) {
     const carouselInner = document.createElement("div");
     const newCardDetail = document.createElement("div");
     const newTextTitle = document.createElement("h2");
-    const newTextPrice = document.createElement("p");
     const newTextNombre = document.createElement("p");
+    const priceContainer = document.createElement("div");
+    const newTextPrice = document.createElement("p");
+    const oldPrice = document.createElement("p");
+
     newCard.onclick = () => redirectToPage(`../screens/productDetail.html?productId=${product.id}`);
 
     newCard.classList.add("card");
@@ -85,7 +86,9 @@ function createCard(product, index) {
     newCardDetail.classList.add("card-details");
     newTextTitle.classList.add("text-title");
     newTextNombre.classList.add("text-title");
-    newTextPrice.classList.add("text-Body");
+    priceContainer.classList.add("price-container");
+    newTextPrice.classList.add("text-Body", "new-price");
+    oldPrice.classList.add("text-Body", "old-price");
 
     [product.image1, product.image2, product.image3].forEach((imgSrc, imgIndex) => {
         const imgDiv = document.createElement("div");
@@ -133,18 +136,27 @@ function createCard(product, index) {
 
     newTextTitle.textContent = product.marca;  // Usar 'marca' como título
     newTextNombre.textContent = product.nombre;
-    newTextPrice.textContent = `$${product.precio}`;  // Usar 'precio'
+
+    if (product.hotSale) {
+        oldPrice.textContent = `$${product.precio.toLocaleString()}`;
+        newTextPrice.textContent = `$${product.hotSale.toLocaleString()}`;
+        priceContainer.appendChild(oldPrice);
+    } else {
+        newTextPrice.textContent = `$${product.precio.toLocaleString()}`;  // Usar 'precio'
+    }
+
+    priceContainer.appendChild(newTextPrice);
 
     newCard.appendChild(newCarousel);
     newCardDetail.appendChild(newTextTitle);
     newCardDetail.appendChild(newTextNombre);
-    newCardDetail.appendChild(newTextPrice);
+    newCardDetail.appendChild(priceContainer);
     newCard.appendChild(newCardDetail);
-    
     const cardContainer = document.getElementById('card-container');
-    
+
     cardContainer.appendChild(newCard);
 }
+
 
 function ordenarProductos(productos) {
     const menorMayorCheckbox = document.getElementById('menor-mayor').checked;
@@ -338,7 +350,8 @@ function buscarProductos(query) {
     query = query.toLowerCase();
     return allProducts.filter(product => 
         product.nombre.toLowerCase().includes(query) || 
-        product.marca.toLowerCase().includes(query)
+        product.marca.toLowerCase().includes(query) || 
+        product.uso.toLowerCase().includes(query)
     );
 }
 
@@ -404,27 +417,28 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 /////////////////////////filtro de precios que puede ingresar el usuario a gusto en los filtros
 function filtrarPrecio(productos) {
-    // Verificar si 'productos' está definido y es un array
     if (!Array.isArray(productos)) {
-        console.error('precio no definido:', productos);
+        console.error('Productos no está definido o no es un array:', productos);
         return [];
     }
+    
     let minimo = parseInt(document.getElementById('minimo').value, 10);
     let maximo = parseInt(document.getElementById('maximo').value, 10);
 
-    // Asignar valores predeterminados si los inputs están vacíos o no son números
-    if (isNaN(minimo)) minimo = parseInt(1);
-    if (isNaN(maximo)) maximo = parseInt(9999999);
+    if (isNaN(minimo)) minimo = 0;
+    if (isNaN(maximo)) maximo = Infinity;
 
     if (minimo >= maximo) {
         alert("El precio mínimo no puede ser igual o más alto que el precio máximo");
         return productos; // Devolver la lista original sin filtrar
     }
+
     if(minimo < 0 || maximo < 0){
         alert("El precio no puede ser negativo");
-        minimo = parseInt(1);
-        maximo = parseInt(9999999);
+        minimo = 0;
+        maximo = Infinity;
     }
+
     return productos.filter(producto => producto.precio >= minimo && producto.precio <= maximo);
 }
 // Llamada a init
