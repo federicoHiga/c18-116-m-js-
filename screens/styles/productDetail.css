@@ -1,3 +1,10 @@
+.selected-color {
+  border: 2px solid black;
+}
+
+.selected-talle {
+  background-color: lightgray;
+}
 .product-container {
   margin: 0 auto;
   padding: 0 2em;
