@@ -589,6 +589,29 @@
         colorsDiv.appendChild(color);
       });
 
+      //talles
+      const tallesDiv = document.getElementById("cajaTalles");
+
+const talles = product.talle.map(talle => {
+    const talleDiv = document.createElement("div");
+    talleDiv.classList.add('disponible', 'talla',"titulotalles");
+    talleDiv.innerText = talle; // Añadir el texto del talle al div
+
+    talleDiv.addEventListener("click", () => {
+        console.log("Button clicked:", talle);
+        // tallesDiv.innerText = Selected size: ${talle}; // Mostrar el valor dentro del div cajaTalles
+    });
+
+    return talleDiv;
+});
+
+talles.forEach(talle => {
+    tallesDiv.appendChild(talle);
+});
+
+console.log('solo hay estos', talles);
+
+
       function addToCart(product) {
         const existingProductIndex = cart.findIndex(item => item.id === product.id);
         if (existingProductIndex !== -1) {
