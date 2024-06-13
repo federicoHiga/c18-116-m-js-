@@ -706,3 +706,9 @@ height: 22px;
   font-weight: 600;
   line-height: normal;
 }
+
+/*Contacto*/
+
+.accordion-header:hover {
+  /*background-color: #fff*/
+}
