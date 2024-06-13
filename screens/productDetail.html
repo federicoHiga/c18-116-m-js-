@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../styles/carrousel.css">
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="../styles/home.css" />
+  <link rel="stylesheet" href="../screens/styles/cart.css">
 </head>
 
 <body>
@@ -483,25 +484,41 @@
       cartItem.classList.add('cart-item');
       cartItem.dataset.id = product.id;
 
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('deleteButton');
+      const deleteIcon = '<img src="../src/atomo/papelera.svg" alt="eliminar">';
+      removeButton.innerHTML = deleteIcon;
+      cartItem.appendChild(removeButton);
+      removeButton.addEventListener('click', () => {
+        removeFromCart(product.id);
+      });
+
+      const image = document.createElement('img');
+      image.classList.add('product-cart-img');
+      image.src = product.image1;
+      cartItem.appendChild(image);
+
       const itemName = document.createElement('span');
-      itemName.textContent = `Producto: ${product.nombre}`;
-      cartItem.appendChild(itemName);
+      itemName.classList.add('item-name');
+      itemName.textContent = product.nombre;
+ 
+
+      const itemQuantity = document.createElement('span');
+      itemQuantity.textContent = `Cantidad: ${product.quantity}`;
+      itemQuantity.classList.add('item-quantity');
+      // cartItem.appendChild(itemQuantity);
+
+      const dataDiv = document.createElement('div');
+      dataDiv.classList.add('data-div');
+      dataDiv.appendChild(itemName);
+      dataDiv.appendChild(itemQuantity);
+      cartItem.appendChild(dataDiv)
 
       const itemPrice = document.createElement('span');
       itemPrice.textContent = `Precio: $${product.precio}`;
       cartItem.appendChild(itemPrice);
 
-      const itemQuantity = document.createElement('span');
-      itemQuantity.textContent = `Cantidad: ${product.quantity}`;
-      itemQuantity.classList.add('item-quantity');
-      cartItem.appendChild(itemQuantity);
 
-      const removeButton = document.createElement('button');
-      removeButton.textContent = 'Eliminar';
-      cartItem.appendChild(removeButton);
-      removeButton.addEventListener('click', () => {
-        removeFromCart(product.id);
-      });
 
       return cartItem;
     }
@@ -517,6 +534,24 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
+    const userStatus = document.getElementById("userStatus");
+    const storedEmail = localStorage.getItem('userEmail');
+
+    if (storedEmail) {
+      userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
+    //  , <button id="logout" href="#">Cerrar sesión</button>`;
+        
+      if(storedEmail == "zenithadmin@zenith.com"){
+        userStatus.innerHTML = `<a href="screens/productForm.html">Cargar producto</a>`} 
+      else{
+        userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
+      }      
+    }   
+
+
+    else {
+      userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
+    }
     init(() => {
       const productsArray = Object.values(products);
       const product = productsArray.find(p => p.id == productId);
@@ -554,6 +589,29 @@
         colorsDiv.appendChild(color);
       });
 
+      //talles
+      const tallesDiv = document.getElementById("cajaTalles");
+
+const talles = product.talle.map(talle => {
+    const talleDiv = document.createElement("div");
+    talleDiv.classList.add('disponible', 'talla',"titulotalles");
+    talleDiv.innerText = talle; // Añadir el texto del talle al div
+
+    talleDiv.addEventListener("click", () => {
+        console.log("Button clicked:", talle);
+        // tallesDiv.innerText = Selected size: ${talle}; // Mostrar el valor dentro del div cajaTalles
+    });
+
+    return talleDiv;
+});
+
+talles.forEach(talle => {
+    tallesDiv.appendChild(talle);
+});
+
+console.log('solo hay estos', talles);
+
+
       function addToCart(product) {
         const existingProductIndex = cart.findIndex(item => item.id === product.id);
         if (existingProductIndex !== -1) {
@@ -573,7 +631,7 @@
       });
     });
 
-    const product = products.find(p => p.id == productId);
+    // const product = products.find(p => p.id == productId);
   });
 </script>
 <script src="./scripts/cart.js"></script>

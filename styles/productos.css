@@ -63,20 +63,24 @@
 }
 
 .text-title {
-    font-size: 12pt;
+    font-size: 11pt;
     font-weight: bold;
     margin: 0;
+    white-space: nowrap; /* Evita saltos de línea */
+    overflow: hidden; /* Oculta el contenido que desborde */
+    text-overflow: ellipsis; 
+    /* Agrega puntos suspensivos (...) si el texto es muy largo */ 
 }
 /* body{
     background-color: #F5F5F5;
 } */
 
-.text-Body {
+/* .text-Body {
     font-size: 16pt;
     font-weight: bold;
     text-align-last: end;
     margin: 0;
-}
+} */
 
 /* Media Queries */
 @media screen and (min-width: 1000px) {
@@ -135,7 +139,7 @@
 
 main .carousel-item img {
     width: 100%;
-    border-radius: 20px 20px 10px 10px;
+    border-radius: 0px !important;
     object-fit: fill; /* Esto asegura que la imagen se ajuste y recorte adecuadamente */
 }
 .container-aplicar{
@@ -270,4 +274,25 @@ hr{
 }
 .mb-2 {
     margin-bottom: 0px !important;
+}
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: red;
+    margin-right:auto;
+}
+
+.new-price {
+    font-weight: bold;
+    color: black;
+    margin-left:auto ;
+}
+
+.text-Body {
+    font-size: 1em;
 }

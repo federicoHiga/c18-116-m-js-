@@ -176,9 +176,15 @@ document.addEventListener("DOMContentLoaded", function() {
       userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
     //  , <button id="logout" href="#">Cerrar sesión</button>`;
         
-      if(storedEmail == "zenithadmin@zenith.com")
-            userStatus.innerHTML= `<a href="screens/productForm.html">Cargar producto</a>`
-    }   else {
+      if(storedEmail == "zenithadmin@zenith.com"){
+        userStatus.innerHTML = `<a href="screens/productForm.html">Cargar producto</a>`} 
+      else{
+        userStatus.innerHTML = `Bienvenido: ${storedEmail}` 
+      }      
+    }   
+
+
+    else {
       userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
     }});
 

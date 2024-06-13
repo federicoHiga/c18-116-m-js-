@@ -1,0 +1,27 @@
+.modal-body{
+    padding: 0px;
+}
+.cart-item{
+    display: flex;
+    margin: 15px;
+    
+}
+.deleteButton{
+    border: none; 
+    background: none;
+    margin: 5px;
+}
+.product-cart-img{
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+}
+.data-div{
+    display: grid;
+    margin-right: 10px;
+    width: 120px;
+}
+.item-name{
+    font-weight: bold;
+    font-size: 18px;
+}
