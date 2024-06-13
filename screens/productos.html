@@ -511,19 +511,34 @@
     <button id="back-to-top"><img src="../src/atomo/flecha arriba.png" alt="↑"></button>
   </main>
   <!-- Footer section Begin -->
-  <footer class="footer">
+  <footer class="footer py-2">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+          <div class="footer-widget my-1 py-2">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button accordion-buttonFooter collapsed shadow-none accordionFooter" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true" aria-controls="panelsStayOpen-collapseSix">
+                    <p class="accordion-textFooter">¿Necesitas Ayuda?</p>
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse show">
+                </div>
+              </div>
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button accordion-buttonFooter collapsed shadow-none accordionFooter" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="true" aria-controls="panelsStayOpen-collapseSeven">
+                      <p class="accordion-textFooter">Información</p>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse show">
+                  </div>
+                </div>
+        <div class="container ">
           <div class="footer-widget">
-            <h6>Necesitas ayuda?</h6>
-          </div>
-        </div>
-        <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-          <div class="footer-widget">
-            <h6>Información</h6>
             <ul>
-              <li><a href="#">Quienes somos?</a></li>
+              <li><a href="quienessomos.html">Quienes somos?</a></li>
               <li><a href="#">Politica de privacidad</a></li>
               <li><a href="#">Términos y condiciones</a></li>
               <li><a href="#">Politica de cambio y devoluciones</a></li>
@@ -531,23 +546,34 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
           <div class="footer-widget">
-            <h6>Contacto</h6>
-            <div class="footer-newslatter">
-              <p>Suscribete para recibir nuestras ofertas y descuentos</p>
+            <h6 class="contactoFooter pb-4 m-0">Contacto</h6>
+            <div class="footer-newslatter container d-flex justify-content-center">
+              <p class="suscribeteFooter">Suscríbete para recibir nuestras</p>
+            </div>
+            <div class="footer-newslatter container d-flex justify-content-center">
+              <p class="suscribeteFooter pb-3">ofertas y descuentos</p>
+            </div>
+            <div class="container-fluid d-flex flex-row justify-content-center px-0">
               <form action="#">
-                <input type="text" placeholder="Escribir correo electronico">
-                <button type="submit"><span><i class="fa fa-envelope" arial-hidden="true"></i></span></button>
+                <div class="input-group">
+                  <input class="inputFormFooter form-controlFooter" type="text" placeholder="Ingresa tu correo electrónico aquí">
+                  <button class="btn btn-outline-successFooter mx-0" type="submit">
+                    <img class="imagenForm" src="../src/images/botonimagenadelante.png">
+                  </button>
+                </div>
               </form>
             </div>
           </div>
-          <ul>
-            <p></a>Siguenos en nuestras redes:</p>
-          </ul>
-          <ul class="social-icons">
-            <li><a href=""><i class="fab fa-facebook"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+          <div class="container d-flex justify-content-center">
+            <p>Siguenos en nuestras redes:</p>
+          </div>
+          <div class="iconos-RRSS-nav-Footer w-100"> 
+            <div class="iconos-RRSS-nav-img-Footer container d-flex justify-content-center align-items-center">
+              <a href="#"><img class="iconos-RRSS-nav-insta" src="../src/atomo/facebookfooter.svg" width="24" alt="Logo de Facebook"></a>
+              <a href="#"></a><img class="iconos-RRSS-nav-face mx-3" src="../src/atomo/instagramfooter.svg" width="25" alt="Logo de Instagram"></a>
+            </div>
+          </div>
             <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
               <div class="footer-newslatter">
               </div>
@@ -555,9 +581,9 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="container d-flex justify-content-center">
       <div class="col-lg-12 text-center">
-        <div class="footer-copyright-text">
+        <div class="footer-copyright-text my-2">
           <p>&copy; 2024. Todos los derechos reservados
         </div>
       </div>
