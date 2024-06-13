@@ -6,57 +6,58 @@
 }
 
 
-
-
-
-
 /* Css Product detail */
-.colorProducto{
+.colorProducto {
   display: inline;
   border-radius: 50%;
   width: 20px;
   height: 20px;
 }
 
-.color-negro{
+.color-negro {
   background-color: #0D0D0D;
   stroke-width: 2px;
   stroke: #661010;
 }
-.color-blanco{
+
+.color-blanco {
   background-color: #FFF;
   stroke-width: 1px;
   stroke: #000;
 }
-.color-rojo{
+
+.color-rojo {
   background-color: #B74040;
   stroke-width: 1px;
   stroke: #000;
 }
-.color-azul{
+
+.color-azul {
   background-color: #5F92A7;
   stroke-width: 1px;
   stroke: #000;
 }
-.color-verde{
+
+.color-verde {
   background-color: #B4D261;
   stroke-width: 1px;
   stroke: #000;
 }
 
-.talles{
+.talles {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;}
+  gap: 8px;
+}
 
-.talleProducto{
+.talleProducto {
   border-radius: 8px;
   border: 1px solid #8C8C8C;
   background: #F2F2F2;
 }
 
-.cajaColor{
+.cajaColor {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -64,22 +65,132 @@
   padding-top: 8px;
 }
 
-.cajaTalles{
-display: flex;
-width: 328px;
-height: 160px;
-justify-content: center;
-align-items: center;
-align-content: center;
-gap: 8px;
-flex-wrap: wrap;
+.cajaTalles {
+  display: flex;
+  width: 328px;
+  height: 160px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
 }
-.titulotalles{
+
+.talla {
+  width: 72px;
+  height: 48px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 8px;
+  border: 1px black solid;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex"
+
+}
+
+.disponible {
+  color: black;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  word-wrap: break-word;
+  }
+
+.nodisponible {
+  color: #8C8C8C;
+  font-size: 16px;
+  font-family: Roboto;
+  font-weight: 400;
+  word-wrap: break-word
+}
+
+.titulotalles {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-align: center;
 }
+
+/* hacer aparecer foto de medida de talles */
+/*Movimientos*/
+/*Efecto*/
+.modalmask {
+  /* position: fixed; */
+  /* font-family: Arial, sans-serif; */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+.modalmask:target {
+  opacity:1;
+  pointer-events: auto;
+}
+
+/*Formato de la ventana*/
+.modalbox{
+  /* width: 400px; */
+  /* position: relative; */
+  /* padding: 5px 20px 13px 20px; */
+  background: #fff;
+  border-radius:3px;
+  -webkit-transition: all 500ms ease-in;
+  -moz-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+   
+}
+
+.movedown {
+  margin: 0 auto;
+}
+.rotate {
+  margin: 10% auto;
+  -webkit-transform: scale(-5,-5);
+  transform: scale(-5,-5);
+}
+/* .resize {
+  margin: 10% auto;
+  width:0;
+  height:0; */
+
+/* } */
+.modalmask:target .movedown{       
+  margin:10% auto;
+}
+
+/*Boton de cerrar*/
+.cerrar {
+  z-index:99999 ;
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  text-align: center;
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius:3px;
+}
+
+.cerrar:hover {
+  background: #FAAC58;
+  color:#222;
+}
+
 
 /* form productos */
 #comentarios label {
@@ -94,10 +205,12 @@ flex-wrap: wrap;
   margin-top: 1%;
 
 }
+
 .estrella {
   color: #8C8C8C;
   font-size: 20px;
 }
+
 .estrella:hover,
 .estrella.activa {
   color: #661010;
