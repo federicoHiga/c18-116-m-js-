@@ -75,21 +75,17 @@ colorDetail = document.getElementById("colorDetail");
 // img2Detail = document.getElementById("img2").value;
 // img3Detail = document.getElementById("img3").value;
 
-// function usoZapatilla(){
-//   usoDetail.addEventListener("select", () => {
-//       if(usoDetail.value == "1"){
-//       return usoDetail = "Uso urbanos"
-//           }
-//     else if(usoDetail.value == "2"){
-//        return tipoDeZapa = "Uso deportivo"
-//           }
-//     else if(usoDetail.value == "3")
-//     tipoDeZapa = "De vestir"
-      
-// })}
-
-// usoZapatilla()
 
 
 
-// HASTA ACÁ NO VA
+
+//usuario sesion
+document.addEventListener("DOMContentLoaded", function() {
+  const userStatus = document.getElementById("userStatus");
+  const storedEmail = localStorage.getItem('userEmail');
+
+  if (storedEmail) {
+    userStatus.innerHTML = `Bienvenido: ${storedEmail}`;
+  } else {
+    userStatus.innerHTML = `<a href="screens/login.html">Iniciar sesión</a>`;
+  }});
