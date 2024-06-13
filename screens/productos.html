@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../styles/productos.css">
   <link rel="stylesheet" href="../styles/footer.css">
   <link rel="stylesheet" href="../styles/home.css" />
+  <link rel="stylesheet" href="../screens/styles/cart.css">
 </head>
 
 <body>
@@ -161,7 +162,7 @@
             <path
               d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
           </svg>
-          <div id="cartCount"></div>
+          <div class="cartCount"></div>
         </div>
         <!-- CART -->
       </div>
@@ -170,15 +171,53 @@
         <div class="modal-dialog modal-fullscreen">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title">Carrito de compras</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h1 class="modal-title">Resumen de compra</h1>
+              <div class="itemDeCompra col-2 d-flex justify-content-center align-self-start justify-content-center mt-3 ml-2"
+              data-bs-toggle="modal" data-bs-target="#cartModal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z" />
+              </svg>
+              <div class="cartCount"></div>
+            </div>
+              <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             </div>
             <div class="modal-body">
-              <div id='cart-items-conteiner'></div>
+              <div id='cart-items-conteiner'>
+                <!-- <div class="cart-item" id="cart-item"></div> -->
+              </div>
+  
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button bg-white collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                    <h1 class="accordion-text">Datos de envío a domicilio</h1>
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <div class="input-div">
+                      <h2>Datos del comprador:</h2>
+                      <input type="text" placeholder="Nombre">
+                      <input type="text" placeholder="Apellido">
+                      <input type="text" placeholder="Correo electrónico">
+                      <h2>Datos de envío:</h2>
+                      <input type="text" placeholder="Direccion">
+                      <input type="text" placeholder="Casa, departamento (opcional)">
+                      <input type="text" placeholder="Localidad">
+                      <input type="text" placeholder="Codigo postal">
+                      <input type="text" placeholder="Descripcion (opcional)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+                </div>
+            <div id="resumenDeCuenta"></div>
+            <div class="modal-footer"> 
+              <button type="button" id="btn-cart-close" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary">Finalizar compra</button>
             </div>
           </div>
         </div>
@@ -596,16 +635,26 @@
     cartCount.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);    
 };
 
+window.onload = function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = document.getElementById("cartCount")
+    cartCount.innerHTML = cart.reduce((acc, item) => acc + item.quantity, 0);    
+};
+
 window.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
 
 const productId = new URL(document.location.toString()).searchParams.get('productId');
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+let selectedColor = null;
+let selectedTalle = null;
+const resumenDeCuenta = document.getElementById('resumenDeCuenta');
+resumenDeCuenta.classList.add('resumen');
 const cartItemsDiv = document.getElementById('cart-items-conteiner');
-const cartCount = document.getElementById("cartCount");
+const cartCount = document.querySelectorAll(".cartCount");
 
 // Update cart count initially
 updateCartCount(cart);
+updateTotalPrice(cart);
 
 window.addEventListener('DOMContentLoaded', loadCartFromLocalStorage);
 
@@ -617,61 +666,100 @@ function loadCartFromLocalStorage() {
       cartItemsDiv.appendChild(cartItemHTML);
     });
   }
+  updateTotalPrice(cart);
 }
 
-function removeFromCart(productId) {
-  const productIndex = cart.findIndex(item => item.id === productId);
-  if (productIndex !== -1) {
-    if (cart[productIndex].quantity > 1) {
-      cart[productIndex].quantity--;
-      document.querySelector(`.cart-item[data-id='${productId}'] .item-quantity`).textContent = `Cantidad: ${cart[productIndex].quantity}`;
-    } else {
-      cart.splice(productIndex, 1);
-      document.querySelector(`.cart-item[data-id='${productId}']`).remove();
+function removeFromCart(productId, color, talle) {
+    const productIndex = cart.findIndex(item => item.id === productId && item.selectedColor === color && item.selectedTalle === talle);
+    if (productIndex !== -1) {
+      if (cart[productIndex].quantity > 1) {
+        cart[productIndex].quantity--;
+        document.querySelector(`.cart-item[data-id='${productId}'][data-color='${color}'][data-talle='${talle}'] .item-quantity`).textContent = `Cantidad: ${cart[productIndex].quantity}`;
+      } else {
+        cart.splice(productIndex, 1);
+        document.querySelector(`.cart-item[data-id='${productId}'][data-color='${color}'][data-talle='${talle}']`).remove();
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartCount(cart);
+      updateTotalPrice(cart);
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    updateCartCount(cart);
   }
-}
 
-function generateCartItemHTML(product) {
-  if (product) {
-    const cartItem = document.createElement('div');
-    cartItem.classList.add('cart-item');
-    cartItem.dataset.id = product.id;
+  function generateCartItemHTML(product) {
+    if (product) {
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
+      cartItem.dataset.id = product.id;
+      cartItem.dataset.color = product.selectedColor;
+      cartItem.dataset.talle = product.selectedTalle;
 
-    const itemName = document.createElement('span');
-    itemName.textContent = `Producto: ${product.nombre}`;
-    cartItem.appendChild(itemName);
+      const removeButton = document.createElement('button');
+      removeButton.classList.add('deleteButton');
+      const deleteIcon = '<img src="../src/atomo/papelera.svg" alt="eliminar">';
+      removeButton.innerHTML = deleteIcon;
+      cartItem.appendChild(removeButton);
+      removeButton.addEventListener('click', () => {
+        removeFromCart(product.id, product.selectedColor, product.selectedTalle);
+      });
 
-    const itemPrice = document.createElement('span');
-    itemPrice.textContent = `Precio: $${product.precio}`;
-    cartItem.appendChild(itemPrice);
+      const image = document.createElement('img');
+      image.classList.add('product-cart-img');
+      image.src = product.image1;
+      cartItem.appendChild(image);
 
-    const itemQuantity = document.createElement('span');
-    itemQuantity.textContent = `Cantidad: ${product.quantity}`;
-    itemQuantity.classList.add('item-quantity');
-    cartItem.appendChild(itemQuantity);
+      const itemName = document.createElement('span');
+      itemName.classList.add('item-name');
+      itemName.textContent = product.nombre;
 
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Eliminar';
-    cartItem.appendChild(removeButton);
-    removeButton.addEventListener('click', () => {
-      removeFromCart(product.id);
-    });
+      const itemQuantity = document.createElement('span');
+      itemQuantity.textContent = `Cantidad: ${product.quantity}`;
+      itemQuantity.classList.add('item-quantity');
 
-    return cartItem;
+      const dataDiv = document.createElement('div');
+      dataDiv.classList.add('data-div');
+      dataDiv.appendChild(itemName);
+      dataDiv.appendChild(itemQuantity);
+
+      // Añadimos color y talle seleccionados
+      if (product.selectedColor) {
+        const itemColor = document.createElement('span');
+        itemColor.textContent = `Color: ${product.selectedColor}`;
+        dataDiv.appendChild(itemColor);
+      }
+
+      if (product.selectedTalle) {
+        const itemTalle = document.createElement('span');
+        itemTalle.textContent = `Talle: ${product.selectedTalle}`;
+        dataDiv.appendChild(itemTalle);
+      }
+
+      cartItem.appendChild(dataDiv);
+
+      const itemPrice = document.createElement('span');
+      itemPrice.textContent = `$${product.precio}`;
+      itemPrice.classList.add('item-price');
+      cartItem.appendChild(itemPrice);
+
+      return cartItem;
+    }
   }
-}
 
 function updateCartCount(cart) {
   const totalQuantity = cart.reduce((acc, product) => acc + product.quantity, 0);
   if (cartCount) {
-    cartCount.innerHTML = totalQuantity;
+    cartCount.forEach(element => {
+      element.innerHTML = totalQuantity;
+    });
   } else {
     console.warn("Cart count element (cartCount) not found!");
   }
 }
+
+function updateTotalPrice(cart) {
+    const totalPrice = cart.reduce((acc, product) => acc + product.precio * product.quantity, 0);
+    resumenDeCuenta.innerHTML = `Total: $${totalPrice.toFixed(2)}`;
+  }
+
 </script>
 </script>
 <script src="../scripts/productos.js"></script>
