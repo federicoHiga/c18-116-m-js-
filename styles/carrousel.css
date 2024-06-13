@@ -16,7 +16,8 @@
 .carrousel-img{
     height: 412px;
     width: 100%;
-    border-radius: 15px;
+    object-fit: fill !important;
+    /* border-radius: 15px; */
 }
 .carousel-control-prev-icon {
    background-color: black;

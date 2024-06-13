@@ -121,7 +121,7 @@
 
   main .carousel-item img {
     width: 100%;
-    border-radius: 20px 20px 10px 10px;
+    /* border-radius: 20px 20px 10px 10px; */
     /* height: 125px; Ajusta la altura según tus necesidades */
     object-fit: fill; /* Esto asegura que la imagen se ajuste y recorte adecuadamente */
   }

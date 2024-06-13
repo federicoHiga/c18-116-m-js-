@@ -53,7 +53,7 @@
                           data-bs-parent="#accordionExample">
                           <div class="accordion-body">
                             <div class="list-group align-items-center">
-                              <a href="./productos.html?query=casuales" id="casual" class="list-group-item list-group">Zapatos Casuales</a>
+                              <a href="./productos.html?query=casuales" class="list-group-item list-group">Zapatos Casuales</a>
                               <a href="./productos.html?query=vestir"  class="list-group-item list-group">Zapatos de Vestir</a>
                               <a href="./productos.html?query=botines"  class="list-group-item list-group">Botas y Botines</a>
                               <a href="./productos.html?query=urbanas"  class="list-group-item list-group">Zapatillas Urbanas</a>
@@ -148,10 +148,14 @@
         <!--Barra de navegacion-->
         <!--Barra de Busqueda-->
         <div class="barraBusqueda container-fluid py-2 d-flex justify-content-center">
-          <form class="d-flex col-11 justify-content-center" role="search">
-            <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search" id="search-bar">
-            <button class="btn btn-outline-success mx-0" type="submit"><img src="../src/atomo/serch.svg"></button>
-          </form>
+          <div class="barraBusqueda container-fluid py-2 d-flex justify-content-center">
+            <form class="d-flex col-11 justify-content-center" id="search-form">
+              <input class="form-control mx-0" type="search" placeholder="Buscar calzado..." aria-label="Search"
+                id="search-bar">
+              <button class="btn btn-outline-success mx-0" type="button" id="search-button"><img
+                  src="/src/atomo/serch.svg"></button>
+            </form>
+          </div>
           <!--Barra de Busqueda-->
         </div>
         <!-- CART -->
@@ -520,6 +524,7 @@
 
     <div class="filters"></div>
     <div class="cantidad-resultados"></div>
+    <div id="loader" style="display:none;">Cargando...</div>
     <div id="card-container"></div>
     <div class="button-container">
       <button id="load-more" class="btn btn-outline-secondary">Cargar más</button>
@@ -584,7 +589,7 @@
           </div>
         </div>
           <div class="footer-widget">
-            <h6 class="contactoFooter pb-4 m-0">Contacto</h6>
+            <h6 class="contactoFooter pb-4 m-0"><a href="contacto.html">Contacto</a></h6>
             <div class="footer-newslatter container d-flex justify-content-center">
               <p class="suscribeteFooter">Suscríbete para recibir nuestras</p>
             </div>
