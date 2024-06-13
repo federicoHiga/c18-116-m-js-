@@ -225,7 +225,9 @@
           <div id="resumenDeCuenta"></div>
           <div class="modal-footer"> 
             <button type="button" id="btn-cart-close" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Finalizar compra</button>
+            <button type="button" class="btn " id="botonFinal" onclick="finalizarCompra()">Finalizar compra</button>
+            <div id="imagenContainer" style="margin-top: 20px;">
+          </div>
           </div>
         </div>
       </div>
@@ -314,14 +316,7 @@
           </div>
         </div>
     </div>
-    <div
-      style="width: 120px;border-radius: 8px; border: 1px solid black; display: flex; justify-content: space-between; align-items: center;">
-      <button style="border: none; background-color:white ;" class="icon-button" id="decrement-btn"><img
-          src="../src/atomo/menos.png"></button>
-      <div id="counter" style="font-family: Roboto;font-size: 20px;font-weight: 400; line-height: normal;">1</div>
-      <button style="border: none; background-color:white ;" class="icon-button" id="increment-btn"><img
-          src="../src/atomo/más.png"></button>
-    </div>
+    
   </div>
   </div>
   <!-- add to cart -->
@@ -701,5 +696,7 @@
 </script>
 <script src="./scripts/cart.js"></script>
 <script src="./scripts/filtro.js"></script>
+<script src="../scripts/logueadoNOIndex.js"></script>
+
 
 </html>
