@@ -696,3 +696,19 @@ height: 22px;
 .hotSaleText {
   color: #661010;
 }
+
+/*Quienes somos*/
+
+.acercaZenithtitulo .acercaZenithlista2 .acercaZenithtitulo2 {
+  color:#000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/*Contacto*/
+
+.accordion-header:hover {
+  /*background-color: #fff*/
+}
